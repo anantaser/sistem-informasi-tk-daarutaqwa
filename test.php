@@ -1,6 +1,4 @@
 <?php 
-    <html>
-    <p>test</p>
-    </html>
+require 'functions.php';
 
 ?>
