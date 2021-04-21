@@ -1,5 +1,5 @@
 <?php   
-
+// require function 
 require 'functions.php';
 
 if (isset ($_POST["login"])){
