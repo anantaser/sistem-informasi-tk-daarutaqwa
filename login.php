@@ -29,7 +29,6 @@ if (isset ($_POST["login"])){
   <title>Masuk/Login</title>
 </head>
 <body>
-<p> ini adalah paragraf <p>
   <div class="login-page">
   <div class="form">
     <form action="" class="login-form" method="post">
