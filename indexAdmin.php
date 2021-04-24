@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>2 Column - fw-18-2-col</title>
+<title>Halaman Admin</title>
 <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
