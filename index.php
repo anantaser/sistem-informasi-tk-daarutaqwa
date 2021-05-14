@@ -2,9 +2,6 @@
 <html>
 <head>
   <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
 <div class="header">
   <img src="assets/logotk.jpg" width="200">
   <h1>TK Islam Daarutaqwa</h1>
@@ -17,29 +14,72 @@
   <a href="ppdb.php">PPDB</a>
   <a href="login.php" style="float:right" >Masuk/Login</a>
 </div>
+</head>
+<body>
 
-<div class="row">
-  <div class="leftcolumn">
+
+<div class="konten">
+<div class="container">
     <div class="card">
-      <h2>Contoh Kegiatan</h2>
-      <h5>Selasa, 6 April 2021</h5>
-      <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
-      <img src="assets/kegiatan1.jpg" height="200px">
-      <p>Calon Dokter</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-    <div class="card">
-      <h2>Contoh Kegiatan 2</h2>
-      <h5>Rabu, 7 April 2021</h5>
-      <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
-      <img src="assets/kegiatan2.jpg" height="200px";>
-      <p>Calon Beban Keluarga</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    </div>
-  </div>
+      
+      <div class="imgBx">
+            <img src="assets/kegiatan2.jpg" >
+      </div> 
+          <div class="content">
+      
+            <h5>Selasa, 6 April 2021</h5>
+              <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+     
+                <p>Calon Dokter</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <a href="">Read More</a></p>
 
-
-  <div class="rightcolumn">
+          </div>
+    </div>
+   <div class="card">
+      <div class="imgBx">
+            <img src="assets/kegiatan2.jpg" >
+      </div> 
+          <div class="content">
+      
+            <h5>Selasa, 6 April 2021</h5>
+              <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+     
+                <p>Calon Dokter</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+    </div>
+   <div class="card">
+      <div class="imgBx">
+            <img src="assets/kegiatan2.jpg" >
+      </div> 
+          <div class="content">
+      
+            <h5>Selasa, 6 April 2021</h5>
+              <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+     
+                <p>Calon Dokter</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+    </div>
+   
+</div> <!-- kontainer-->
+ <div class="rightcolumn">
     <div class="card">
       <h2>About Me</h2>
       <!-- <div class="fakeimg" style="height:100px;" align="center"> -->
@@ -47,7 +87,8 @@
       <!-- </div> -->
       <p>Jadi gini</p>
     </div>
-   <!--  <div class="card">
+</div>
+ <!--  <div class="card">
       <h3>Popular Post</h3>
       <div class="fakeimg"><p>Image</p></div>
       <div class="fakeimg"><p>Image</p></div>
@@ -59,10 +100,8 @@
     </div>
   </div>
 </div>
-
 <div class="footer">
   <h2>TK - Daarutaqwa ©2021</h2>
 </div>
-
 </body>
 </html>
