@@ -43,7 +43,7 @@
     </div>
    <div class="card">
       <div class="imgBx">
-            <img src="assets/kegiatan2.jpg" >
+            <img src="assets/kegiatan2.jpg">
       </div> 
           <div class="content">
       
