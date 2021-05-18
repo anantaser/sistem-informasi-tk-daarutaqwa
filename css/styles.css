@@ -12,7 +12,7 @@ footer{
   width: 100%;
   height: auto;
   padding: 50px 100px;
-  background: #113;
+  background: #43A047;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -46,7 +46,7 @@ footer .kontainer .sec.aboutus h1 :before{
   
 }
 footer .kontainer .sec.aboutus p{
-  color: #999;
+  color: #fff;
 }
 .quickLinks{
   position: relative;
@@ -74,26 +74,26 @@ footer .kontainer .sec.aboutus p{
 
 }
 .contact .info li span:nth-child(1){
-  color: #999;
+  color: #fff;
   font-size: 20px;
   margin-right: 10px;
 }
 .contact .info li span{
 
-  color: #999;
+  color: #fff;
 }
 .contact .info li  a{
-  color: #999;
+  color: #fff;
 }
 .contact .info li  a:hover{
   color: #000;
 }
 .copyrightText{
   width:100%;
-  background: #111;
+  background: #346337;
   padding: 8px 100px;
   text-align: center;
-  color: #999;
+  color: #fff;
 
 
 }
@@ -113,7 +113,7 @@ footer .kontainer .sec.aboutus p{
   position: relative;
   height: 35px;
   width: 35px;
-  border:2px solid black;
+  border:2px solid white;
   margin: 0 15px;
   border-radius: 50%;
   cursor: pointer;
@@ -173,7 +173,7 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
 /* Style the top navigation bar */
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #346337;
 }
 
 /* Style the topnav links */

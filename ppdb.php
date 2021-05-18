@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Halaman PPDSB</title>
+	<title>Halaman PPDB</title>
 	<link rel="stylesheet" href="css/ppdb.css">
 	<div class="header">
   <img src="assets/logotk.jpg" width="200">
