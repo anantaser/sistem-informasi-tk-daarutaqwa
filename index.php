@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <link rel="stylesheet" href="css/styles.css">
 <div class="header">
+  <script type="https://kit.fontawesome.com/a076d05399.js"></script>
   <img src="assets/logotk.jpg" width="200">
   <h1>TK Islam Daarutaqwa</h1>
   <p>Jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
@@ -79,29 +82,67 @@
     </div>
    
 </div> <!-- kontainer-->
- <div class="rightcolumn">
-    <div class="card">
-      <h2>About Me</h2>
-      <!-- <div class="fakeimg" style="height:100px;" align="center"> -->
-        <img src="assets/about.jpg" height="70px" align="center">
-      <!-- </div> -->
-      <p>Jadi gini</p>
-    </div>
-</div>
- <!--  <div class="card">
-      <h3>Popular Post</h3>
-      <div class="fakeimg"><p>Image</p></div>
-      <div class="fakeimg"><p>Image</p></div>
-      <div class="fakeimg"><p>Image</p></div>
-    </div> -->
-    <div class="card">
-      <h3>Follow Me</h3>
-      <p>Some text..</p>
-    </div>
+ 
+    
   </div>
 </div>
-<div class="footer">
-  <h2>TK - Daarutaqwa ©2021</h2>
+
+<footer>
+  <div class="kontainer">
+    <div class="sec aboutus">
+      <h1>About Us</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    </div>
+    <div class="sec quickLinks">
+      <h1>Quick Link</h1>
+      <ul>
+        
+        <li><a href="#">About</a></li>
+        <li><a href="#">Faq</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Term & Consitions</a></li>
+        <li><a href="#">About</a></li>
+
+      </ul>
+    </div>
+    <div class="sec contact">
+      <h1>Contact Info</h1>
+
+      <ul class="info">
+        <li>
+          <span><i class="fa fa-map"></i></span>
+          <span>Cibinong <br>
+            Kab bogor <br>IND</span></li>
+        <li>
+          <span><i class="fa fa-phone"></i></span>
+          <p><a href="tel:1290402030">+1290402030</a><br><a href="tel:1290402030">+1290402030
+          </p>
+          </li>
+            <li>
+          <span><i class="fa fa-envelope"></i></span>
+          <p><a href="asdasdas@gmail.com">asdasdas@gmail.com</a></p>
+          </li>
+      </ul>
+    </div>
 </div>
+<div class="body">
+    <div class="sci">
+      <li><a href="#"><span class="fa fa-facebook "></span></a></li>
+      <li><a href="#"><span class="fa fa-instagram "></span></a></li>
+      <li><a href="#"><span class="fa fa-twitter "></span></a></li>
+      <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+     
+      
+    </div>
+  </div>
+</footer>
+<div class="copyrightText">TK - Daarutaqwa ©2021</div>
 </body>
 </html>
