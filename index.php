@@ -4,19 +4,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
-<div class="header">
-  <script type="https://kit.fontawesome.com/a076d05399.js"></script>
-  <img src="assets/logotk.jpg" width="200">
-  <h1>TK Islam Daarutaqwa</h1>
-  <p>Jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
-</div>
 
-<div class="topnav">
-  <a href="index.php">Mengenai Kita</a>
-  <a href="fotokegiatan.php">Foto Kegiatan</a>
-  <a href="ppdb.php">PPDB</a>
-  <a href="login.php" style="float:right" >Masuk/Login</a>
-</div>
+  <div class="header">
+    <script type="https://kit.fontawesome.com/a076d05399.js"></script>
+    <img src="assets/logotk.jpg" width="200">
+    <h1>TK Islam Daarutaqwa</h1>
+    <p>Jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
+  </div>
+
+  <div class="topnav">
+    <a href="index.php">Mengenai Kita</a>
+    <a href="fotokegiatan.php">Foto Kegiatan</a>
+    <a href="ppdb.php">PPDB</a>
+    <a href="login.php" style="float:right" >Masuk/Login</a>
+  </div>
+
 </head>
 <body>
   <div>

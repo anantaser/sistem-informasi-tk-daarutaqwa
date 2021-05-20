@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Halaman PPDB</title>
-	<link rel="stylesheet" href="css/ppdb.css">
-	<div class="header">
+<title>Halaman PPDB</title>
+<link rel="stylesheet" href="css/ppdb.css">
+
+<div class="header">
   <img src="assets/logotk.jpg" width="200">
   <h1>TK Islam Daarutaqwa</h1>
   <p>Jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
 </div>
 
 <div class="topnav">
-  <a href="#">Mengenai Kita</a>
-  <a href="#">Foto Kegiatan</a>
+  <a href="index.php">Mengenai Kita</a>
+  <a href="fotokegiatan.php">Foto Kegiatan</a>
   <a href="ppdb.php">PPDB</a>
   <a href="login.php" style="float:right" >Masuk/Login</a>
 </div>
