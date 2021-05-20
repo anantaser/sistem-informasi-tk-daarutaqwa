@@ -20,9 +20,6 @@
 
 
 <body>
-	
-<p> ini adalah paragraf <p>
-<a href="index.php">Home</a>
 
 <h1>Halaman PPDB</h1>
 
