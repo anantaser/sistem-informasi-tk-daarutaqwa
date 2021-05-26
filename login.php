@@ -15,8 +15,10 @@ if (isset ($_POST["login"])){
         if( password_verify($password, $row["password"]) ){
           header("Location:indexAdmin.php");
           exit;
-          }
-      }
+          } else 
+          echo "<script> alert('Username atau Password Tidak Sesuai!'); </script>";
+      } 
+
 }
     
  ?>
