@@ -15,6 +15,7 @@ function query($query){
 
 function registrasi($data){
 	global $conn;
+	echo "koneksi berhasil";
 
 	$username = strtolower(stripslashes($data["username"]));
 	$password = mysqli_real_escape_string($conn, $data["password"]);
@@ -41,10 +42,11 @@ function registrasi($data){
 
 	// enkripsi password
 	$password = password_hash($password, PASSWORD_DEFAULT);
+	echo $password;
+	echo $username;
 
 	// tambahkan user baru ke database
-	mysqli_query($conn, "INSERT INTO user VALUES ('','$username','$password')");
-
+	mysqli_query($conn, "INSERT INTO `user`(`username`, `password`) VALUES ('$username','$password')");
 	return mysqli_affected_rows($conn);
 }
 

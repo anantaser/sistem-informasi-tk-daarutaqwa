@@ -32,19 +32,19 @@
 		  		<div class="user-details">
 		    		<div class="input-box">
 					  <span class="details">Nama Lengkap </span>
-					  <input type="text" placeholder="masukan nama lengkap"name="nama" id="nama">
+					  <input type="text" placeholder="" name="nama" id="nama">
 		    		</div>
 		    
 					<div class="input-box">
 				
 						<span class="details">Alamat Lengkap </span>
-						<input type="text" placeholder="Masukan Alamat Lengkap"name="almtlkp" id="almtlkp">
+						<input type="text" placeholder="" name="almtlkp" id="almtlkp">
 						
 					</div>
 			
 					<div class="input-box">
 						<span class="details">Jenis Kelamin </span>
-						<input type="text" placeholder="masukan tanggal lahir"name="jk" id="jk">
+						<input type="text" placeholder=""name="jk" id="jk">
 					</div>
 			
 			
@@ -53,7 +53,7 @@
 					<div class="input-box">
 						<span class="details">Tinggal Bersama
 						</span>
-						<input type="text" placeholder="Masukan "name="tglbsm" id="tglbsm">
+						<input type="text" placeholder=""name="tglbsm" id="tglbsm">
 					
 					</div>
 				
@@ -104,19 +104,19 @@
         	<div class="user-details">
 		    		<div class="input-box">
 					  <span class="details">Nama Ayah </span>
-					  <input type="text" placeholder="masukan nama lengkap"name="namaayah" id="namaayah">
+					  <input type="text" placeholder=""name="namaayah" id="namaayah">
 		    		</div>
 		    
 					<div class="input-box">
 				
 						<span class="details">Pendidikan Ayah </span>
-						<input type="text" placeholder="Masukan pendidikan"name="pdkayah" id="pdkayah">
+						<input type="text" placeholder="" name="pdkayah" id="pdkayah">
 						
 					</div>
 			
 					<div class="input-box">
 						<span class="details">NIK</span>
-						<input type="text" placeholder="masukan NIK"name="nikayah" id="nikayah">
+						<input type="text" placeholder="" name="nikayah" id="nikayah">
 					</div>
 			
 			
@@ -128,7 +128,7 @@
 					<div class="input-box">
 						<span class="details">Tanggal lahir :
 						</span>
-						<input type="text" placeholder="Masukan Agama"name="tglayah" id="tglayah">
+						<input type="text" placeholder="" name="tglayah" id="tglayah">
 					
 					</div>
 			
@@ -137,13 +137,13 @@
         	<div class="user-details">
 		    		<div class="input-box">
 					  <span class="details">Nama Ibu </span>
-					  <input type="text" placeholder="masukan nama lengkap"name="namaibu" id="namaibu">
+					  <input type="text" placeholder="" name="namaibu" id="namaibu">
 		    		</div>
 		    
 					<div class="input-box">
 				
 						<span class="details">Pendidikan Ibu </span>
-						<input type="text" placeholder="Masukan nama panggilan"name="pdkibu" id="pdkibu">
+						<input type="text" placeholder="" name="pdkibu" id="pdkibu">
 						
 					</div>
 			
@@ -161,7 +161,7 @@
 					<div class="input-box">
 						<span class="details">Tanggal Lahir
 						</span>
-						<input type="text" placeholder="Masukan Agama"name="tglibu" id="tglibu">
+						<input type="text" placeholder="" name="tglibu" id="tglibu">
 					
 					</div>
 				
@@ -173,19 +173,19 @@
         	<div class="user-details">
 		    		<div class="input-box">
 					  <span class="details">Tinggi Badan </span>
-					  <input type="text" placeholder="masukan Tinggi"name="tgbdn" id="tgbdn">
+					  <input type="text" placeholder="" name="tgbdn" id="tgbdn">
 		    		</div>
 		    
 					<div class="input-box">
 				
 						<span class="details">Jarak Tempuh </span>
-						<input type="text" placeholder="Masukan jarak tempuh"name="jktp" id="jktp">
+						<input type="text" placeholder="" name="jktp" id="jktp">
 						
 					</div>
 			
 					<div class="input-box">
 						<span class="details">Berat Badan</span>
-						<input type="text" placeholder="masukan berat badan"name="btbdn" id="btbdn">
+						<input type="text" placeholder="" name="btbdn" id="btbdn">
 					</div>
 			
 			
@@ -199,11 +199,11 @@
 				</div>
 					<div class="title"> D.Register</div>
 				 <br>
-		<div class="gender-details">
-          <input type="radio" name="gender" id="dot-1">
-          <input type="radio" name="gender" id="dot-2">
-          <input type="radio" name="gender" id="dot-3">
-          <span class="gender-title">Jenis Pendaftaran</span>
+					<div class="gender-details">
+	          <input type="radio" name="gender" id="dot-1">
+	          <input type="radio" name="gender" id="dot-2">
+	          <input type="radio" name="gender" id="dot-3">
+	          <span class="gender-title">Jenis Pendaftaran</span>
           <div class="category">
             <label for="dot-1">
             <span class="dot one"></span>
@@ -217,37 +217,40 @@
             <span class="dot three"></span>
             <span class="gender">Sekolah Lagi</span>
             </label>
-          </div>
-          
+          </div> 
         </div>
-					
-        <div class="rombel">
-        	<input type="radio1" name="gender" id="dot1">
-        	<input type="radio1" name="gender" id="dot2">
-        	<span class="title">
-        		Rombel
-        	</span>
-        	<div class="kategori">
+        <br>
+
+        <div class="rombel"> Rombel </div>
+        <div class="gender-details">
+        	<input type="checkbox" name="gendor" id="dot1">
+        	<label>Kelompok A</label>
+        	<br>
+        	<input type="checkbox" name="gender" id="dot2">
+        	<label>Kelompok B</label>
+				</div>
+       <!--  	<div class="kategori">
         		<label for="dot1">
         			<span class="dot satu"></span>
-        			<span class="gender">da</span>	
+        			<span class="gender">Kelompok A</span>	
         		</label>
         		<label for="dot2">
         			<span class="dot dua"></span>
-        			<span class="gender">das</span>	
+        			<span class="gender">Kelompok B</span>	
         		</label>
         	</div>
-        </div>
+        </div> -->
+
         <div class="user-details">
 		    		<div class="input-box">
 					  <span class="details">Tanggal masuk sekolah </span>
-					  <input type="text" placeholder="masukan tgl"name="tglmskskl" id="tglmskskl">
+					  <input type="text" placeholder="" name="tglmskskl" id="tglmskskl">
 		    		</div>
 		    
 					<div class="input-box">
 				
 						<span class="details">No Induk Siswa </span>
-						<input type="text" placeholder="Masukan "name="nis" id="nis">
+						<input type="text" placeholder="" name="nis" id="nis">
 						
 					</div>
 				
