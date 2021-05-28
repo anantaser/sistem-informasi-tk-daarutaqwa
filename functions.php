@@ -16,7 +16,6 @@ function query($query){
 function registrasi($data){
 	global $conn;
 	echo "koneksi berhasil";
-
 	$username = strtolower(stripslashes($data["username"]));
 	$password = mysqli_real_escape_string($conn, $data["password"]);
 	$password2 = mysqli_real_escape_string($conn, $data["password2"]);
