@@ -13,7 +13,7 @@ if (isset ($_POST["login"])){
         // cek password
         $row = mysqli_fetch_assoc($result);
         if( password_verify($password, $row["password"]) ){
-          header("Location:indexAdmin.php");
+          header("Location:indexUser.php");
           exit;
           } else 
           echo "<script> alert('Username atau Password Tidak Sesuai!'); </script>";

@@ -1,10 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/bukti.css">
 
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -21,60 +20,36 @@
   </div>
 </head>
 <body>
-  <h1>Halaman Status Pembayaran - Sisi User</h1>
-  <div class="container">
-    <div class="content">
-      <form class="#">
-        <div class="user-details">
-    <div class="input-box">
-    <label for="NamaLengkap">Nama Lengkap :</label>
-    <input type="text" name="NamaLengkap" id="NamaLengkap" disabled="disabled">
-    </div>
-    <br><br>
-    <div class="input-box">
-    <label for="NamaOT">Nama Orang Tua :</label>
-    <input type="text" name="NamaOT" id="NamaOT" disabled="disabled">
-    </div>
-    <br><br>
-    <div class="input-box">
-    <label for="Alamat">Alamat :</label>
-    <input type="text" name="Alamat" id="Alamat" disabled="disabled">
-    </div>
-    <br><br>
+  <h1>Selamat Datang, User</h1>
+  <div>
+    <h2>Data Diri</h2>
+      <label>NIS :</label>
+      <label>NIS</label>
+      <br>
+      <label>Nama :</label>
+      <label>Nama</label>
+      <br>
+      <label>Tanggal Lahir :</label>
+      <label>Tanggal Lahir</label>
+      <br>
+      <label>Tempat Lahir :</label>
+      <label>Tempat Lahir</label>
+      <br>
+      <label>Kelompok Belajar :</label>
+      <label>Kelompok Belajar</label>
+      <br>
+    <h2>Keuangan</h2>
+      <label for="">Halaman Status Pembayaran</label>
+      <input type="button" onclick="location.href='pembayaran.php';" value="Check" />
+      <br>
+    <h2>Nilai dan Rapot</h2>
+      <label for="">Halaman Nilai dan Rapot</label>
+      <input type="button" onclick="location.href='eraporuser.php';" value="Check" />
+      <br>
+      <br>
 
-    <form>
-    <tr>
-      <td>
-        ID Pembayaran
-      </td>
-      <td>
-        NIS
-      </td>
-      <td>
-        Tanggal Bayar
-      </td>
-      <td>
-        Bulan Bayar
-      </td>
-      <td>
-        Keterangan Bayar
-      </td>
-      <td>
-        Status Bayar
-      </td>
-      <td>
-        Kategori
-      </td>
-      <td>
-        ID Bukti
-      </td>
-    </tr>
-    </form>
-    </div>
-    </form>
-    <br><br>
-  </div>
-  </div>
+
+    
 
 </body>
 

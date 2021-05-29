@@ -1,10 +1,9 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
-<link rel="stylesheet" href="css/bukti.css">
 
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -21,61 +20,30 @@
   </div>
 </head>
 <body>
-  <h1>Halaman Status Pembayaran - Sisi User</h1>
-  <div class="container">
-    <div class="content">
-      <form class="#">
-        <div class="user-details">
-    <div class="input-box">
-    <label for="NamaLengkap">Nama Lengkap :</label>
-    <input type="text" name="NamaLengkap" id="NamaLengkap" disabled="disabled">
-    </div>
-    <br><br>
-    <div class="input-box">
-    <label for="NamaOT">Nama Orang Tua :</label>
-    <input type="text" name="NamaOT" id="NamaOT" disabled="disabled">
-    </div>
-    <br><br>
-    <div class="input-box">
-    <label for="Alamat">Alamat :</label>
-    <input type="text" name="Alamat" id="Alamat" disabled="disabled">
-    </div>
-    <br><br>
-
-    <form>
-    <tr>
-      <td>
-        ID Pembayaran
-      </td>
-      <td>
-        NIS
-      </td>
-      <td>
-        Tanggal Bayar
-      </td>
-      <td>
-        Bulan Bayar
-      </td>
-      <td>
-        Keterangan Bayar
-      </td>
-      <td>
-        Status Bayar
-      </td>
-      <td>
-        Kategori
-      </td>
-      <td>
-        ID Bukti
-      </td>
-    </tr>
-    </form>
-    </div>
-    </form>
-    <br><br>
+  <h1>Formulir Seragam</h1>
+  <div>
+    <label>NIS :</label>
+    <label>NIS</label>
+    <br>
+    <label>Nama :</label>
+    <label>Nama</label>
+    <br>
+    <label for="UkuranTopi">Ukuran Topi :</label>
+        <select id="UkuranTopi" name="UkuranTopi">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>   
+    <br>
+    <label for="UkuranSeragam">Ukuran Seragam :</label>
+        <select id="UkuranSeragam" name="UkuranSeragam">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>   
   </div>
-  </div>
-
 </body>
 
 <footer>
