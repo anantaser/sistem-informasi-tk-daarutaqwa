@@ -21,12 +21,45 @@
 
 </head>
 <body>
+  <div class="konten">
+    <div class="box">
+      <div class="imageBx">
+        <img src="assets/cth.jpeg">
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="imageBx">
+        <img src="assets/cth1.jpg">
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="imageBx">
+        <img src="assets/cth.jpeg">
+      </div>
+    </div>
+    
+    <div class="box">
+      <div class="imageBx">
+        <img src="assets/cth2.jpg">
+      </div>
+    </div>
+    
+  </div>
+  <br><br><br><br><br><br><br><br><br>
   <div>
     <br>
     <br>
     <br>
     
   </div>
+  <script type="text/javascript">
+    const imageBx = document.querySellectorAll('.imageBx');
+    imageBx.forEach(popup => popup.addEventListener('click',()=>{
+      popup.classList.toggle('active')
+    }))
+  </script>
 </body>
 
 <footer>

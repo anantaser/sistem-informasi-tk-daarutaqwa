@@ -19,8 +19,6 @@
 </div>
 </head>
 <body>
-
-
 <div class="konten">
 <div class="container">
     <div class="card">
