@@ -1,6 +1,7 @@
   <!DOCTYPE html>
 <html>
 <head>
+  <title>Cetak</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -20,47 +21,9 @@
   </div>
 </head>
 <body>
-  <h1>Halaman Status Pembayaran - Sisi User</h1>
+  <h1>INI MERUPAKAN HALAMAN CETAK</h1>
   <div>
-    <label for="NamaLengkap">Nama Lengkap :</label>
-    <input type="text" name="NamaLengkap" id="NamaLengkap" disabled="disabled">
-    <br><br>
-    <label for="NamaOT">Nama Orang Tua :</label>
-    <input type="text" name="NamaOT" id="NamaOT" disabled="disabled">
-    <br><br>
-    <label for="Alamat">Alamat :</label>
-    <input type="text" name="Alamat" id="Alamat" disabled="disabled">
-    <br><br>
-
-    <form>
-    <tr>
-      <td>
-        ID Pembayaran
-      </td>
-      <td>
-        NIS
-      </td>
-      <td>
-        Tanggal Bayar
-      </td>
-      <td>
-        Bulan Bayar
-      </td>
-      <td>
-        Keterangan Bayar
-      </td>
-      <td>
-        Status Bayar
-      </td>
-      <td>
-        Kategori
-      </td>
-      <td>
-        ID Bukti
-      </td>
-    </tr>
-    </form>
-    <br><br>
+   
   </div>
 </body>
 

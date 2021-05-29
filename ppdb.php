@@ -48,8 +48,6 @@
 					</div>
 			
 			
-					
-			
 					<div class="input-box">
 						<span class="details">Tinggal Bersama
 						</span>
@@ -248,18 +246,16 @@
 		    		</div>
 		    
 					<div class="input-box">
-				
 						<span class="details">No Induk Siswa </span>
 						<input type="text" placeholder="" name="nis" id="nis">
-						
 					</div>
-				
-
 				</div>
 
 			
 					<div class="button">
-          			<input type="submit" value="Simpan">
+    				<input type="button" onclick="location.href='afterppdb.php';" value="SIMPAN" />
+						</form>	
+						</form>
         			</div>
 		
 		  	</form>	

@@ -1,6 +1,7 @@
   <!DOCTYPE html>
 <html>
 <head>
+  <title>Nilai & E-Rapot</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -20,46 +21,49 @@
   </div>
 </head>
 <body>
-  <h1>Halaman Status Pembayaran - Sisi User</h1>
+  <h1>Halaman Nilai dan E-Raport</h1>
   <div>
-    <label for="NamaLengkap">Nama Lengkap :</label>
-    <input type="text" name="NamaLengkap" id="NamaLengkap" disabled="disabled">
-    <br><br>
-    <label for="NamaOT">Nama Orang Tua :</label>
-    <input type="text" name="NamaOT" id="NamaOT" disabled="disabled">
-    <br><br>
-    <label for="Alamat">Alamat :</label>
-    <input type="text" name="Alamat" id="Alamat" disabled="disabled">
-    <br><br>
-
+    <label>NIS :</label>
+    <label>NIS</label>
+    <br>
+    <label>Nama :</label>
+    <label>Nama</label>
+    <br>
+    <label>Kelompok Belajar :</label>
+    <label>Kelompok Belajar</label>
+    <br>
+    <label>Tanggal Update Terakhir :</label>
+    <label>Tanggal Update Terakhir</label>
+    <br>
+    <br>
     <form>
     <tr>
       <td>
-        ID Pembayaran
+        Sosial Emosional
       </td>
       <td>
-        NIS
+        Bahasa
       </td>
       <td>
-        Tanggal Bayar
+        Koginitif
       </td>
       <td>
-        Bulan Bayar
+        Motorik Kasar
       </td>
       <td>
-        Keterangan Bayar
+        Motorik Halus
       </td>
       <td>
-        Status Bayar
-      </td>
-      <td>
-        Kategori
-      </td>
-      <td>
-        ID Bukti
+        Seni
       </td>
     </tr>
     </form>
+    <br>
+    <br>
+
+    <label for="">Cetak</label>
+      <input type="button" onclick="location.href='cetak.php';" value="Cetak Raport" />
+    <br>
     <br><br>
   </div>
 </body>
