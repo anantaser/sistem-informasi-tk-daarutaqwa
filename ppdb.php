@@ -8,6 +8,7 @@ if (isset($_POST["ppdb"])){
 		echo "<script>
 				alert('data berhasil ditambahkan!');
 		</script>";
+		header("afterppdb.php");
 	} else {
 		echo mysqli_error($conn);
 	}
@@ -54,7 +55,7 @@ if (isset($_POST["ppdb"])){
 
 						<div class="input-box">
 							<span class="details">Alamat Lengkap </span>
-							<input type="text" placeholder="" 	="almtlkp" id="almtlkp">
+							<input type="text" placeholder="" name="almtlkp" id="almtlkp">
 						</div>
 			
 						<div class="input-box">
@@ -84,7 +85,7 @@ if (isset($_POST["ppdb"])){
 
 						<div class="input-box">
 							<span class="details">Tanggal Lahir</span>
-							<input type="text" placeholder=""name="tanggallahir" id="tanggallahir">	
+							<input type="date" placeholder=""name="tanggallahir" id="tanggallahir">	
 						</div>
 					
 						<div class="input-box">
@@ -113,6 +114,7 @@ if (isset($_POST["ppdb"])){
         		<br>
 
         		<div>1. Ayah Kandung</div>
+        		<br>
         			<div class="user-details">
 			    			<div class="input-box">
 						  		<span class="details">Nama Ayah </span>
@@ -133,15 +135,16 @@ if (isset($_POST["ppdb"])){
 										<span class="details">Pekerjaan Ayah </span>
 									<input type="text" placeholder=""name="pkjayah" id="pkjayah">			
 								</div>
-					
+
 								<div class="input-box">
 									<span class="details">Tanggal lahir :</span>
-									<input type="text" placeholder="" name="tglayah" id="tglayah">
-								</div>			
+									<input type="text" placeholder="Kota, Hari Bulan Tahun" name="tglayah" id="tglayah">
+								</div>				
 						</div>
 
 
 						<div>2. Ibu Kandung</div>
+						<br>
         			<div class="user-details">
 								
 							<div class="input-box">
@@ -156,7 +159,7 @@ if (isset($_POST["ppdb"])){
 			
 							<div class="input-box">
 								<span class="details">NIK</span>
-								<input type="text" placeholder="masukan tanggal lahir"name="nikibu" id="nikibu">
+								<input type="text" placeholder="" name="nikibu" id="nikibu">
 							</div>
 			
 							<div class="input-box">
@@ -167,10 +170,8 @@ if (isset($_POST["ppdb"])){
 							<div class="input-box">
 								<span class="details">Tanggal Lahir
 								</span>
-								<input type="text" placeholder="" name="tglibu" id="tglibu">
+								<input type="text" placeholder="Kota, Hari Bulan Tahun" name="tglibu" id="tglibu">
 							</div>
-				
-					
 						</div>
 				
 					<div class="title">C. PERIODIK</div>
@@ -178,18 +179,18 @@ if (isset($_POST["ppdb"])){
         	
         		<div class="user-details">
 		    			<div class="input-box">
-					  		<span class="details">Tinggi Badan </span>
-					  		<input type="text" placeholder="" name="tgbdn" id="tgbdn">
+					  		<span class="details">Tinggi Badan (Centimeter) </span>
+					  		<input type="text" placeholder="" name="tgbdn" id="tgbdn"> 
 		    			</div>
 		    
 							<div class="input-box">
-								<span class="details">Jarak Tempuh </span>
+								<span class="details">Jarak Tempuh (Kilometer)</span>
 								<input type="text" placeholder="" name="jktp" id="jktp">
 							</div>
 			
 							<div class="input-box">
-								<span class="details">Berat Badan</span>
-								<input type="text" placeholder="" name="btbdn" id="btbdn">
+								<span class="details">Berat Badan (Kilo Gram)</span>
+								<input type="text" placeholder="" name="btbdn" id="btbdn"> <p>*Koma menggunakan Simbol Titik "."</p>
 							</div>
 			
 							<div class="input-box">
@@ -200,54 +201,44 @@ if (isset($_POST["ppdb"])){
 
 					<div class="title"> D.Register</div>
 				 		<br>
-							<div class="gender-details">
-			          <input type="radio" name="jenis" id="jenis1" value="Siswa Baru">
-			          <input type="radio" name="jenis" id="jenis2" value="Pindahan">
-			          <input type="radio" name="jenis" id="jenis3" value="Sekolah Lagi">
-			          <span class="gender-title">Jenis Pendaftaran</span>
-         			<div class="category">
-            		<label for="dot-1">
-            			<span class="dot one"></span>
-            			<span class="gender">Siswa Baru</span>
-          			</label>
-			          <label for="dot-2">
-			            <span class="dot two"></span>
-			            <span class="gender">Pindahan</span>
-			          </label>
-			          <label for="dot-3">
-			            <span class="dot three"></span>
-			            <span class="gender">Sekolah Lagi</span>
-			          </label>
-          		</div> 
-        	</div>
-        		<br>
+				 		<div class="rombel">Jenis Pendaftaran</div>
+				 		<div class="gender-details">
+				        	<input type="checkbox" name="jenis" id="dot1" value="Siswa Baru">
+				        	<label>Siswa Baru</label>
+				        	<br>
+				        	<input type="checkbox" name="jenis" id="dot2" value="Pindahan">
+				        	<label>Pindahan</label>
+				        	<br>
+				        	<input type="checkbox" name="jenis" id="dot3" value="Sekolah Lagi">
+				        	<label>Sekolah Lagi</label>
+						</div>
 
-        <div class="rombel"> Rombel </div>
+						<br>
+        	<div class="rombel"> Rombel </div>
         	<div class="gender-details">
 	        	<input type="checkbox" name="rombel" id="dot1" value="Kelompok A">
-	        	<label>Kelompok A</label>
+	        	<label>Kelompok A | (4-5 Tahun)</label>
 	        	<br>
 	        	<input type="checkbox" name="rombel" id="dot2" value="Kelompok B">
-	        	<label>Kelompok B</label>
-					</div>
-
+	        	<label>Kelompok B | (5-6 Tahun)</label>
+			</div>
+			<br>
         	<div class="user-details">
 		    		<div class="input-box">
 					  <span class="details">Tanggal masuk sekolah </span>
-					  <input type="text" placeholder="" name="tglmskskl" id="tglmskskl">
-		    	</div>
-		    
-					<div class="input-box">
-						<span class="details">No Induk Siswa </span>
-						<input type="text" placeholder="" name="nis" id="nis">
-					</div>
+					  <input type="date" placeholder="" name="tglmskskl" id="tglmskskl">
+		    		</div>
+			</div>
+
+					<input type="checkbox" name="ststj" id="dot2" value="1">
+	        	<label>Menyetujui Data diatas yang di inputkan valid</label>
 					</div>
 
 					<!-- Button untuk menyimpan -->
         	<div class="button">
         		<button type="submit" name="ppdb">Simpan</button>
         	</div>
-		
+
 		  	</form>	
 		  </form>	
 		</div>

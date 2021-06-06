@@ -52,6 +52,7 @@ function registrasi($data){
 function ppdb($datappdb){
 	global $conn;
 	echo "Berhasil trigger button";
+	$rand = strtoupper(substr(uniqid(rand()),0,12));
 	$nama = mysqli_real_escape_string($conn,$datappdb["nama"]);
 	$almtlkp = mysqli_real_escape_string($conn, $datappdb["almtlkp"]);
 	$jk = mysqli_real_escape_string($conn, $datappdb["jk"]);
@@ -84,17 +85,30 @@ function ppdb($datappdb){
 	// Break Section
 	$jenis = mysqli_real_escape_string($conn, $datappdb["jenis"]);
 	$rombel = mysqli_real_escape_string($conn, $datappdb["rombel"]);
-	$rombel = mysqli_real_escape_string($conn, $datappdb["rombel"]);
 	$tglmskskl = mysqli_real_escape_string($conn, $datappdb["tglmskskl"]);
-	$nis = mysqli_real_escape_string($conn, $datappdb["nis"]);
+	$ststj = mysqli_real_escape_string($conn, $datappdb["ststj"]);
 
-	$sql1 = "INSERT INTO `ppdb`(`id_ppdb`, `namalengkap`, `jk`, `nik`, `tl_anak`, `agama_anak`, `kwn_anak`, `alamat`, `tinggal_bersama`, `anak_ke`, `usia_anak`, `no_hp`, `nama_ayah`, `nik_ayah`, `ttl_ayah`, `pend_ayah`, `pek_ayah`, `nama_ibu`, `nik_ibu`, `ttl_ibu`, `pend_ibu`, `pek_ibu`, `tinggi_badan`, `berat_badan`, `jarak_tempuh`, `jumlah_saudara`, `jenis_pendaftaran`, `tanggal_masuk`, `masuk_rombel`, `status_setuju`) VALUES ('','$nama','$jk','$nik','$tempatlahir','$tglbsm','$anakke','$usia','$nhp','$namaayah','$nikayah','$tglayah','$pdkayah','$pkjayah','$namaibu','$nikibu','$tglibu','$pdkibu','$pkjibu','$tgbdn','$btbdn','$jktp','$js','$jenis','$','[value-26]','[value-27]','[value-28]','[value-29]','[value-30]')"
+	if ($ststj == 1){
+		$ststjbol = "1";
+	} else {
+		$ststjbol = "0";
+	}
+
+
 
 	// variable value ada yang terlewat mohon double cek syntax sqlnya
 
-	mysqli_query($conn,"");
+	mysqli_query($conn,"INSERT INTO `ppdb`(`id_ppdb`, `namalengkap`, `jk`, `nik`, `tl_anak`, `t_anak`, `agama_anak`, `kwn_anak`, `alamat`, `tinggal_bersama`, `anak_ke`, `usia_anak`, `no_hp`, `nama_ayah`, `nik_ayah`, `ttl_ayah`, `pend_ayah`, `pek_ayah`, `nama_ibu`, `nik_ibu`, `ttl_ibu`, `pend_ibu`, `pek_ibu`, `tinggi_badan`, `berat_badan`, `jarak_tempuh`, `jumlah_saudara`, `jenis_pendaftaran`, `tanggal_masuk`, `masuk_rombel`, `status_setuju`) VALUES ('$rand','$nama','$jk','$nik','$tanggallahir','$tempatlahir','$agm','$kwg','$almtlkp','$tglbsm','$anakke','$usia','$nhp','$namaayah','$nikayah','$tglayah','$pdkayah','$pkjayah','$namaibu','$nikibu','$tglibu','$pdkibu','$pkjibu','$tgbdn','$btbdn','$jktp','$js','$jenis','$tglmskskl','$rombel','$ststjbol')");
 	return mysqli_affected_rows($conn);
-	}
 
+	$today = date("Ymd");
+	$rand = strtoupper(substr(uniqid(rand()),0,4));
+	echo $nis = $today . $rand;
+	$username = $nis;
+
+	mysqli_query($conn,"INSERT INTO `siswa`(`nis`, `id_ppdb`, `username`, `kelompok`, `semester`, `id_kelas`, `ukuran_seragam`, `ukuran_topi`, `status_siswa`) VALUES ('$nis','$rand','$username','$rombel','','','','','Review')");
+	return mysqli_affected_rows($conn);
+
+	}
 
  ?>
