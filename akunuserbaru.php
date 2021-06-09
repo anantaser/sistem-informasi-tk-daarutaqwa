@@ -1,28 +1,15 @@
 <?php 
 
-require 'functions.php';
-
-if (isset($_POST["afterppdb"])){
-
-  if( ppdb($_POST) > 0 ) {
-    echo "<script>
-        alert('data berhasil ditambahkan!');
-    </script>";
-  } else {
-    echo mysqli_error($conn);
-  }
-}
+$user = $_POST["niss"];
+$pass = $_POST["passrand"];
 
 
-$niss = $_POST["nis"];
-$passrand = strtoupper(substr(uniqid(rand()),0,8));
-
-?>
+ ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Seragam Sekolah</title>
+  <title>Berhasil Registrasi</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -43,38 +30,15 @@ $passrand = strtoupper(substr(uniqid(rand()),0,8));
 </head>
 <body>
   <h1>Formulir Seragam</h1>
-  <form action="akunuserbaru.php" method="post">
+  <form action="index.php" method="post">
   <div>
-    <p>NIS: <?= $niss ?> </p>
-    <p>Nama : <?= $_POST["nama"] ?></p>
-    <p>Alamat : <?= $_POST["almtlkp"] ?></p>
-    <br>
-    <label for="UkuranTopi">Ukuran Topi :</label>
-        <select id="UkuranTopi" name="ukurantopi">
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-        </select>   
-    <br>
-    <label for="UkuranSeragam">Ukuran Seragam :</label>
-        <select id="UkuranSeragam" name="ukuranseragam">
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-        </select>   
+    <p>Gunakan Akses Ini Untuk Login</p>
+    <p>Username/NIS : <?= $user ?></p>
+    <p>Password : <?= $pass ?></p>
+    <div class="button">
+      <button type="submit" name="akunuserbaru">OK</button>
   </div>
-    <div>
-      <input type="hidden" name="passrand" value="<?= $passrand ?>">
-    </div>
-    <div>
-      <input type="hidden" name="niss" value="<?= $niss ?>">
-    </div>
-  <div class="button">
-      <button type="submit" name="afterppdb">Simpan</button>
-  </div>
-</form>
+  </form>
 </body>
 
 <footer>
