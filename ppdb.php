@@ -2,19 +2,26 @@
 
 require 'functions.php';
 
+	$today = date("Ymd");
+	$rand = strtoupper(substr(uniqid(rand()),0,4));
+	$nis = $today . $rand;
+	$username = $nis;
+
+
 if (isset($_POST["ppdb"])){
 
 	if( ppdb($_POST) > 0 ) {
 		echo "<script>
 				alert('data berhasil ditambahkan!');
 		</script>";
-		header("afterppdb.php");
 	} else {
 		echo mysqli_error($conn);
 	}
 }
 
- ?>
+
+?>
+
 
 <!DOCTYPE html>
 <html>
@@ -32,7 +39,7 @@ if (isset($_POST["ppdb"])){
 		  <a href="index.php">Mengenai Kita</a>
 		  <a href="fotokegiatan.php">Foto Kegiatan</a>
 		  <a href="ppdb.php">PPDB</a>
-		  <a href="login.php" style="float:right" >Masuk/Login</a>
+		  <a href="login.php" style="float:right">Masuk/Login</a>
 		</div>
 	</head>
 
@@ -40,24 +47,28 @@ if (isset($_POST["ppdb"])){
 
 	<h1>Halaman PPDB</h1>
 
-		<form action="" method="post">
+		<form action="afterppdb.php" method="post">
 
 		 <div class="container">	
  			<div class="title">A. Indentitas Calon Siswa/i</div>
-	  	<div class="content">
+	  		<div class="content">
 	   	   	<form action="#">
 		  			<div class="user-details">
 		  				<br><br>
+		  			<div>
+		  				<input type="hidden" name="nis" value="<?= $nis ?>">
+		  			</div>
 		    		<div class="input-box">
 					  	<span class="details">Nama Lengkap </span>
 					  	<input type="text" placeholder="" name="nama" id="nama">
 		    		</div>
 
+						<div class="input-box">						</div>
 						<div class="input-box">
-							<span class="details">Alamat Lengkap </span>
-							<input type="text" placeholder="" name="almtlkp" id="almtlkp">
+							<span class="details">Alamat Lengkap</span>
+							<input type="text" placeholder=""name="almtlkp" id="almtlkp">
 						</div>
-			
+
 						<div class="input-box">
 							<span class="details">Jenis Kelamin </span>
 							<input type="text" placeholder=""name="jk" id="jk">

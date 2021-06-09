@@ -52,7 +52,13 @@ function registrasi($data){
 function ppdb($datappdb){
 	global $conn;
 	echo "Berhasil trigger button";
+
+	if (!$conn) {
+    	die("Connection failed: " . mysqli_connect_error());
+  	}
+
 	$rand = strtoupper(substr(uniqid(rand()),0,12));
+	$nis = mysqli_real_escape_string($conn,$datappdb["nis"]);
 	$nama = mysqli_real_escape_string($conn,$datappdb["nama"]);
 	$almtlkp = mysqli_real_escape_string($conn, $datappdb["almtlkp"]);
 	$jk = mysqli_real_escape_string($conn, $datappdb["jk"]);
@@ -94,21 +100,42 @@ function ppdb($datappdb){
 		$ststjbol = "0";
 	}
 
-
-
 	// variable value ada yang terlewat mohon double cek syntax sqlnya
+	$sql = "INSERT INTO `ppdb`(`id_ppdb`, `namalengkap`, `jk`, `nik`, `tl_anak`, `t_anak`, `agama_anak`, `kwn_anak`, `alamat`, `tinggal_bersama`, `anak_ke`, `usia_anak`, `no_hp`, `nama_ayah`, `nik_ayah`, `ttl_ayah`, `pend_ayah`, `pek_ayah`, `nama_ibu`, `nik_ibu`, `ttl_ibu`, `pend_ibu`, `pek_ibu`, `tinggi_badan`, `berat_badan`, `jarak_tempuh`, `jumlah_saudara`, `jenis_pendaftaran`, `tanggal_masuk`, `masuk_rombel`, `status_setuju`) VALUES ('$rand','$nama','$jk','$nik','$tanggallahir','$tempatlahir','$agm','$kwg','$almtlkp','$tglbsm','$anakke','$usia','$nhp','$namaayah','$nikayah','$tglayah','$pdkayah','$pkjayah','$namaibu','$nikibu','$tglibu','$pdkibu','$pkjibu','$tgbdn','$btbdn','$jktp','$js','$jenis','$tglmskskl','$rombel','$ststjbol');";
+	$sql .= "INSERT INTO `siswa`(`nis`, `id_ppdb`, `username`, `kelompok`, `semester`, `id_kelas`, `ukuran_seragam`, `ukuran_topi`, `status_siswa`) VALUES ('$nis','$rand','$nis','$rombel','','','','','Review');";
 
-	mysqli_query($conn,"INSERT INTO `ppdb`(`id_ppdb`, `namalengkap`, `jk`, `nik`, `tl_anak`, `t_anak`, `agama_anak`, `kwn_anak`, `alamat`, `tinggal_bersama`, `anak_ke`, `usia_anak`, `no_hp`, `nama_ayah`, `nik_ayah`, `ttl_ayah`, `pend_ayah`, `pek_ayah`, `nama_ibu`, `nik_ibu`, `ttl_ibu`, `pend_ibu`, `pek_ibu`, `tinggi_badan`, `berat_badan`, `jarak_tempuh`, `jumlah_saudara`, `jenis_pendaftaran`, `tanggal_masuk`, `masuk_rombel`, `status_setuju`) VALUES ('$rand','$nama','$jk','$nik','$tanggallahir','$tempatlahir','$agm','$kwg','$almtlkp','$tglbsm','$anakke','$usia','$nhp','$namaayah','$nikayah','$tglayah','$pdkayah','$pkjayah','$namaibu','$nikibu','$tglibu','$pdkibu','$pkjibu','$tgbdn','$btbdn','$jktp','$js','$jenis','$tglmskskl','$rombel','$ststjbol')");
-	return mysqli_affected_rows($conn);
-
-	$today = date("Ymd");
-	$rand = strtoupper(substr(uniqid(rand()),0,4));
-	echo $nis = $today . $rand;
-	$username = $nis;
-
-	mysqli_query($conn,"INSERT INTO `siswa`(`nis`, `id_ppdb`, `username`, `kelompok`, `semester`, `id_kelas`, `ukuran_seragam`, `ukuran_topi`, `status_siswa`) VALUES ('$nis','$rand','$username','$rombel','','','','','Review')");
-	return mysqli_affected_rows($conn);
+		if (mysqli_multi_query($conn, $sql)) {    
+    		echo "New records created successfully";
+  		} else {    
+    	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  		}
+  		mysqli_close($conn);
 
 	}
+
+function afterppdb($dataafterppdb){
+	global $conn;
+	echo "berhasil trigger button";
+
+	if (!$conn) {
+    	die("Connection failed: " . mysqli_connect_error());
+  	}
+
+  	$ukurantopi = mysqli_real_escape_string($conn,$dataafterppdb["ukurantopi"]);
+	$ukuranseragam = mysqli_real_escape_string($conn,$dataafterppdb["ukuranseragam"]);
+	$niss = mysqli_real_escape_string($conn,$dataafterppdb["niss"]);
+	$passrand = mysqli_real_escape_string($conn,$dataafterppdb["passrand"]);
+	$passrand = password_hash($passrand, PASSWORD_DEFAULT);
+
+	$sql = "UPDATE `siswa` SET `ukuran_seragam`='$ukuranseragam',`ukurantopi`='$ukurantopi' WHERE `nis` = '$niss';";
+	$sql .= "INSERT INTO `user`(`username`, `password`) VALUES ('$niss','$passrand')";
+	if (mysqli_multi_query($conn, $sql)) {    
+    		echo "New records created successfully";
+  		} else {    
+    	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  		}
+  		mysqli_close($conn);
+
+}
 
  ?>

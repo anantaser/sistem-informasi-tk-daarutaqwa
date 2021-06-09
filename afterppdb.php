@@ -1,3 +1,25 @@
+<?php 
+
+require 'functions.php';
+
+if (isset($_POST["afterppdb"])){
+
+  if( ppdb($_POST) > 0 ) {
+    echo "<script>
+        alert('data berhasil ditambahkan!');
+    </script>";
+  } else {
+    echo mysqli_error($conn);
+  }
+}
+
+
+$niss = $_POST["nis"];
+$passrand = strtoupper(substr(uniqid(rand()),0,8));
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,15 +44,14 @@
 </head>
 <body>
   <h1>Formulir Seragam</h1>
+  <form action="akunuserbaru.php" method="post">
   <div>
-    <label>NIS :</label>
-    <label>NIS</label>
-    <br>
-    <label>Nama :</label>
-    <label>Nama</label>
+    <p>NIS: <?= $niss ?> </p>
+    <p>Nama : <?= $_POST["nama"] ?></p>
+    <p>Alamat : <?= $_POST["almtlkp"] ?></p>
     <br>
     <label for="UkuranTopi">Ukuran Topi :</label>
-        <select id="UkuranTopi" name="UkuranTopi">
+        <select id="UkuranTopi" name="ukurantopi">
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
@@ -38,13 +59,23 @@
         </select>   
     <br>
     <label for="UkuranSeragam">Ukuran Seragam :</label>
-        <select id="UkuranSeragam" name="UkuranSeragam">
+        <select id="UkuranSeragam" name="ukuranseragam">
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
         </select>   
   </div>
+    <div>
+      <input type="hidden" name="passrand" value="<?= $passrand ?>">
+    </div>
+    <div>
+      <input type="hidden" name="niss" value="<?= $niss ?>">
+    </div>
+  <div class="button">
+      <button type="submit" name="afterppdb">Simpan</button>
+  </div>
+  </form>
 </body>
 
 <footer>
