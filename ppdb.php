@@ -12,13 +12,13 @@ if (isset($_POST["ppdb"])){
 
 	if( ppdb($_POST) > 0 ) {
 		echo "<script>
-				alert('data berhasil ditambahkan!');
+				alert('data berhasil ditambahkan'!);
 		</script>";
+		// header("Location:afterppdb.php");
 	} else {
-		echo mysqli_error($conn);
+		// echo mysqli_error($conn);
 	}
 }
-
 
 ?>
 
@@ -47,8 +47,8 @@ if (isset($_POST["ppdb"])){
 
 	<h1>Halaman PPDB</h1>
 
-		<form action="afterppdb.php" method="post">
-
+		<!-- <form action="afterppdb.php" method="post"> -->
+		<form method=post action="afterppdb.php">
 		 <div class="container">	
  			<div class="title">A. Indentitas Calon Siswa/i</div>
 	  		<div class="content">
