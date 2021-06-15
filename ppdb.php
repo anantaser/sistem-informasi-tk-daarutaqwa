@@ -63,7 +63,6 @@ if (isset($_POST["ppdb"])){
 					  	<input type="text" placeholder="" name="nama" id="nama">
 		    		</div>
 
-						<div class="input-box">						</div>
 						<div class="input-box">
 							<span class="details">Alamat Lengkap</span>
 							<input type="text" placeholder=""name="almtlkp" id="almtlkp">

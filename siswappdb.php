@@ -3,7 +3,7 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/bukti.css">
 
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -23,45 +23,83 @@
   
   <h1>Halaman Siswa - Setelah PPDB</h1>
   <div>
+    <div class="container">
+    <div class="content">
+    <form class="#">
+      <div class="user-details">
+  
+    <div class="input-box">
     <label for="NIS">NIS :</label>
     <input type="text" name="NIS" id="NIS" disabled="disabled">
-    <br><br>
+    </div>
+    
+    <div class="input-box">
     <label for="id_ppdb">ID PPDB :</label>
     <input type="text" name="id_ppdb" id="id_ppdb">
-    <br><br>
+    </div>
+    <div class="input-box">
     <label for="username">Username :</label>
     <input type="text" name="username" id="username">
-    <br><br>
+    </div>
+    <div class="input-box">
     <label for="NamaLengkap">Nama Lengkap :</label>
     <input type="text" name="NamaLengkap" id="NamaLengkap">
-    <br><br>
+    </div>
+    <div class="input-box">
     <label for="TempatLahir">Tempat Lahir :</label>
     <input type="text" name="TempatLahir " id="TempatLahir">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="TanggalLahir">Tanggal Lahir :</label>
     <input type="text" name="TanggalLahir" id="TanggalLahir">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="Usia Anak">Usia Anak :</label>
     <input type="text" name="Usia Anak" id="Usia Anak">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="Kelompok">Kelompok :</label>
     <input type="text" name="Kelompok" id="Kelompok">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="Semester">Semester :</label>
     <input type="text" name="Semester" id="Semester">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="id_kelas">ID Kelas :</label>
     <input type="text" name="id_kelas" id="id_kelas">
-    <br><br>
-    <label for="Ukuranseragam">Ukuran Seragam :</label>
+    </div>
+    <div class="input-box">
+    
+    <label for="Ukuranseragam">Ukuran Seragam :
+    </label>
     <input type="text" name="Ukuranseragam" id="Ukuranseragam">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="UkuranTopi">Ukuran Topi :</label>
     <input type="text" name="UkuranTopi" id="UkuranTopi">
-    <br><br>
+    </div>
+    <div class="input-box">
+    
     <label for="Status Siswa">Status Siswa :</label>
     <input type="text" name="Status Siswa" id="Status Siswa">
-    <br><br>
+    </div>
+     <div class="input-box">
+    <label for="imageUpload">Simpan  </label>
+    <button>Save</button>
+    </div>
+    
+  </div>
+
+  </form>
+
+</div>
   </div> 
 
 </body>
