@@ -127,9 +127,9 @@ function afterppdb($dataafterppdb){
 	$passrand = mysqli_real_escape_string($conn,$dataafterppdb["passrand"]);
 	$passrand = password_hash($passrand, PASSWORD_DEFAULT);
 
-	$sql = "UPDATE `siswa` SET `ukuran_seragam`='$ukuranseragam',`ukurantopi`='$ukurantopi' WHERE `nis` = '$niss';";
-	$sql .= "INSERT INTO `user`(`username`, `password`) VALUES ('$niss','$passrand')";
-	if (mysqli_multi_query($conn, $sql)) {    
+	$sqlo = "UPDATE `siswa` SET `ukuran_seragam`='$ukuranseragam',`ukurantopi`='$ukurantopi' WHERE `nis` = '$niss';";
+	$sqlo .= "INSERT INTO `user`(`username`, `password`) VALUES ('$niss','$passrand')";
+	if (mysqli_multi_query($conn, $sqlo)) {    
     		echo "New records created successfully";
   		} else {    
     	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
