@@ -9,16 +9,18 @@ require 'functions.php';
 
 
 if (isset($_POST["ppdb"])){
-
-	if( ppdb($_POST) > 0 ) {
-		echo "<script>
-				alert('data berhasil ditambahkan'!);
-		</script>";
-		// header("Location:afterppdb.php");
-	} else {
-		// echo mysqli_error($conn);
+		if(ppdb($_POST)<0) {
+			echo "<script>
+					alert('Data Gagal Ditambahkan!');
+					document.location.href = 'ppdb.php';
+				</script>";
+		} else {
+			echo "<script>
+					alert('data berhasil ditambahkan!');
+					document.location.href = 'afterppdb.php';
+			</script>";
+		}
 	}
-}
 
 ?>
 
@@ -48,7 +50,7 @@ if (isset($_POST["ppdb"])){
 	<h1>Halaman PPDB</h1>
 
 		<!-- <form action="afterppdb.php" method="post"> -->
-		<form method=post action="afterppdb.php">
+		<form method=post action="">
 		 <div class="container">	
  			<div class="title">A. Indentitas Calon Siswa/i</div>
 	  		<div class="content">
