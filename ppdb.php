@@ -57,7 +57,7 @@ if (isset($_POST["ppdb"])){
 	   	   	<form action="#">
 		  			<div class="user-details">
 		  				<br><br>
-		  			<div>
+		  			<div class="details">
 		  				<input type="hidden" name="nis" value="<?= $nis ?>">
 		  			</div>
 		    		<div class="input-box">

@@ -27,6 +27,9 @@ $passrand = strtoupper(substr(uniqid(rand()),0,8));
   
   <link rel="stylesheet" href="css/styles.css">
 
+  <link rel="stylesheet" href="css/bukti.css">
+
+
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
     <img src="assets/logotk.jpg" width="200">
@@ -44,37 +47,46 @@ $passrand = strtoupper(substr(uniqid(rand()),0,8));
 <body>
   <h1>Formulir Seragam</h1>
   <form action="akunuserbaru.php" method="post">
-  <div>
-    <p>NIS: <?= $niss ?> </p>
+  <div class="container">
+  <div class="content">
+  
+  <div class="user-details">
+    <p>NIS:  <?= $niss ?> </p>
     <p>Nama : <?= $_POST["nama"] ?></p>
     <p>Alamat : <?= $_POST["almtlkp"] ?></p>
     <br>
+    <div class="input-box">
     <label for="UkuranTopi">Ukuran Topi :</label>
         <select id="UkuranTopi" name="ukurantopi">
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
-        </select>   
+        </select>   </div>
     <br>
+    <div class="input-box">
     <label for="UkuranSeragam">Ukuran Seragam :</label>
         <select id="UkuranSeragam" name="ukuranseragam">
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
-        </select>   
-  </div>
+        </select>
+        </div>   
+  
     <div>
       <input type="hidden" name="passrand" value="<?= $passrand ?>">
     </div>
     <div>
       <input type="hidden" name="niss" value="<?= $niss ?>">
     </div>
-  <div class="button">
-      <button type="submit" name="afterppdb">Simpan</button>
+        <button class="button" type="submit" name="afterppdb">Simpan</button>
+
+</div>
+</div>
   </div>
 </form>
+
 </body>
 
 <footer>

@@ -6,6 +6,8 @@
   
   <link rel="stylesheet" href="css/styles.css">
 
+
+  <link rel="stylesheet" href="css/bukti.css">
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
     <img src="assets/logotk.jpg" width="200">
@@ -22,8 +24,11 @@
 </head>
 <body>
   <h1>Halaman Nilai dan E-Raport</h1>
-  <div>
-    
+  <div class="container">
+    <div class="content">
+    <form class="#">
+      <div class="user-details">
+    <div class="input-box">
     <table border="1" cellpadding="10" cellspacing="0">
 <tr>
 <th>NIS</th>
@@ -38,7 +43,9 @@
 <td>senin 23 07 2021</td>
 </tr>
    </table>
+</div>
    <br>
+   <div class="input-detail">
    <div>Nilai Siswa</div>
     <table border="1" cellpadding="10" cellspacing="0">
 <tr>
@@ -59,13 +66,19 @@
   <td>A</td>
 </tr>
 </table>
+ </div>
     <br>
     <br>
-
+<div class="input-box">
+  <br><br><br>
     <label for="">Cetak</label>
-      <input type="button" onclick="location.href='cetak.php';" value="Cetak Raport" />
+      <input class="button" type="button" onclick="location.href='cetak.php';" value="Cetak Raport" />
     <br>
     <br><br>
+    </div>
+    </div>
+    </form>
+    </div>
     </div>
  </body>
 
@@ -76,7 +89,7 @@
       <p>Merupakan TK Islam yang berlokasi di cibinong yang beralamat di jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
 
     </div>
-    <div class="sec contact">
+    <div class="asec contact">
       <h1>Contact Info</h1>
 
       <ul class="info">

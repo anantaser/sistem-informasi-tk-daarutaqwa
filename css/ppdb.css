@@ -196,6 +196,23 @@ body {
      background: linear-gradient(135deg, #71b7e6, #9b59b6);
    
    }
+.container button{
+     height: 25px;
+     margin: 11px 0
+       height: 100%;
+     width: 50%;
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     font-size: 15px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   
+   }
+
 
    form .button input{
      height: 100%;
@@ -210,6 +227,7 @@ body {
      transition: all 0.3s ease;
      background: linear-gradient(135deg, #71b7e6, #9b59b6);
    }
+   
    form .button input:hover{
     /* transform: scale(0.99); */
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);

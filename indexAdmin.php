@@ -27,7 +27,7 @@ $nisup = strtoupper($nis);
     <title>Dashboard Admin</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/ppdb.css">
-
+<link rel="stylesheet" href="css/bukti.css">
     <div class="header">
       <img src="assets/logotk.jpg" width="200">
       <h1>TK Islam Daarutaqwa</h1>
@@ -51,6 +51,10 @@ $nisup = strtoupper($nis);
 
 </div>
 <div class="container">
+<div class="content">
+  <form class="#">
+<div class="user-details">
+
 <table border="1" cellpadding="10" cellspacing="0">
  <tr>
    <th>No</th>
@@ -78,6 +82,8 @@ $nisup = strtoupper($nis);
 
 </table>
 <br>
+<div class="input-box">
+
 <label for="Penilaian siswa">Penilaian Siswa </label>
 <input type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
 <br>
@@ -90,12 +96,19 @@ $nisup = strtoupper($nis);
 <input type="button" onclick="location.href='keuangan.php';" value="Check" />
 <br>
 <br>
-<label for="ppdb">PPDB</label>
-<input type="button" onclick="location.href='data.php';" value="Check" />
-<br>
-<br>
+
+<div class="input-box">
+  <label for="ppdb">PPDB</label>
+  <input type="button" onclick="location.href='data.php';" value="Check" />
+  <br>
+  <br>
+
+<div class="input-box">
 <label for="laporan">Cetak Laporan</label>
-    <button>cetak</button>
+  <button>cetak</button>
+    </div>
+    </form>
+    </div>
     </div>
 </body>
 

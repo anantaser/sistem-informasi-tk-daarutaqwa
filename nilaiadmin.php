@@ -152,14 +152,15 @@ if (isset($_POST["submit"])){
     <label for="tanggalnilai">Tanggal Nilai :</label>
     <input type="date" name="tanggalnilai" id="tanggalnilai"
     value="date"
-    min="2001-01-01" max="2030-12-31" 
-    ><br>
+    min="2001-01-01" max="2030-12-31"><br>
     <br><br>
     <button type="submit" name="submit"> Tambah Data! </button>
     <input type="button" onclick="location.href='bnilaiadmin.php';" value="Kembali" />
+    >
   
     </div>
-    
+    <div class="input-box" >
+    <button>Simpan</button></div>
     <br><br>
   </div>
   </form>
