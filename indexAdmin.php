@@ -7,6 +7,7 @@ $conn = mysqli_connect("localhost","root","","sia_tk");
 
   <head>
     <title>Index admin</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/ppdb.css">
 
     <div class="header">
@@ -19,7 +20,7 @@ $conn = mysqli_connect("localhost","root","","sia_tk");
       <a href="index.php">Mengenai Kita</a>
       <a href="fotokegiatan.php">Foto Kegiatan</a>
       <a href="ppdb.php">PPDB</a>
-      <a href="login.php" style="float:right">Masuk/Login</a>
+      <a href="index.php" style="float:right">Log Out</a>
     </div>
   </head>
 
@@ -60,39 +61,25 @@ $conn = mysqli_connect("localhost","root","","sia_tk");
    <td>1b</td>
  </tr>
 </table>
-
+<br>
 <label for="Penilaian siswa">Penilaian Siswa </label>
     <button>Check</button>
 
 <br>
+<br> 
 <label for="keuangan">Keuangan </label>
     <button>Check</button>
+<br>
 <br>
 <label for="ppdb">PPDB</label>
     <button>check</button>
 
 <br>
-<label for="laporan">cetaklaporan</label>
+<br>
+<label for="laporan">Cetak Laporan</label>
     <button>cetak</button>
     </div>
-<!-- Begin Wrapper -->
-<div id="wrapper">
-  <!-- Begin Header -->
-  <div id="header"><h1><a href="http://www.free-css.com/free-css-layouts.php">Free CSS Layouts</a></h1></div>
-  <!-- End Header -->
-  <!-- Begin Navigation -->
-  <div id="navigation"> Navigation Here </div>
-  <!-- End Navigation -->
-  <!-- Begin Left Column -->
-  <div id="leftcolumn"> Left Column </div>
-  <!-- End Left Column -->
-  <!-- Begin Right Column -->
-  <div id="rightcolumn"> Right Column </div>
-  <!-- End Right Column -->
-  <!-- Begin Footer -->
-  <div id="footer"> This is the Footer </div>
-  <!-- End Footer -->
- </div>
-<!-- End Wrapper -->
 </body>
+
+
 </html>

@@ -12,10 +12,14 @@ if (isset ($_POST["login"])){
       if (mysqli_num_rows($result) === 1) {
         // cek password
         $row = mysqli_fetch_assoc($result);
-        if( password_verify($password, $row["password"]) ){
-          header("Location:indexUser.php");
+        if( password_verify($password, $row["password"])){
+          if (strpos($username, 'admin') !== false){
+          // if ($username contains 'admin'){
+          header("Location:indexAdmin.php");
           exit;
-          } else 
+            } else 
+            header("Location:indexUser.php");
+        } else 
           echo "<script> alert('Username atau Password Tidak Sesuai!'); </script>";
       } 
 
