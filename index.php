@@ -22,6 +22,8 @@
 
 </head>
 <body>
+   <h1>TK Islam Daarutaqwa</h1>
+  <h2>Selamat datang di sekolah TK Islam Daruttaqwa</h2>
   <div class="konten">
     <div class="box">
       <div class="imageBx">
@@ -62,9 +64,6 @@
     
   </div>
   <div>
-    <br><br><br><br><br><br><br><br><br>
-    <h1>TK Islam Daarutaqwa</h1>
-  <h2>Selamat datang di sekolah TK Islam Daruttaqwa</h2>
   </div>
   <script type="text/javascript">
     const imageBx = document.querySellectorAll('.imageBx');

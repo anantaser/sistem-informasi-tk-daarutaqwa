@@ -230,7 +230,7 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
 .konten{
   position: absolute;
   display: flex;
-    height: calc(50% - 20px);
+    height: calc(100% - 20px);
     width: calc(100% - 35px);
    /* background: #f00;*/
     
@@ -238,9 +238,9 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
 .konten .box {
   position: relative;
   width: 25%;
-  height: 100%;/*
-  background: #ff0;*/
-  overflow: hidden;
+  height: 100%;
+  background: yellow;
+    overflow: hidden;
   border-right: 5px solid #111;
 
 }
@@ -254,7 +254,7 @@ left: 0;
 width: 100%;
 height: 100%;
 transition: 0.5s;
-opacity: 0.5;
+opacity: 0.9;
 filter: grayscale(1);
 }
 .konten .box .imageBx.active{
@@ -308,7 +308,7 @@ filter: grayscale(0);
   transition: 0.3s ease-in-out;
 }
 .container .card:hover{
-  height: 520px;
+  height: 400px;
 }
 .container .card .imgBx{
   position: relative;
@@ -337,7 +337,7 @@ filter: grayscale(0);
   .container .card:hover .content{
     visibility: visible;
     opacity: 1;
-    margin-top: -40px;
+    margin-top: -125px;
     transition-delay: 0.3s;
   }
 /*ppdbcss*/
