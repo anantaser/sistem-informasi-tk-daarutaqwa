@@ -41,8 +41,6 @@ function registrasi($data){
 
 	// enkripsi password
 	$password = password_hash($password, PASSWORD_DEFAULT);
-	echo $password;
-	echo $username;
 
 	// tambahkan user baru ke database
 	mysqli_query($conn, "INSERT INTO `user`(`username`, `password`) VALUES ('$username','$password')");
@@ -137,5 +135,72 @@ function afterppdb($dataafterppdb){
   		mysqli_close($conn);
 
 }
+
+function buktibayar($databuktibayar){
+	global $conn;
+	// echo "berhasil trigger button";
+
+	if (!$conn) {
+    	die("Connection failed: " . mysqli_connect_error());
+  	}
+
+  	$id_bukti = strtoupper(substr(uniqid(rand()),0,10));
+  	$nis = mysqli_real_escape_string($conn,$databuktibayar["nis"]);
+  	$bulanbayar = mysqli_real_escape_string($conn,$databuktibayar["bulanbayar"]);
+  	$jumlahbayar = mysqli_real_escape_string($conn,$databuktibayar["jumlahbayar"]);
+  	$keteranganbayar = mysqli_real_escape_string($conn,$databuktibayar["keteranganbayar"]);
+  	$kategoribukti = mysqli_real_escape_string($conn,$databuktibayar["kategoribukti"]);
+
+  	//upload gambar
+  	$imageupload = upload();
+  	if( !$imageupload) {
+  		return false;
+  	}
+
+  	$query = "INSERT INTO `bukti_pembayaran`(`id_bukti`, `nis`, `bulan_bayar`, `jumlah_bayar`, `keterangan_bayar`, `imageupload`, `kategoribukti`) VALUES ('$id_bukti','$nis','$bulanbayar','$jumlahbayar','$keteranganbayar','$imageupload','$kategoribukti')";
+  	mysqli_query($conn, $query);
+  	return mysqli_affected_rows($conn);
+}
+
+function upload() {
+
+	$namaFile = $_FILES['imageupload']['name'];
+	$ukuranFile = $_FILES['imageupload']['size'];
+	$error = $_FILES['imageupload']['error'];
+	$tmpName = $_FILES['imageupload']['tmp_name'];
+
+	//cek apakag ada gambar yang diuplaod atau tidak
+	if ($error === 4) {
+		echo "<script>
+		alert('pilih gambar terlebih dahulu');
+		</script>;
+		";
+		return false;
+	}
+	// cek apakah yang diupload gambar atau bukan
+	$ekstensiGambarValid = ['jpeg','jpeg','png'];
+	$ekstensiGambar = explode('.',$namaFile);
+	$ekstensiGambar = strtolower(end($ekstensiGambar));
+	if (!in_array($ekstensiGambar, $ekstensiGambarValid) ) {
+		echo "<script>
+				alert('yang anda upload bukan gambar!');
+				</script>";
+		return false;
+	}
+
+
+	//cek jika ukuran terlalu besar
+	if ( $ukuranFile > 1000000){
+		echo "<script>
+				alert('Ukuran gambar terlalu besar!');
+				</script>";
+		return false;
+
+	}
+
+	//lolos pengecekan, gambar siap diupload
+	move_uploaded_file($tmpName, 'img/'.$namaFile);
+	return $namaFile;
+}	
 
  ?>

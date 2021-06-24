@@ -1,6 +1,37 @@
+<?php  
+
+require 'functions.php'; 
+
+if ( isset($_POST["submit"])) {
+
+  // var_dump($_POST);
+  // var_dump($_FILES);
+  // die;
+
+  if ( buktibayar($_POST) > 0) {
+    echo"
+        <script>
+        alert('data berhasil ditambahkan');
+        document.location.href='pembayaran.php';
+        </script>
+        ";
+  } else {
+    echo"
+        <script>
+        alert('data gagal ditambahkan');
+        document.location.href= 'pembayaran.php';
+        </script>
+        ";
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Upload Bukti Bayar</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
  <!--  <link rel="stylesheet" href="css/styles.css">
@@ -16,7 +47,7 @@
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="login.php" style="float:right" >Masuk/Login</a>
+    <a href="login.php" style="float:right" >Log Out</a>
   </div>
 
 </head>
@@ -25,66 +56,75 @@
   <div class="container">
     <div class="title"> Upload Bukti Pembayaran</div>
     <div class="content">    
-      <form action="#">
+    <form action="" method="post" enctype="multipart/form-data">
     <div class="user-details">
-      <div class="input-box">
+    
+    <div class="input-box">
     <span class="details">NIS</span>
-    <input type="text" name="NIS" id="NIS">
-    <button>Check
+    <input type="text" name="nis" id="nis">
+    </div>
 
-    </button>
-    </div>
-    <!--   <br><br>
-    <label for="NIS">NIS:</label>
-    <select id="NIS" name="NIS">
-      <option value="12345678">12345678910</option>
-      <option value="56789101">56789101112</option>
-    </select> -->
     <br><br>
     <div class="input-box">
-    <label for="namalengkap">Nama Lengkap :</label>
-    <input type="text" name="namalengkap" id="namalengkap" disabled="disabled">
+        <label for="namalengkap">Nama Lengkap :</label>
+        <input type="text" name="namalengkap" id="namalengkap">
+    </div>
+    <br><br>
+
+    <div class="input-box">
+       <label for="kelompok">Kelompok :</label>
+        <input type="text" name="kelompok" id="kelompok">
     </div>
     <br><br>
     <div class="input-box">
-    <label for="kelompok">Kelompok :</label>
-    <input type="text" name="kelompok" id="kelompok" disabled="disabled">
+       <label for="bulanbayar">Bulan Bayar :</label>
+        <select id=" bulanbayar" name="bulanbayar">
+            <option value="Januari">Januari</option>
+            <option value="Februari">Februari</option>
+            <option value="Maret">Maret</option>
+            <option value="April">April</option>
+            <option value="Mei">Mei</option>
+            <option value="Juni">Juni</option>
+            <option value="Juli">Juli</option>
+            <option value="Agustus">Agustus</option>
+            <option value="September">September</option>
+            <option value="Oktober">Oktober</option>
+            <option value="November">November</option>
+            <option value="Desember">Desember</option>
+         </select>
     </div>
     <br><br>
+
     <div class="input-box">
-    <label for="bulanbayar">Bulan Bayar :</label>
-    <select id="NIS" name="NIS">
-      <option value="Januari">Januari</option>
-      <option value="Februari">Februari</option>
-      <option value="Maret">Maret</option>
-      <option value="April">April</option>
-      <option value="Mei">Mei</option>
-      <option value="Juni">Juni</option>
-      <option value="Juli">Juli</option>
-      <option value="Agustus">Agustus</option>
-      <option value="September">September</option>
-      <option value="Oktober">Oktober</option>
-      <option value="November">November</option>
-      <option value="Desember">Desember</option>
-    </select>
+        <label for="keteranganbayar">Keterangan Bayar :</label>
+        <input type="text" name="keteranganbayar" id="keteranganbayar">
     </div>
     <br><br>
+
     <div class="input-box">
-    <label for="keteranganbayar">Keterangan Bayar :</label>
-    <input type="text" name="keteranganbayar" id="keteranganbayar">
+        <label for="kategoribukti">Kategori Bukti :</label>
+        <select id="kategoribukti" name="kategoribukti">
+         <option value="SPP">SPP</option>
+          <option value="Pengembangan">Pengembangan</option>
+        </select>
     </div>
     <br><br>
-    <div class="input-box">
-    <label for="kategoribukti">Kategori Bukti :</label>
-    <select id="kategoribukti" name="kategoribukti">
-      <option value="SPP">SPP</option>
-      <option value="Pengembangan">Pengembangan</option>
-    </select>
+     <div class="input-box">
+        <label for="jumlahbayar">Jumlah :</label>
+        <input type="text" name="jumlahbayar" id="jumlahbayar">
     </div>
+    <br><br>  
+    <div></div>
+    
+    <div class="">
+      <label> Upload Gambar -> </label>
+      <input type="file" name="imageupload" id="imageupload">
+      <br><br>    
+          <button type="submit" name="submit"> Tambah Data! </button>
     <br><br>
-    <div class="input-box">
-    <label for="imageUpload">Upload Image </label>
-    <button>Upload</button>
+
+
+    <input type="button" onclick="location.href='pembayaran.php';" value="Kembali" />
     </div>
     </div>
 </form>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Halaman User</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -16,7 +17,7 @@
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="login.php" style="float:right" >Masuk/Login</a>
+    <a href="index.php" style="float:right" >Log Out</a>
   </div>
 </head>
 <body>
