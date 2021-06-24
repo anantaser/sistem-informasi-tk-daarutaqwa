@@ -1,3 +1,31 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION["login"])){
+  header("location: login.php");
+  exit;
+} 
+
+$nis = $_SESSION['username'];
+
+$conn = mysqli_connect("localhost","root","","sia_tk");
+$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = '$nis';");
+
+$ppdb = mysqli_fetch_row($result);
+
+$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[1]';");
+
+$user = mysqli_fetch_row($result2);
+
+
+
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,27 +45,27 @@
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="index.php" style="float:right" >Log Out</a>
+    <a href="logout.php" style="float:right" >Log Out</a>
   </div>
 </head>
 <body>
-  <h1>Selamat Datang, User</h1>
+  <h1>Selamat Datang, <?= $user[1] ?></h1>
   <div>
     <h2>Data Diri</h2>
       <label>NIS :</label>
-      <label>NIS</label>
-      <br>
+      <label><?= $nis ?></label>
+      <br><br>
       <label>Nama :</label>
-      <label>Nama</label>
-      <br>
+      <label><?= $user[1] ?></label>
+      <br><br>
       <label>Tanggal Lahir :</label>
-      <label>Tanggal Lahir</label>
-      <br>
+      <label><?= $user[4] ?></label>
+      <br><br>
       <label>Tempat Lahir :</label>
-      <label>Tempat Lahir</label>
-      <br>
+      <label><?= $user[5] ?></label>
+      <br><br>
       <label>Kelompok Belajar :</label>
-      <label>Kelompok Belajar</label>
+      <label><?= $ppdb[3] ?></label>
       <br>
     <h2>Keuangan</h2>
       <label for="">Halaman Status Pembayaran</label>

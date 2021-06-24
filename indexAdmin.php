@@ -1,12 +1,29 @@
-<?php  
+<?php
+
+session_start();
+
+if (!isset($_SESSION["login"])){
+  header("location: login.php");
+  exit;
+} 
+
+$nis = $_SESSION['username'];
+
 $conn = mysqli_connect("localhost","root","","sia_tk");
+$result = mysqli_query($conn, "SELECT * FROM ppdb ");
+
+$admin = mysqli_fetch_row($result)
+// var_dump ($result);
+
+
+
 
  ?>
 <!DOCTYPE html>
 <html>
 
   <head>
-    <title>Index admin</title>
+    <title>Dashboard Admin</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/ppdb.css">
 
@@ -20,7 +37,7 @@ $conn = mysqli_connect("localhost","root","","sia_tk");
       <a href="index.php">Mengenai Kita</a>
       <a href="fotokegiatan.php">Foto Kegiatan</a>
       <a href="ppdb.php">PPDB</a>
-      <a href="index.php" style="float:right">Log Out</a>
+      <a href="logout.php" style="float:right">Log Out</a>
     </div>
   </head>
 
