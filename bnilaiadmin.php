@@ -10,26 +10,22 @@ if (!isset($_SESSION["login"])){
 $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
-$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = '$nis';");
+$result = mysqli_query($conn, "SELECT * FROM ppdb ");
 
-$ppdb = mysqli_fetch_row($result);
+// $admin = mysqli_fetch_assoc($result);
 
-$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[1]';");
-
-$user = mysqli_fetch_row($result2);
+$result2 = mysqli_query($conn, "SELECT * FROM siswa ");
+$nisup = strtoupper($nis);
 
  ?>
-
-
 
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Halaman User</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/bukti.css">
 
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -42,40 +38,57 @@ $user = mysqli_fetch_row($result2);
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="logout.php" style="float:right" >Log Out</a>
+    <a href="login.php" style="float:right" >Masuk/Login</a>
   </div>
 </head>
 <body>
-  <h1>Selamat Datang, <?= $user[1] ?></h1>
-  <div>
-    <h2>Data Diri</h2>
-      <label>NIS :</label>
-      <label><?= $nis ?></label>
-      <br><br>
-      <label>Nama :</label>
-      <label><?= $user[1] ?></label>
-      <br><br>
-      <label>Tanggal Lahir :</label>
-      <label><?= $user[4] ?></label>
-      <br><br>
-      <label>Tempat Lahir :</label>
-      <label><?= $user[5] ?></label>
-      <br><br>
-      <label>Kelompok Belajar :</label>
-      <label><?= $ppdb[3] ?></label>
-      <br>
-    <h2>Keuangan</h2>
-      <label for="">Halaman Status Pembayaran</label>
-      <input type="button" onclick="location.href='pembayaran.php';" value="Check" />
-      <br>
-    <h2>Nilai dan Rapot</h2>
-      <label for="">Halaman Nilai dan Rapot</label>
-      <input type="button" onclick="location.href='eraporuser.php';" value="Check" />
-      <br>
-      <br>
+  
+  <h1>Halaman Nilai</h1>
+  <div class="container">
+<div class="content">
+  <form action="#">
+    <div class="user-details">
+    <table border="1" cellpadding="10" cellspacing="0">
+     <tr>
+       <th>No</th>
+       <th>Aksi</th>
+       <th>Nama</th>
+       <th>NIS</th>
+       <th>Kelompok</th>
+       <th>Semester</th>
+       <th>kelas</th>
+       
+     </tr> 
+     <?php $i = 1; ?>
+     <?php while($row = mysqli_fetch_assoc($result)) : ?>
+      <?php while($row2 = mysqli_fetch_assoc($result2)) :?>
+     <tr>
+       <td><?= $i ?></td>
+       <td>
+         <a href="nilaiadmin.php?nis=<?= $row2['nis'] ?>">Beri Nilai</a>
+       </td>
+       <td><?= $row['namalengkap'] ?></td>
+       <td><?= $row2['nis'] ?></td>
+       <td><?= $row2['kelompok'] ?></td>
+       <td><?= $row2['semester'] ?></td>
+       <td><?= $row2['id_kelas'] ?></td>
+     </tr>
+<?php $i++; ?>
+<?php endwhile; ?>
+<?php endwhile; ?>
 
-
+</table>
+  
+    </div>
     
+    <br><br>
+  </div>
+  </form>
+
+  </div>
+
+  </div> 
+
 
 </body>
 

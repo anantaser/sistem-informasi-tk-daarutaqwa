@@ -1,6 +1,38 @@
+<?php
+
+session_start();
+
+require 'functions.php';
+
+$nis = $_GET["nis"];
+$rand = strtoupper(substr(uniqid(rand()),0,4));
+$idnilai = $rand;
+
+$nilai = query("SELECT * FROM siswa WHERE nis = '$nis'")[0];
+echo "<br><br>"; 
+$ppdbtr = $nilai['id_ppdb'];
+
+$nilai2 = query("SELECT * FROM ppdb WHERE id_ppdb = '$ppdbtr' ")[0];
+
+if (isset($_POST["submit"])){
+
+  //
+  if( nilaiadmin($_POST) > 0 ) {
+    echo "<script>
+        alert('nilai berhasil dimasukan!');
+    </script>";
+  } else {
+    echo mysqli_error($conn);
+  }
+}
+
+ ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Masukan Nilai Siswa</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/bukti.css">
@@ -16,35 +48,36 @@
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="login.php" style="float:right" >Masuk/Login</a>
+    <a href="logout.php" style="float:right" >Log Out</a>
   </div>
 </head>
 <body>
   
-  <h1>Halaman Nilai</h1>
-  <div class="container">
+<h1>Halaman Nilai</h1>
+<div class="container">
 <div class="content">
-  <form action="#">
-    <div class="user-details">
+<form action="" method="post">   
+<div class="user-details">
+
     <div class="input-box">
-    <label for="ID_Nilai">ID Nilai :</label>
-    <input type="text" name="Nilai" id="Nilai" disabled="disabled">
+      <label for="ID_Nilai">ID Nilai :</label>
+      <input type="text" name="nilai" id="nilai" value="<?= $rand ?>">
     </div>
     <br><br>
     <div class="input-box">
-    <label for="NIS">NIS :</label>
-    <input type="text" name="NIS" id="NIS" disabled="disabled">
+      <label for="NIS">NIS :</label>
+      <input type="text" name="nis" id="nis" value="<?= $nis ?>">
     </div>
     <br><br>
     <div class="input-box">
-    <label for="Nama Lengkap">Nama Lengkap :</label>
-    <input type="text" name="Nama Lengkap" id="Nama Lengkap" disabled="disabled">
+      <label for="Nama Lengkap">Nama Lengkap :</label>
+      <input type="text" name="namalengkap" id="namalengkap" value="<?= $nilai2['namalengkap']; ?>">
     </div>
     <br><br>
-    <div class="input-box">
-    <label for="SosialEmosional">Sosial Emosional :</label>
+      <div class="input-box">
+      <label for="SosialEmosional">Sosial Emosional :</label>
     <br>
-    <select id="SosialEmosional" name="SosialEmosional">
+    <select id="sosialemosional" name="sosialemosional">
       <!-- Tolong textnya diganti indikator, valuenya tetep angka karna mau di itung -->
       <option value="1">1</option>
       <option value="2">2</option>
@@ -58,7 +91,7 @@
     <div class="input-box">
     <label for="Bahasa">Bahasa :</label>
         <br>
-        <select id="Bahasa" name="Bahasa">
+        <select id="bahasa" name="bahasa">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -70,7 +103,7 @@
     <div class="input-box">
     <label for="Kognitif">Kognitif :</label>
         <br>
-        <select id="Kognitif" name="Kognitif">
+        <select id="kognitif" name="kognitif">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -80,9 +113,9 @@
         </div>
     <br><br>
     <div class="input-box">
-    <label for="MotorikKasar">MotorikKasar :</label>
+    <label for="motorikkasar">MotorikKasar :</label>
     <br>
-          <select id="MotorikKasar" name="MotorikKasar">
+          <select id="motorikkasar" name="motorikkasar">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -94,7 +127,7 @@
     <div class="input-box">
     <label for="MotorikHalus">MotorikHalus :</label>
         <br>
-        <select id="MotorikHalus" name="MotorikHalus">
+        <select id="motorihHalus" name="motorikhalus">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -106,7 +139,7 @@
     <div class="input-box">
     <label for="Seni">Seni :</label><br>
          
-         <select id="Seni" name="Seni">
+         <select id="Seni" name="seni">
            <option value="1">1</option>
            <option value="2">2</option>
            <option value="3">3</option>
@@ -122,7 +155,8 @@
     min="2001-01-01" max="2030-12-31" 
     ><br>
     <br><br>
-      <button>Simpan</button>
+    <button type="submit" name="submit"> Tambah Data! </button>
+    <input type="button" onclick="location.href='bnilaiadmin.php';" value="Kembali" />
   
     </div>
     

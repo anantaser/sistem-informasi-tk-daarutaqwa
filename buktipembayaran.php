@@ -1,6 +1,25 @@
 <?php  
 
-require 'functions.php'; 
+session_start();
+
+require 'functions.php';
+
+if (!isset($_SESSION["login"])){
+  header("location: login.php");
+  exit;
+} 
+
+$nis = $_SESSION['username'];
+
+$conn = mysqli_connect("localhost","root","","sia_tk");
+$result = mysqli_query($conn, "SELECT * FROM siswa 
+WHERE nis = '$nis';");
+$ppdb = mysqli_fetch_row($result);
+
+$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[1]';");
+
+$user = mysqli_fetch_row($result2);
+ 
 
 if ( isset($_POST["submit"])) {
 
@@ -19,7 +38,7 @@ if ( isset($_POST["submit"])) {
     echo"
         <script>
         alert('data gagal ditambahkan');
-        document.location.href= 'pembayaran.php';
+        document.location.href= 'buktipembayaran.php';
         </script>
         ";
   }
@@ -55,30 +74,30 @@ if ( isset($_POST["submit"])) {
   <h1>Upload Bukti Pembayaran - Sisi User</h1>
   <div class="container">
     <div class="title"> Upload Bukti Pembayaran</div>
-    <div class="content">    
+    <div class="content">   
+     <!--form method untuk file handling  -->
     <form action="" method="post" enctype="multipart/form-data">
+
     <div class="user-details">
-    
     <div class="input-box">
     <span class="details">NIS</span>
-    <input type="text" name="nis" id="nis">
+    <input type="text" name="nis" value="<?= $nis ?>" id="nis">
     </div>
-
     <br><br>
     <div class="input-box">
         <label for="namalengkap">Nama Lengkap :</label>
-        <input type="text" name="namalengkap" id="namalengkap">
-    </div>
+        <input type="text" name="namalengkap" id="namalengkap" value="<?= $user[1] ?>">
+     </div>
     <br><br>
 
     <div class="input-box">
        <label for="kelompok">Kelompok :</label>
-        <input type="text" name="kelompok" id="kelompok">
+        <input type="text" name="kelompok" id="kelompok" value="<?= $ppdb[3] ?>">
     </div>
     <br><br>
     <div class="input-box">
        <label for="bulanbayar">Bulan Bayar :</label>
-        <select id=" bulanbayar" name="bulanbayar">
+        <select  name="bulanbayar" id="bulanbayar">
             <option value="Januari">Januari</option>
             <option value="Februari">Februari</option>
             <option value="Maret">Maret</option>

@@ -12,13 +12,14 @@ $nis = $_SESSION['username'];
 $conn = mysqli_connect("localhost","root","","sia_tk");
 $result = mysqli_query($conn, "SELECT * FROM ppdb ");
 
-$admin = mysqli_fetch_row($result)
-// var_dump ($result);
+// $admin = mysqli_fetch_assoc($result);
 
-
-
+$result2 = mysqli_query($conn, "SELECT * FROM siswa ");
+$nisup = strtoupper($nis);
 
  ?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -45,7 +46,7 @@ $admin = mysqli_fetch_row($result)
 
 <body>
 <div>
-  <h1>Selamat datang , admin</h1>
+  <h1>Selamat Datang, <?= $nisup ?></h1>
 
 
 </div>
@@ -60,37 +61,37 @@ $admin = mysqli_fetch_row($result)
    <th>kelas</th>
    
  </tr> 
+ <?php $i = 1; ?>
+ <?php while($row = mysqli_fetch_assoc($result)) : ?>
+  <?php while($row2 = mysqli_fetch_assoc($result2)) :?>
  <tr>
-   <td>1</td>
-   <td>Paijo</td>
-   <td>11213</td>
-   <td>2</td>
-   <td>1</td>
-   <td>1b</td>
+   <td><?= $i ?></td>
+   <td><?= $row['namalengkap'] ?></td>
+   <td><?= $row2['nis'] ?></td>
+   <td><?= $row2['kelompok'] ?></td>
+   <td><?= $row2['semester'] ?></td>
+   <td><?= $row2['id_kelas'] ?></td>
  </tr>
+<?php $i++; ?>
+<?php endwhile; ?>
+<?php endwhile; ?>
 
- <tr>
-   <td>1</td>
-   <td>Paijo</td>
-   <td>11213</td>
-   <td>2</td>
-   <td>1</td>
-   <td>1b</td>
- </tr>
 </table>
 <br>
 <label for="Penilaian siswa">Penilaian Siswa </label>
-    <button>Check</button>
-
+<input type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
+<br>
+<br> 
+<label for="Penilaian siswa">E-Rapot </label>
+<input type="button" onclick="location.href='eraporinput.php';" value="Check" />
 <br>
 <br> 
 <label for="keuangan">Keuangan </label>
-    <button>Check</button>
+<input type="button" onclick="location.href='keuangan.php';" value="Check" />
 <br>
 <br>
 <label for="ppdb">PPDB</label>
-    <button>check</button>
-
+<input type="button" onclick="location.href='data.php';" value="Check" />
 <br>
 <br>
 <label for="laporan">Cetak Laporan</label>

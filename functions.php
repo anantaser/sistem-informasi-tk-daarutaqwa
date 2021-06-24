@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
 
@@ -142,14 +142,16 @@ function buktibayar($databuktibayar){
 
 	if (!$conn) {
     	die("Connection failed: " . mysqli_connect_error());
+    	exit;
   	}
 
   	$id_bukti = strtoupper(substr(uniqid(rand()),0,10));
-  	$nis = mysqli_real_escape_string($conn,$databuktibayar["nis"]);
-  	$bulanbayar = mysqli_real_escape_string($conn,$databuktibayar["bulanbayar"]);
+  	$nis = mysqli_real_escape_string($conn,$databuktibayar["nis"]);  	
   	$jumlahbayar = mysqli_real_escape_string($conn,$databuktibayar["jumlahbayar"]);
   	$keteranganbayar = mysqli_real_escape_string($conn,$databuktibayar["keteranganbayar"]);
   	$kategoribukti = mysqli_real_escape_string($conn,$databuktibayar["kategoribukti"]);
+  	$bulanbayar = mysqli_real_escape_string($conn,$databuktibayar["bulanbayar"]);
+  	
 
   	//upload gambar
   	$imageupload = upload();
@@ -202,5 +204,26 @@ function upload() {
 	move_uploaded_file($tmpName, 'img/'.$namaFile);
 	return $namaFile;
 }	
+
+function nilaiadmin($dataadmin){
+	global $conn;
+
+$nilai = mysqli_real_escape_string($conn,$dataadmin["nilai"]);
+$nis = mysqli_real_escape_string($conn,$dataadmin["nis"]);
+$sosialemosional = mysqli_real_escape_string($conn,$dataadmin["sosialemosional"]);
+$nis = mysqli_real_escape_string($conn,$dataadmin["nis"]);
+$bahasa = mysqli_real_escape_string($conn,$dataadmin["bahasa"]);
+$kognitif = mysqli_real_escape_string($conn,$dataadmin["kognitif"]);
+$motorikkasar = mysqli_real_escape_string($conn,$dataadmin["motorikkasar"]);
+$motorikhalus = mysqli_real_escape_string($conn,$dataadmin["motorikhalus"]);
+$seni = mysqli_real_escape_string($conn,$dataadmin["seni"]);
+$tanggalnilai = mysqli_real_escape_string($conn,$dataadmin["tanggalnilai"]);
+
+$sql = "INSERT INTO `nilai`(`id_nilai`, `nis`, `sosemos`, `bahasa`, `kognitif`, `mototik_kasar`, `motorik_halus`, `seni`, `tanggalnilai`) VALUES ('$nilai','$nis','$sosialemosional','$bahasa','$kognitif','$motorikkasar','$motorikhalus','$seni','$tanggalnilai')";
+mysqli_query($conn, $sql);
+return mysqli_affected_rows($conn);
+
+
+}
 
  ?>

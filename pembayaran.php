@@ -1,4 +1,32 @@
-  <!DOCTYPE html>
+<?php 
+
+session_start();
+
+if (!isset($_SESSION["login"])){
+  header("location: login.php");
+  exit;
+} 
+
+$nis = $_SESSION['username'];
+
+$conn = mysqli_connect("localhost","root","","sia_tk");
+$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = '$nis';");
+
+$ppdb = mysqli_fetch_row($result);
+
+$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[1]';");
+
+$user = mysqli_fetch_row($result2);
+
+$result3 = mysqli_query($conn, "SELECT * FROM bukti_pembayaran WHERE nis='$nis';");
+
+
+
+ ?>
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
   <title>Status Pembayaran</title>
@@ -29,48 +57,43 @@
         <div class="user-details">
     <div class="input-box">
     <label for="NamaLengkap">Nama Lengkap :</label>
-    <input type="text" name="NamaLengkap" id="NamaLengkap" disabled="disabled">
+    <input type="text" name="NamaLengkap" id="NamaLengkap" disabled="disabled" value="<?= $user[1] ?>">
     </div>
     <br><br>
     <div class="input-box">
     <label for="NamaOT">Nama Orang Tua :</label>
-    <input type="text" name="NamaOT" id="NamaOT" disabled="disabled">
+    <input type="text" name="NamaOT" id="NamaOT" disabled="disabled" value="<?= $user[18] ?>">
     </div>
     <br><br>
     <div class="input-box">
     <label for="Alamat">Alamat :</label>
-    <input type="text" name="Alamat" id="Alamat" disabled="disabled">
+    <input type="text" name="Alamat" id="Alamat" disabled="disabled" value="<?= $user[8] ?>">
+    <br>
     </div>
     <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
+
+
      <tr>
        <th>ID Pembayaran</th>
        <th>NIS</th>
-       <th>Tanggal Bayar</th>
+       <th>Jumlah Bayar</th>
        <th>Bulan Bayar</th>
        <th>Keterangan Bayar</th>
-       <th>Status Bayar</th>
-       <th>Keategori</th>
-       <th>ID Bukti</th>
+       <!-- <th>Status Bayar</th> -->
+       <th>Kategori</th>
        
      </tr> 
+     <?php while($row = mysqli_fetch_assoc($result3)) :?>
      <tr>
-       <td>1</td>
-       <td>Paijo</td>
-       <td>11213</td>
-       <td>2</td>
-       <td>1</td>
-       <td>1b</td>
+       <td><?= $row['id_bukti'] ?></td>
+       <td><?= $row['nis'] ?></td>
+       <td><?= $row['jumlah_bayar'] ?></td>
+       <td><?= $row['bulan_bayar'] ?></td>
+       <td><?= $row['keterangan_bayar'] ?></td>
+       <td><?= $row['kategoribukti'] ?></td>
      </tr>
-
-     <tr>
-       <td>1</td>
-       <td>Paijo</td>
-       <td>11213</td>
-       <td>2</td>
-       <td>1</td>
-       <td>1b</td>
-     </tr>
+     <?php endwhile; ?>
     </table>
     </div>
     </form>
