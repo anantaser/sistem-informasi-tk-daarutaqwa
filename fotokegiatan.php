@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Foto Kegiatan</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -18,72 +19,48 @@
   <a href="login.php" style="float:right" >Masuk/Login</a>
 </div>
 </head>
+
+
 <body>
 <div class="konten">
 <div class="container">
     <div class="card">
-      
       <div class="imgBx">
-            <img src="assets/kegiatan2.jpg" >
+            <img src="assets/kegiatann1.jpeg" >
       </div> 
           <div class="content">
       
-            <h5>Selasa, 6 April 2021</h5>
-              <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
+            <h5>Kegiatan Belajar Mengajar</h5>
      
-                <p>Calon Dokter</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              <a href="">Read More</a></p>
+               <!--  <p></p>
+                <p>Mengembangkan seluruh kemampuan yang dimiliki oleh anak sesuai tahap perkembangannya
+              <a href="">Read More</a></p> -->
 
           </div>
     </div>
    <div class="card">
       <div class="imgBx">
-            <img src="assets/kegiatan2.jpg">
+            <img src="assets/kegiatann2.jpeg">
       </div> 
           <div class="content">
-      
-            <h5>Selasa, 6 April 2021</h5>
-              <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
-     
-                <p>Calon Dokter</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>Kegiatan Belajar Mengajar</h5>
           </div>
     </div>
+
    <div class="card">
       <div class="imgBx">
-            <img src="assets/kegiatan2.jpg" >
+            <img src="assets/kegiatann3.jpeg" >
       </div> 
           <div class="content">
-      
-            <h5>Selasa, 6 April 2021</h5>
-              <!-- <div class="fakeimg" style="height:200px;">Image</div> -->
-     
-                <p>Calon Dokter</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5>Kegiatan Belajar Mengajar</h5>
           </div>
     </div>
    
-</div> <!-- kontainer-->
- 
-    
-  </div>
-</div>
+    </div> <!-- kontainer-->
+</div>  
+
+</body>
+
 
 <footer>
   <div class="kontainer">
@@ -124,5 +101,4 @@
   </div>
 </footer>
 <div class="copyrightText">TK - Daarutaqwa ©2021</div>
-</body>
 </html>
