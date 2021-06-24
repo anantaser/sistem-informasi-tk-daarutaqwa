@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>TK Islam Daarutaqwa</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -24,35 +25,46 @@
   <div class="konten">
     <div class="box">
       <div class="imageBx">
-        <img src="assets/cth.jpeg">
+        <img src="assets/kegiatann2.jpeg">
       </div>
     </div>
 
     <div class="box">
       <div class="imageBx">
-        <img src="assets/cth1.jpg">
+        <img src="assets/sekolah1.jpeg">
       </div>
     </div>
     
     <div class="box">
       <div class="imageBx">
-        <img src="assets/cth.jpeg">
+        <img src="assets/kegiatann1.jpeg">
       </div>
     </div>
     
     <div class="box">
       <div class="imageBx">
-        <img src="assets/cth2.jpg">
+        <img src="assets/sekolah2.jpeg">
       </div>
     </div>
     
   </div>
-  <br><br><br><br><br><br><br><br><br>
+  
   <div>
     <br>
     <br>
     <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     
+  </div>
+  <div>
+    <br><br><br><br><br><br><br><br><br>
+    <h1>TK Islam Daarutaqwa</h1>
+  <h2>Selamat datang di sekolah TK Islam Daruttaqwa</h2>
   </div>
   <script type="text/javascript">
     const imageBx = document.querySellectorAll('.imageBx');
