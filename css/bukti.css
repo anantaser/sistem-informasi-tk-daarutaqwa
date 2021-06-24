@@ -281,7 +281,23 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
 
 .user-details .input-box button{
      height: 25px;
-     margin: 11px 0
+     margin: 11px 0;
+       height: 100%;
+     width: 50%;
+     border-radius: 5px;
+     border: none;
+     color: #fff;
+     font-size: 15px;
+     font-weight: 500;
+     letter-spacing: 1px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     background: linear-gradient(135deg, #71b7e6, #000);
+   
+   }
+   .user-details  .button{
+     height: 25px;
+     margin: 11px 0;
        height: 100%;
      width: 50%;
      border-radius: 5px;
@@ -295,6 +311,8 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
      background: linear-gradient(135deg, #71b7e6, #9b59b6);
    
    }
+  
+
   
   .user-details .input-box input{
     height: 30px;

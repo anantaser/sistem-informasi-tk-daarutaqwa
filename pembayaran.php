@@ -72,13 +72,19 @@
        <td>1b</td>
      </tr>
     </table>
+
+    <div class="input-box"><br>
+    <label for="keuangan">Upload Bukti Bayar</label>
+    <input class="button" type="button" onclick="location.href='buktipembayaran.php';" value="Upload" /></div>
+    <br><br> 
+    <div class="input-box"><br>
+      <label>.</label>
+    <input class="button" type="button" onclick="location.href='indexUser.php';" value="Kembali" />
+    </div>
     </div>
     </form>
     <br><br>
-     <label for="keuangan">Upload Bukti Bayar</label>
-    <input type="button" onclick="location.href='buktipembayaran.php';" value="Upload" />
-    <br><br> 
-    <input type="button" onclick="location.href='indexUser.php';" value="Kembali" />
+     
     <label></label>
   </div>
   </div>

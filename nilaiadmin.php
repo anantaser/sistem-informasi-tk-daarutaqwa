@@ -120,12 +120,13 @@
     <input type="date" name="tanggalnilai" id="tanggalnilai"
     value="date"
     min="2001-01-01" max="2030-12-31" 
-    ><br>
-    <br><br>
-      <button>Simpan</button>
+    >
+
+      
   
     </div>
-    
+    <div class="input-box" >
+    <button>Simpan</button></div>
     <br><br>
   </div>
   </form>

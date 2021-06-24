@@ -116,15 +116,18 @@ if ( isset($_POST["submit"])) {
     <br><br>  
     <div></div>
     
-    <div class="">
+   
       <label> Upload Gambar -> </label>
-      <input type="file" name="imageupload" id="imageupload">
-      <br><br>    
-          <button type="submit" name="submit"> Tambah Data! </button>
+    
+      <input  type="file" name="imageupload" id="imageupload">
+
+      <br><br>  
+<div class="input-box">
+          <button class="button" type="submit" name="submit"> Tambah Data! </button>
     <br><br>
-
-
-    <input type="button" onclick="location.href='pembayaran.php';" value="Kembali" />
+</div>
+<div class="input-box">
+    <input class="button" type="button" onclick="location.href='pembayaran.php';" value="Kembali" />
     </div>
     </div>
 </form>

@@ -32,8 +32,9 @@ $user = mysqli_fetch_row($result2);
   <title>Halaman User</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
+  <link rel="stylesheet" href="css/ppdb.css">
   <link rel="stylesheet" href="css/styles.css">
-
+  
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
     <img src="assets/logotk.jpg" width="200">
@@ -50,34 +51,65 @@ $user = mysqli_fetch_row($result2);
 </head>
 <body>
   <h1>Selamat Datang, <?= $user[1] ?></h1>
-  <div>
+  <div class="container">
+  <div class="content">
+    <form class="#">
+
     <h2>Data Diri</h2>
-      <label>NIS :</label>
+<div class="user-details">
+
+<div class="input-box">
+      <label class="details">NIS :</label>
       <label><?= $nis ?></label>
+ </div>
       <br><br>
+<div class="input-box">
+
       <label>Nama :</label>
       <label><?= $user[1] ?></label>
+</div>
       <br><br>
+<div class="input-box">
+
       <label>Tanggal Lahir :</label>
       <label><?= $user[4] ?></label>
+</div>
+
       <br><br>
+<div class="input-box">
+
       <label>Tempat Lahir :</label>
       <label><?= $user[5] ?></label>
+</div>
+
       <br><br>
+<div class="input-box">
+
       <label>Kelompok Belajar :</label>
       <label><?= $ppdb[3] ?></label>
+</div>
+
       <br>
+</div>    
     <h2>Keuangan</h2>
       <label for="">Halaman Status Pembayaran</label>
+      <div class="button">
       <input type="button" onclick="location.href='pembayaran.php';" value="Check" />
-      <br>
+      </div>
+      
     <h2>Nilai dan Rapot</h2>
+      
       <label for="">Halaman Nilai dan Rapot</label>
+      <div class="button">
       <input type="button" onclick="location.href='eraporuser.php';" value="Check" />
+    
+    </div>
       <br>
       <br>
 
-
+</div>
+</form>
+</div>
     
 
 </body>
