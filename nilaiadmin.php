@@ -52,6 +52,7 @@
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
+
     </div>
     <br><br>
     <div class="input-box">
@@ -119,8 +120,12 @@
     <input type="date" name="tanggalnilai" id="tanggalnilai"
     value="date"
     min="2001-01-01" max="2030-12-31" 
-    >
+    ><br>
+    <br><br>
+      <button>Simpan</button>
+  
     </div>
+    
     <br><br>
   </div>
   </form>

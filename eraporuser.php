@@ -23,41 +23,42 @@
 <body>
   <h1>Halaman Nilai dan E-Raport</h1>
   <div>
-    <label>NIS :</label>
-    <label>NIS</label>
-    <br>
-    <label>Nama :</label>
-    <label>Nama</label>
-    <br>
-    <label>Kelompok Belajar :</label>
-    <label>Kelompok Belajar</label>
-    <br>
-    <label>Tanggal Update Terakhir :</label>
-    <label>Tanggal Update Terakhir</label>
-    <br>
-    <br>
-    <form>
-    <tr>
-      <td>
-        Sosial Emosional
-      </td>
-      <td>
-        Bahasa
-      </td>
-      <td>
-        Koginitif
-      </td>
-      <td>
-        Motorik Kasar
-      </td>
-      <td>
-        Motorik Halus
-      </td>
-      <td>
-        Seni
-      </td>
-    </tr>
-    </form>
+    
+    <table border="1" cellpadding="10" cellspacing="0">
+<tr>
+<th>NIS</th>
+<th>Nama</th>
+<th>Kelompok Belajar</th>
+<th>Tanggal Update Terakhir</th>
+</tr>
+<tr>
+<td>213</td>
+<td>siomah </td>
+<td>4-5 tahun</td>
+<td>senin 23 07 2021</td>
+</tr>
+   </table>
+   <br>
+   <div>Nilai Siswa</div>
+    <table border="1" cellpadding="10" cellspacing="0">
+<tr>
+  <th>Sosial Emosional</th>
+  <th>Bahasa</th>
+  <th>Kognitif</th>
+  <th>Motorik kasar</th>
+  <th>Motorik Halus</th>
+  <th>Seni</th>
+</tr>
+<tr>
+  
+  <td>A</td>
+  <td>D</td>
+  <td>A</td>
+  <td>E</td>
+  <td>E</td>
+  <td>A</td>
+</tr>
+</table>
     <br>
     <br>
 
@@ -65,8 +66,8 @@
       <input type="button" onclick="location.href='cetak.php';" value="Cetak Raport" />
     <br>
     <br><br>
-  </div>
-</body>
+    </div>
+ </body>
 
 <footer>
   <div class="kontainer">
