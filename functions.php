@@ -208,16 +208,16 @@ function upload() {
 function nilaiadmin($dataadmin){
 	global $conn;
 
-$nilai = mysqli_real_escape_string($conn,$dataadmin["nilai"]);
-$nis = mysqli_real_escape_string($conn,$dataadmin["nis"]);
-$sosialemosional = mysqli_real_escape_string($conn,$dataadmin["sosialemosional"]);
-$nis = mysqli_real_escape_string($conn,$dataadmin["nis"]);
-$bahasa = mysqli_real_escape_string($conn,$dataadmin["bahasa"]);
-$kognitif = mysqli_real_escape_string($conn,$dataadmin["kognitif"]);
-$motorikkasar = mysqli_real_escape_string($conn,$dataadmin["motorikkasar"]);
-$motorikhalus = mysqli_real_escape_string($conn,$dataadmin["motorikhalus"]);
-$seni = mysqli_real_escape_string($conn,$dataadmin["seni"]);
-$tanggalnilai = mysqli_real_escape_string($conn,$dataadmin["tanggalnilai"]);
+$nilai = mysqli_real_escape_string($conn,$dataadmin	["nilai"]);
+$nis = mysqli_real_escape_string($conn,$dataadmin	["nis"]);
+$sosialemosional = mysqli_real_escape_string($conn,$dataadmin	["sosialemosional"]);
+$nis = mysqli_real_escape_string($conn,$dataadmin	["nis"]);
+$bahasa = mysqli_real_escape_string($conn,$dataadmin	["bahasa"]);
+$kognitif = mysqli_real_escape_string($conn,$dataadmin	["kognitif"]);
+$motorikkasar = mysqli_real_escape_string($conn,$dataadmin	["motorikkasar"]);
+$motorikhalus = mysqli_real_escape_string($conn,$dataadmin	["motorikhalus"]);
+$seni = mysqli_real_escape_string($conn,$dataadmin	["seni"]);
+$tanggalnilai = mysqli_real_escape_string($conn,$dataadmin	["tanggalnilai"]);
 
 $sql = "INSERT INTO `nilai`(`id_nilai`, `nis`, `sosemos`, `bahasa`, `kognitif`, `mototik_kasar`, `motorik_halus`, `seni`, `tanggalnilai`) VALUES ('$nilai','$nis','$sosialemosional','$bahasa','$kognitif','$motorikkasar','$motorikhalus','$seni','$tanggalnilai')";
 mysqli_query($conn, $sql);
