@@ -87,6 +87,11 @@ $user = mysqli_fetch_row($result2);
 </div>
 
       <br>
+
+      <div class="input-box">
+      <label>Status Siswa :</label>
+      <label><?= $ppdb[8] ?></label>
+</div>
 </div>    
     <h2>Keuangan</h2>
       <label for="">Halaman Status Pembayaran</label>

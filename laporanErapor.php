@@ -1,3 +1,13 @@
+<?php
+
+require 'functions.php';
+$conn = mysqli_connect("localhost","root","","sia_tk");
+
+$result3 = mysqli_query($conn, "SELECT * FROM e_rapor order by id_erapot desc ");
+
+$dr3 = mysqli_fetch_assoc($result3);
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +35,7 @@
      <br>
      <table border="1" cellpadding="10" cellspacing="0">
  <tr>
+   <th>No</th><br>
    <th>NIS</th><br>
    <th>Pertumbuhan</th>
    <th>Sikap Spiritual</th>
@@ -33,20 +44,21 @@
    <th>Keterampilan</th>
    
  </tr> 
+  <?php $i = 1; ?>
+<?php while($data = mysqli_fetch_assoc($result3)) : ?>
 <tr>
-   <td>1</td>
-   <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
-   <td></td>
-   <td></td>
-   <td></td>
-   <td></td>
+  <td><?= $i ?></td>     
+   <td><?= $data['nis'] ?></td>
+   <td><?= $data['pertumbuhan'] ?></td>
+   <td><?= $data['sikap_spiritual'] ?></td>
+   <td><?= $data['sikap_sosial'] ?></td>
+   <td><?= $data['pengetahuan'] ?></td>
+   <td><?= $data['keterampilan'] ?></td>
    
  </tr> 
+
+<?php $i++; ?>
+<?php endwhile; ?>
 
 </table>
 

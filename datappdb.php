@@ -10,7 +10,7 @@ if (!isset($_SESSION["login"])){
 $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
-$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb");
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb WHERE siswa.status_siswa = 'Review'");
 
 $dr = mysqli_fetch_assoc($result);
 $nisup  = strtoupper($nis);
@@ -22,7 +22,7 @@ $nisup  = strtoupper($nis);
 <html>
 
   <head>
-    <title>PPDB - Admin</title>
+    <title>Dashboard Admin</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/ppdb.css">
 <link rel="stylesheet" href="css/bukti.css">
@@ -48,20 +48,20 @@ $nisup  = strtoupper($nis);
 
 
 </div>
-
 <div class="container">
 <div class="content">
   <form class="#">
-<h1>Daftar Siswa Aktif</h1>
+<h1>Daftar Review PPDB</h1>
 <div class="user-details">
 <table border="1" cellpadding="10" cellspacing="0">
  <tr>
    <th>No</th>
    <th>Nama</th>
+   <th>ID PPDB</th>
    <th>NIS</th>
    <th>Kelompok</th>
-   <th>Semester</th>
-   <th>Kelas</th>
+   <th>Status Siswa</th>
+   <th>Aksi</th>
   
  </tr> 
  <?php $i = 1; ?>
@@ -70,39 +70,20 @@ $nisup  = strtoupper($nis);
    <td><?= $i ?></td>
    <td><?= $row['namalengkap'] ?></td>
    <td><?= $row['nis'] ?></td>
+   <td><?= $row['id_ppdb'] ?></td>
    <td><?= $row['kelompok'] ?></td>
-   <td><?= $row['semester'] ?></td>
-   <td><?= $row['id_kelas'] ?></td>
+   <td><?= $row['status_siswa'] ?></td>
+   <td>
+     <a href="reviewppdb.php?id_ppdb=<?= $row['id_ppdb'] ?>">Tinjau Siswa</a>
+   </td>
+
  </tr>
-<?php $i++; ?>
-<?php endwhile; ?>
+  <?php $i++; ?>
+  <?php endwhile; ?>
 
 </table>
 <br>
-<br><br>
-<div class="input-box">
-<br><br>
-
-<label for="Penilaian siswa">Penilaian Siswa </label>
-<input class="button" type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
-<br>
-<br> 
-<label for="Penilaian siswa">E-Rapot </label>
-<input class="button" type="button" onclick="location.href='beraporinput.php';" value="Check" />
-<br>
-<br> 
-<label for="keuangan">Keuangan </label>
-<input class="button" type="button" onclick="location.href='keuangan.php';" value="Check" />
-<br>
-<br>
-<label for="ppdb">PPDB</label>
-  <input class="button" type="button" onclick="location.href='data.php';" value="Check" />
- 
-
-  <br>
-  <br>
-
- </form>
+    </form>
     </div>
     </div>
 </body>

@@ -255,4 +255,56 @@ return mysqli_affected_rows($conn);
 
 }
 
+
+function aktifsiswa($dataaktif){
+	global $conn;
+$nis = mysqli_real_escape_string($conn,$dataaktif["nis"]);
+$nama = mysqli_real_escape_string($conn,$dataaktif["nama"]);
+$almtlkp = mysqli_real_escape_string($conn,$dataaktif["almtlkp"]);
+$jk = mysqli_real_escape_string($conn,$dataaktif["jk"]);
+$tglbsm = mysqli_real_escape_string($conn,$dataaktif["tglbsm"]);
+$nik = mysqli_real_escape_string($conn,$dataaktif["nik"]);
+$anakke = mysqli_real_escape_string($conn,$dataaktif["anakke"]);
+$tempatlahir = mysqli_real_escape_string($conn,$dataaktif["tempatlahir"]);
+$tanggallahir = mysqli_real_escape_string($conn,$dataaktif["tanggallahir"]);
+$agm = mysqli_real_escape_string($conn,$dataaktif["agm"]);
+$nhp = mysqli_real_escape_string($conn,$dataaktif["nhp"]);
+$kwg = mysqli_real_escape_string($conn,$dataaktif["kwg"]);
+$namaayah = mysqli_real_escape_string($conn,$dataaktif["namaayah"]);
+$pdkayah = mysqli_real_escape_string($conn,$dataaktif["pdkayah"]);
+$nikayah = mysqli_real_escape_string($conn,$dataaktif["nikayah"]);
+$pkjayah = mysqli_real_escape_string($conn,$dataaktif["pkjayah"]);
+$tglayah = mysqli_real_escape_string($conn,$dataaktif["tglayah"]);
+$namaibu = mysqli_real_escape_string($conn,$dataaktif["namaibu"]);
+$pdkibu = mysqli_real_escape_string($conn,$dataaktif["pdkibu"]);
+$nikibu = mysqli_real_escape_string($conn,$dataaktif["nikibu"]);
+$pkjibu = mysqli_real_escape_string($conn,$dataaktif["pkjibu"]);
+$tglibu = mysqli_real_escape_string($conn,$dataaktif["tglibu"]);
+$tgbdn = mysqli_real_escape_string($conn,$dataaktif["tgbdn"]);
+$jktp = mysqli_real_escape_string($conn,$dataaktif["jktp"]);
+$btbdn = mysqli_real_escape_string($conn,$dataaktif["btbdn"]);
+$js = mysqli_real_escape_string($conn,$dataaktif["js"]);
+$jp = mysqli_real_escape_string($conn,$dataaktif["jp"]);
+$rombel = mysqli_real_escape_string($conn,$dataaktif["rombel"]);
+$tanggalmasuk = mysqli_real_escape_string($conn,$dataaktif["tanggalmasuk"]);
+$ststj = mysqli_real_escape_string($conn,$dataaktif["ststj"]);
+$ukseragam = mysqli_real_escape_string($conn,$dataaktif["ukseragam"]);
+$uktopi = mysqli_real_escape_string($conn,$dataaktif["uktopi"]);
+$Semester = mysqli_real_escape_string($conn,$dataaktif["Semester"]);
+$idkelas = mysqli_real_escape_string($conn,$dataaktif["idkelas"]);
+$aktifsiswa = mysqli_real_escape_string($conn,$dataaktif["aktifsiswa"]);
+
+$sql = "UPDATE `ppdb` SET `id_ppdb`='[value-1]',`namalengkap`='[value-2]',`jk`='[value-3]',`nik`='[value-4]',`tl_anak`='[value-5]',`t_anak`='[value-6]',`agama_anak`='[value-7]',`kwn_anak`='[value-8]',`alamat`='[value-9]',`tinggal_bersama`='[value-10]',`anak_ke`='[value-11]',`usia_anak`='[value-12]',`no_hp`='[value-13]',`nama_ayah`='[value-14]',`nik_ayah`='[value-15]',`ttl_ayah`='[value-16]',`pend_ayah`='[value-17]',`pek_ayah`='[value-18]',`nama_ibu`='[value-19]',`nik_ibu`='[value-20]',`ttl_ibu`='[value-21]',`pend_ibu`='[value-22]',`pek_ibu`='[value-23]',`tinggi_badan`='[value-24]',`berat_badan`='[value-25]',`jarak_tempuh`='[value-26]',`jumlah_saudara`='[value-27]',`jenis_pendaftaran`='[value-28]',`tanggal_masuk`='[value-29]',`masuk_rombel`='[value-30]',`status_setuju`='[value-31]' WHERE 'id_ppdb' = '$id_ppdb'";
+$sql .= "UPDATE `siswa` SET `nis`='[value-1]',`id_ppdb`='[value-2]',`username`='[value-3]',`kelompok`='[value-4]',`semester`='[value-5]',`id_kelas`='[value-6]',`ukuran_seragam`='[value-7]',`ukuran_topi`='[value-8]',`status_siswa`='[value-9]' WHERE `nis` = '$nis'";
+
+		if (mysqli_multi_query($conn, $sql)) {    
+    		echo "New records created successfully";
+  		} else {    
+    	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+  		}
+  		mysqli_close($conn);
+
+}
+
+
  ?>
