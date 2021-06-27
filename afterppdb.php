@@ -1,28 +1,43 @@
 <?php 
 
+session_start();
+
 require 'functions.php';
 
 if (isset($_POST["afterppdb"])){
-
-  if( ppdb($_POST) > 0 ) {
-    echo "<script>
-        alert('data berhasil ditambahkan!');
-    </script>";
-  } else {
-    echo mysqli_error($conn);
+  // var_dump($_POST);
+  // exit();
+    if(afterppdb($_POST)<0) {
+      echo "<script>
+          alert('Data Gagal Ditambahkan!');
+          document.location.href = 'afterppdb.php';
+        </script>";
+    } else {
+      echo "<script>
+          alert('Data berhasil ditambahkan!');
+          document.location.href = 'akunuserbaru.php';
+      </script>";
+    }
   }
-}
 
 
-$niss = $_POST["nis"];
-$passrand = strtoupper(substr(uniqid(rand()),0,8));
+$nis = $_SESSION['nissession'];
+// $passrand = strtoupper(substr(uniqid(rand()),0,8));
+
+$conn = mysqli_connect("localhost","root","","sia_tk");
+$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = '$nis' ");
+$dr = mysqli_fetch_assoc($result);
+$q1 = $dr['id_ppdb'];
+
+$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$q1';");
+$dr2 = mysqli_fetch_assoc($result2);
 
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Seragam Sekolah</title>
+  <title>Daftar Seragam Sekolah</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/styles.css">
@@ -46,14 +61,14 @@ $passrand = strtoupper(substr(uniqid(rand()),0,8));
 </head>
 <body>
   <h1>Formulir Seragam</h1>
-  <form action="akunuserbaru.php" method="post">
+  <form action="" method="post">
   <div class="container">
   <div class="content">
   
   <div class="user-details">
-    <p>NIS:  <?= $niss ?> </p>
-    <p>Nama : <?= $_POST["nama"] ?></p>
-    <p>Alamat : <?= $_POST["almtlkp"] ?></p>
+    <p>NIS:  <?= $nis ?> </p>
+    <p>Nama : <?= $dr2['namalengkap'] ?></p>
+    <p>Alamat : <?= $dr2['alamat'] ?></p>
     <br>
     <div class="input-box">
     <label for="UkuranTopi">Ukuran Topi :</label>
@@ -75,11 +90,9 @@ $passrand = strtoupper(substr(uniqid(rand()),0,8));
         </div>   
   
     <div>
-      <input type="hidden" name="passrand" value="<?= $passrand ?>">
     </div>
     <div>
-      <input type="hidden" name="niss" value="<?= $niss ?>">
-    </div>
+     </div>
         <button class="button" type="submit" name="afterppdb">Simpan</button>
 
 </div>

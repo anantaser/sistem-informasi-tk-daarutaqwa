@@ -23,6 +23,7 @@ $nisup = strtoupper($nis);
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Halaman Penilaian Siswa</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/bukti.css">
@@ -38,7 +39,7 @@ $nisup = strtoupper($nis);
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="login.php" style="float:right" >Masuk/Login</a>
+    <a href="logout.php" style="float:right">Log Out</a>
   </div>
 </head>
 <body>
@@ -76,8 +77,8 @@ $nisup = strtoupper($nis);
 <?php $i++; ?>
 <?php endwhile; ?>
 <?php endwhile; ?>
-
 </table>
+<input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
   
     </div>
     

@@ -95,7 +95,7 @@ $user = mysqli_fetch_row($result2);
       </div>
       
     <h2>Nilai dan Rapot</h2>
-      
+    
       <label for="">Halaman Nilai dan Rapot</label>
       <div class="button">
       <input type="button" onclick="location.href='eraporuser.php';" value="Check" />

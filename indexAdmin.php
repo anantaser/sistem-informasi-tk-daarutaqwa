@@ -53,8 +53,8 @@ $nisup = strtoupper($nis);
 <div class="container">
 <div class="content">
   <form class="#">
+<h1>Daftar Siswa</h1>
 <div class="user-details">
-
 <table border="1" cellpadding="10" cellspacing="0">
  <tr>
    <th>No</th>
@@ -62,8 +62,8 @@ $nisup = strtoupper($nis);
    <th>NIS</th>
    <th>Kelompok</th>
    <th>Semester</th>
-   <th>kelas</th>
-   
+   <th>Kelas</th>
+  
  </tr> 
  <?php $i = 1; ?>
  <?php while($row = mysqli_fetch_assoc($result)) : ?>
@@ -82,14 +82,16 @@ $nisup = strtoupper($nis);
 
 </table>
 <br>
+<br><br>
 <div class="input-box">
+<br><br>
 
 <label for="Penilaian siswa">Penilaian Siswa </label>
 <input type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
 <br>
 <br> 
 <label for="Penilaian siswa">E-Rapot </label>
-<input type="button" onclick="location.href='eraporinput.php';" value="Check" />
+<input type="button" onclick="location.href='beraporinput.php';" value="Check" />
 <br>
 <br> 
 <label for="keuangan">Keuangan </label>

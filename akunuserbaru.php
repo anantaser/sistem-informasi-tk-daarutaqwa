@@ -1,9 +1,28 @@
 <?php 
 
-$user = $_POST["niss"];
-$pass = $_POST["passrand"];
+session_start();
+
+require 'functions.php';
+
+if (isset($_POST["akunuserbaru"])){
+    if(akunuserbaru($_POST)<0) {
+      echo "<script>
+          alert('Data Gagal Ditambahkan!');
+          document.location.href = 'akunuserbaru.php';
+        </script>";
+    } else {
+      echo "<script>
+          alert('Data berhasil ditambahkan!');
+          document.location.href = 'logout.php';
+      </script>";
+    }
+  }
 
 
+$nis = $_SESSION['nissession'];
+
+$passrand = strtoupper(substr(uniqid(rand()),0,8));
+$password = password_hash($passrand, PASSWORD_DEFAULT);
  ?>
 
 <!DOCTYPE html>
@@ -30,11 +49,22 @@ $pass = $_POST["passrand"];
 </head>
 <body>
   <h1>Formulir Seragam</h1>
-  <form action="index.php" method="post">
+  <form action="" method="post">
   <div>
     <p>Gunakan Akses Ini Untuk Login</p>
-    <p>Username/NIS : <?= $user ?></p>
-    <p>Password : <?= $pass ?></p>
+      <div class="input-box">
+              <span class="details">Username / Nis</span>
+              <input type="text" placeholder=""name="nis" id="nis" value="<?= $nis ?>">
+            </div>
+      <div class="input-box">
+              <span class="details">Password</span>
+              <input type="text" placeholder=""name="passrand" id="passrand" value="<?= $passrand ?>">
+            </div>
+            <div class="input-box">
+              <input type="hidden" placeholder=""name="password" id="password" value="<?= $password ?>">
+            </div>
+    <p>Harap di Screenshot atau dicatat untuk Login</p>
+    <p>Klik "OK" untuk menyelesaikan proses PPDB</p>
     <div class="button">
       <button type="submit" name="akunuserbaru">OK</button>
   </div>

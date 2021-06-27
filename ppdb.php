@@ -28,7 +28,7 @@ if (isset($_POST["ppdb"])){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Halaman PPDB</title>
+		<title>PPDB</title>
 		<link rel="stylesheet" href="css/ppdb.css">
 
 		<div class="header">

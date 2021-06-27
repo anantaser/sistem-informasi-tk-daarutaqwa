@@ -1,4 +1,31 @@
-  <!DOCTYPE html>
+<?php
+
+session_start();
+
+$conn = mysqli_connect("localhost","root","","sia_tk");
+
+if (!isset($_SESSION["login"])){
+  header("location: login.php");
+  exit;
+} 
+
+$nis = $_SESSION['username'];
+
+$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = '$nis';");
+
+$ppdb = mysqli_fetch_assoc($result);
+
+$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[id_ppdb]';");
+
+$user = mysqli_fetch_assoc($result2);
+
+$result3 = mysqli_query($conn,"SELECT * FROM `nilai` WHERE `nis` = $nis");
+
+$nilai = mysqli_fetch_assoc($result3);
+
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
   <title>Nilai & E-Rapot</title>
@@ -19,7 +46,7 @@
     <a href="index.php">Mengenai Kita</a>
     <a href="fotokegiatan.php">Foto Kegiatan</a>
     <a href="ppdb.php">PPDB</a>
-    <a href="login.php" style="float:right" >Masuk/Login</a>
+    <a href="logout.php" style="float:right" >Log Out</a>
   </div>
 </head>
 <body>
@@ -29,26 +56,27 @@
     <form class="#">
       <div class="user-details">
     <div class="input-box">
+    <div>Data Diri</div>
     <table border="1" cellpadding="10" cellspacing="0">
 <tr>
 <th>NIS</th>
 <th>Nama</th>
 <th>Kelompok Belajar</th>
-<th>Tanggal Update Terakhir</th>
 </tr>
 <tr>
-<td>213</td>
-<td>siomah </td>
-<td>4-5 tahun</td>
-<td>senin 23 07 2021</td>
+<td><?= $nis ?></td>
+<td><?= $user['namalengkap'] ?> </td>
+<td><?= $ppdb['kelompok'] ?></td>
 </tr>
    </table>
 </div>
    <br>
    <div class="input-detail">
+    <br>
    <div>Nilai Siswa</div>
     <table border="1" cellpadding="10" cellspacing="0">
 <tr>
+  <th>Tanggal Penilaian </th>
   <th>Sosial Emosional</th>
   <th>Bahasa</th>
   <th>Kognitif</th>
@@ -56,23 +84,27 @@
   <th>Motorik Halus</th>
   <th>Seni</th>
 </tr>
+<?php while($aa = mysqli_fetch_assoc($result3)) :?>
 <tr>
-  
-  <td>A</td>
-  <td>D</td>
-  <td>A</td>
-  <td>E</td>
-  <td>E</td>
-  <td>A</td>
+  <td><?= $aa['tanggalnilai'] ?></td>
+  <td><?= $aa['sosemos'] ?></td>
+  <td><?= $aa['bahasa'] ?></td>
+  <td><?= $aa['kognitif'] ?></td>
+  <td><?= $aa['mototik_kasar'] ?></td>
+  <td><?= $aa['motorik_halus'] ?></td>
+  <td><?= $aa['seni'] ?></td>
 </tr>
+<?php endwhile; ?>
+<br>
 </table>
  </div>
     <br>
     <br>
 <div class="input-box">
-  <br><br><br>
-    <label for="">Cetak</label>
-      <input class="button" type="button" onclick="location.href='cetak.php';" value="Cetak Raport" />
+  <br>
+      <input class="button" type="button" onclick="location.href='cetakraporuser.php';" value="Cetak Raport" />
+      <input class="button" type="button" onclick="location.href='cetaknilaiuser.php';" value="Cetak Nilai" />
+      <input class="button" type="button" onclick="location.href='indexUser.php';" value="Kembali" />
     <br>
     <br><br>
     </div>
@@ -115,8 +147,6 @@
       <li><a href="#"><span class="fa fa-instagram "></span></a></li>
       <li><a href="#"><span class="fa fa-twitter "></span></a></li>
       <li><a href="#"><span class="fa fa-youtube"></span></a></li>
-     
-      
     </div>
   </div>
 </footer>

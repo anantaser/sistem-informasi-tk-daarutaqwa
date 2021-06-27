@@ -1,7 +1,44 @@
+<?php 
+
+require 'functions.php';
+
+session_start();
+
+if (!isset($_SESSION["login"])){
+  header("location: login.php");
+  exit;
+} 
+
+$nis = $_SESSION['username'];
+$datetime = date("Y-m-d");
+
+$conn = mysqli_connect("localhost","root","","sia_tk");
+$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis='$nis'");
+
+$dr = mysqli_fetch_assoc($result);
+$qu = $dr['id_ppdb'];
+
+$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$qu';");
+
+$dr2 = mysqli_fetch_assoc($result2);
+$nisup = strtoupper($nis);
+
+$result3 = mysqli_query($conn, "SELECT * FROM nilai WHERE nis = '$nis';");
+
+$dr3 = mysqli_fetch_assoc($result3);
+
+// var_dump($dr);
+// echo"<br><br>";
+// var_dump($dr2);
+// echo"<br><br>";
+// var_dump($dr3);
+// exit();
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Cetak Nilai</title>
 	<style type="text/css">
 		.konten{
 		  position: relative;
@@ -38,13 +75,12 @@
      </table>
      <br><br>
 
-    <p>NIS:   </p>
-    <p>Nama:   </p>
-    <p>Kelas:   </p>
+    <p>NIS: <?= $nis ?>   </p>
+    <p>Nama: <?= $dr2['namalengkap'] ?>  </p>
+    <p>Kelas:  <?= $dr['id_kelas'] ?> </p>
   
 <table border="1" cellpadding="10" cellspacing="0">
  <tr>
-   <th>Id Nilai</th><br>
    <th>Sosemos</th>
    <th>Bahasa</th>
    <th>Kognitif</th>
@@ -54,24 +90,28 @@
  </tr> 
 <tr>
   <center>
-   <td>1</td>
-   <td>A+</td>
-   <td>B</td>
-   <td>C+</td>
-   <td>A-</td>
-   <td>D-</td>
-   <td>E-</td>
+   <td><?= $dr3['sosemos'] ?></td>
+   <td><?= $dr3['bahasa'] ?></td>
+   <td><?= $dr3['kognitif'] ?></td>
+   <td><?= $dr3['mototik_kasar'] ?></td>
+   <td><?= $dr3['motorik_halus'] ?></td>
+   <td><?= $dr3['seni'] ?></td>
    </center>
  </tr> 
 </table>
+
 
 <table width="100%">
   <tr>
     <td></td>
     <td width="200px">
       <p>Mengetahui Guru/Wali Kelas <br>  <br></p>
-      <br><br><u>ibu Maimunah M,pd</u></td>
+      <br><br><u>Ibu Maimunah, M.Pd</u></td>
+      <br>
+      <?= "Tanggal Cetak : ".$datetime ?>
+
   </tr>
+
 </table>
 </div>
 </body>

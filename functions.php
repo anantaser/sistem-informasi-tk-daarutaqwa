@@ -1,4 +1,4 @@
-	<?php 
+<?php 
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
 
@@ -15,7 +15,6 @@ function query($query){
 
 function registrasi($data){
 	global $conn;
-	echo "koneksi berhasil";
 	$username = strtolower(stripslashes($data["username"]));
 	$password = mysqli_real_escape_string($conn, $data["password"]);
 	$password2 = mysqli_real_escape_string($conn, $data["password2"]);
@@ -49,7 +48,9 @@ function registrasi($data){
 
 function ppdb($datappdb){
 	global $conn;
-	echo "Berhasil trigger button";
+	
+	session_start();
+
 
 	if (!$conn) {
     	die("Connection failed: " . mysqli_connect_error());
@@ -57,6 +58,7 @@ function ppdb($datappdb){
 
 	$rand = strtoupper(substr(uniqid(rand()),0,12));
 	$nis = mysqli_real_escape_string($conn,$datappdb["nis"]);
+	$_SESSION['nissession'] = $nis;
 	$nama = mysqli_real_escape_string($conn,$datappdb["nama"]);
 	$almtlkp = mysqli_real_escape_string($conn, $datappdb["almtlkp"]);
 	$jk = mysqli_real_escape_string($conn, $datappdb["jk"]);
@@ -113,27 +115,13 @@ function ppdb($datappdb){
 
 function afterppdb($dataafterppdb){
 	global $conn;
-	echo "berhasil trigger button";
-
-	if (!$conn) {
-    	die("Connection failed: " . mysqli_connect_error());
-  	}
 
   	$ukurantopi = mysqli_real_escape_string($conn,$dataafterppdb["ukurantopi"]);
 	$ukuranseragam = mysqli_real_escape_string($conn,$dataafterppdb["ukuranseragam"]);
-	$niss = mysqli_real_escape_string($conn,$dataafterppdb["niss"]);
-	$passrand = mysqli_real_escape_string($conn,$dataafterppdb["passrand"]);
-	$passrand = password_hash($passrand, PASSWORD_DEFAULT);
-
-	$sqlo = "UPDATE `siswa` SET `ukuran_seragam`='$ukuranseragam',`ukurantopi`='$ukurantopi' WHERE `nis` = '$niss';";
-	$sqlo .= "INSERT INTO `user`(`username`, `password`) VALUES ('$niss','$passrand')";
-	if (mysqli_multi_query($conn, $sqlo)) {    
-    		echo "New records created successfully";
-  		} else {    
-    	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-  		}
-  		mysqli_close($conn);
-
+	$nis = $_SESSION['nissession'];
+	$sql = "UPDATE `siswa` SET `ukuran_seragam`='$ukuranseragam',`ukuran_topi`='$ukurantopi' WHERE `nis` = '$nis';";
+	mysqli_query($conn, $sql);
+  	return mysqli_affected_rows($conn);
 }
 
 function buktibayar($databuktibayar){
@@ -223,6 +211,47 @@ $sql = "INSERT INTO `nilai`(`id_nilai`, `nis`, `sosemos`, `bahasa`, `kognitif`, 
 mysqli_query($conn, $sql);
 return mysqli_affected_rows($conn);
 
+
+}
+
+function frapor($datarapor){
+	global $conn;
+
+	if (!$conn) {
+    	die("Connection failed: " . mysqli_connect_error());
+  	}	
+
+$IDRapot = mysqli_real_escape_string($conn,$datarapor["IDRapot"]);
+$NIS = mysqli_real_escape_string($conn,$datarapor["NIS"]);
+$Pertumbuhan = mysqli_real_escape_string($conn,$datarapor["Pertumbuhan"]);
+$SikapSpiritual = mysqli_real_escape_string($conn,$datarapor["SikapSpiritual"]);
+$SikapSosial = mysqli_real_escape_string($conn,$datarapor["SikapSosial"]);
+$Pengetahuan = mysqli_real_escape_string($conn,$datarapor["Pengetahuan"]);
+$Keterampilan = mysqli_real_escape_string($conn,$datarapor["Keterampilan"]);
+$Sakit = mysqli_real_escape_string($conn,$datarapor["Sakit"]);
+$Izin = mysqli_real_escape_string($conn,$datarapor["Izin"]);
+$Alpha = mysqli_real_escape_string($conn,$datarapor["Alpha"]);
+$Semester = mysqli_real_escape_string($conn,$datarapor["Semester"]);
+$BeratBadan = mysqli_real_escape_string($conn,$datarapor["BeratBadan"]);
+$TinggiBadan = mysqli_real_escape_string($conn,$datarapor["TinggiBadan"]);
+
+$sql = "INSERT INTO `e_rapor`(`id_erapot`, `nis`, `semester`, `pertumbuhan`, `sikap_spiritual`, `sikap_sosial`, `pengetahuan`, `keterampilan`, `berat_badan`, `tinggi_badan`, `sakit`, `izin`, `alpha`) VALUES ('$IDRapot','$NIS','$Semester','$Pertumbuhan','$SikapSpiritual','$SikapSosial','$Pengetahuan','$Keterampilan','$BeratBadan','$TinggiBadan','$Sakit','$Izin','$Alpha');";
+
+mysqli_query($conn,$sql);
+return mysqli_affected_rows($conn);
+
+}
+
+function akunuserbaru($akunuser){
+	global $conn;
+
+$nis = mysqli_real_escape_string($conn,$akunuser	["nis"]);
+$password = mysqli_real_escape_string($conn,$akunuser["password"]);
+
+$sql = "INSERT INTO `user`(`username`, `password`) VALUES ('$nis','$password');";
+
+mysqli_query($conn,$sql);
+return mysqli_affected_rows($conn);
 
 }
 

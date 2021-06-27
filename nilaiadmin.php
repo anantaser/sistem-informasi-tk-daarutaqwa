@@ -9,7 +9,6 @@ $rand = strtoupper(substr(uniqid(rand()),0,4));
 $idnilai = $rand;
 
 $nilai = query("SELECT * FROM siswa WHERE nis = '$nis'")[0];
-echo "<br><br>"; 
 $ppdbtr = $nilai['id_ppdb'];
 
 $nilai2 = query("SELECT * FROM ppdb WHERE id_ppdb = '$ppdbtr' ")[0];
@@ -153,15 +152,12 @@ if (isset($_POST["submit"])){
     <input type="date" name="tanggalnilai" id="tanggalnilai"
     value="date"
     min="2001-01-01" max="2030-12-31"><br>
-    <br><br>
+    <br>
     <button type="submit" name="submit"> Tambah Data! </button>
+    <br><br>
     <input type="button" onclick="location.href='bnilaiadmin.php';" value="Kembali" />
-    >
   
     </div>
-    <div class="input-box" >
-    <button>Simpan</button></div>
-    <br><br>
   </div>
   </form>
 
@@ -177,12 +173,6 @@ if (isset($_POST["submit"])){
     <div class="sec aboutus">
       <h1>TK Daarutaqwa</h1>
       <p>Merupakan TK Islam yang berlokasi di cibinong yang beralamat di jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
-
-    </div>
-    <div class="sec contact">
-      <h1>Contact Info</h1>
-
-      <ul class="info">
         <li>
           <span><i class="fa fa-map"></i></span>
           <span>Cibinong <br>
