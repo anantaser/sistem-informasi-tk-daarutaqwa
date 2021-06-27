@@ -10,11 +10,8 @@ if (!isset($_SESSION["login"])){
 $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
-$result = mysqli_query($conn, "SELECT * FROM ppdb ");
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb");
 
-// $admin = mysqli_fetch_assoc($result);
-
-$result2 = mysqli_query($conn, "SELECT * FROM siswa ");
 $nisup = strtoupper($nis);
 
  ?>
@@ -62,20 +59,18 @@ $nisup = strtoupper($nis);
      </tr> 
      <?php $i = 1; ?>
      <?php while($row = mysqli_fetch_assoc($result)) : ?>
-      <?php while($row2 = mysqli_fetch_assoc($result2)) :?>
      <tr>
        <td><?= $i ?></td>
        <td>
-         <a href="nilaiadmin.php?nis=<?= $row2['nis'] ?>">Beri Nilai</a>
+         <a href="nilaiadmin.php?nis=<?= $row['nis'] ?>">Beri Nilai</a>
        </td>
        <td><?= $row['namalengkap'] ?></td>
-       <td><?= $row2['nis'] ?></td>
-       <td><?= $row2['kelompok'] ?></td>
-       <td><?= $row2['semester'] ?></td>
-       <td><?= $row2['id_kelas'] ?></td>
+       <td><?= $row['nis'] ?></td>
+       <td><?= $row['kelompok'] ?></td>
+       <td><?= $row['semester'] ?></td>
+       <td><?= $row['id_kelas'] ?></td>
      </tr>
 <?php $i++; ?>
-<?php endwhile; ?>
 <?php endwhile; ?>
 </table>
 <input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
