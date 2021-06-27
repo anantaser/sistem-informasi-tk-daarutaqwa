@@ -153,8 +153,9 @@ if (isset($_POST["erapor"])){
       <!-- <label  for="IDRapot">IDRapot :</label> -->
       <input type="hidden" name="IDRapot" id="IDRapot" value="<?= $idrapot ?>">
     </div>
-      <button type="submit" name="erapor"> Simpan </button>
-      <input class="" type="button" onclick="location.href='beraporinput.php';" value="Kembali"/>
+      </div>
+      <div class="input-box"><button class="button" type="submit" name="erapor"> Simpan </button>
+      <input class="button" type="button" onclick="location.href='beraporinput.php';" value="Kembali"/>
     </div>
     <div>
     </div>

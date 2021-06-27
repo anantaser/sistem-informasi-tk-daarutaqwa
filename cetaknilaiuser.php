@@ -90,7 +90,7 @@ $dr3 = mysqli_fetch_assoc($result3);
  </tr> 
 <tr>
   <center>
-   <td><?= $dr3['sosemos'] ?></td>
+   <td ><?= $dr3['sosemos'] ?></td>
    <td><?= $dr3['bahasa'] ?></td>
    <td><?= $dr3['kognitif'] ?></td>
    <td><?= $dr3['mototik_kasar'] ?></td>

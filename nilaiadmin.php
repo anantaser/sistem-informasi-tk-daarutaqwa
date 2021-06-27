@@ -73,6 +73,14 @@ if (isset($_POST["submit"])){
       <input type="text" name="namalengkap" id="namalengkap" value="<?= $nilai2['namalengkap']; ?>">
     </div>
     <br><br>
+    <div class="input-box">
+    <label for="tanggalnilai">Tanggal Nilai :</label>
+    <input type="date" name="tanggalnilai" id="tanggalnilai"
+    value="date"
+    min="2001-01-01" max="2030-12-31"><br>
+    
+    </div>
+    <br><br>
       <div class="input-box">
       <label for="SosialEmosional">Sosial Emosional :</label>
     <br>
@@ -146,16 +154,14 @@ if (isset($_POST["submit"])){
            <option value="5">5</option>
          </select>   
          </div>
-    <br><br> 
-    <div class="input-box">
-    <label for="tanggalnilai">Tanggal Nilai :</label>
-    <input type="date" name="tanggalnilai" id="tanggalnilai"
-    value="date"
-    min="2001-01-01" max="2030-12-31"><br>
-    <br>
-    <button type="submit" name="submit"> Tambah Data! </button>
     <br><br>
-    <input type="button" onclick="location.href='bnilaiadmin.php';" value="Kembali" />
+<div class="input-box">
+    <button class="button" type="submit" name="submit"> Tambah Data! </button>
+  
+    </div>
+
+<div class="input-box">
+    <input class="button" type="button" onclick="location.href='bnilaiadmin.php';" value="Kembali" />
   
     </div>
   </div>

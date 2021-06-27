@@ -231,6 +231,59 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
   }
 }
 
+.containe{
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+     margin: 0 auto 100px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
+  }
+
+table{
+    border-collapse:collapse;
+    font:normal normal 12px Verdana,Arial,Sans-Serif;
+    color:#333333;
+}
+/* Mengatur warna latar, warna teks, ukruan font dan jenis bold (tebal) pada header tabel */
+table th {
+    background:#5F9EA0;
+    color:black;
+    font-weight:bold;
+    font-size:14px;
+}
+/* Mengatur border dan jarak/ruang pada kolom */
+table th,
+table td {
+    vertical-align:top;
+    padding:5px 10px;
+    border:1px solid #000;
+}
+/* Mengatur warna baris */
+table tr {
+    background:#F5FFFA;
+}
+/* Mengatur warna baris genap (akan menghasilkan warna selang seling pada baris tabel) */
+table tr:nth-child(even) {
+    background:#F0FFFF;
+}
+
+.contain{
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+     margin: 0 auto 100px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
+  }
 .container{
     position: relative;
     z-index: 1;
@@ -280,20 +333,27 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
   }
 
 .user-details .input-box button{
-     height: 25px;
-     margin: 11px 0;
-       height: 100%;
-     width: 50%;
-     border-radius: 5px;
-     border: none;
-     color: #fff;
-     font-size: 15px;
-     font-weight: 500;
-     letter-spacing: 1px;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     background: linear-gradient(135deg, #71b7e6, #000);
-   
+    height: 30px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease
+   }
+   .user-details .input-boxx button{
+    height: 30px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  
    }
    .user-details  .button{
      height: 25px;

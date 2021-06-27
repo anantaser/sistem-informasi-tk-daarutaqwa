@@ -50,7 +50,7 @@ $nisup = strtoupper($nis);
 
 
 </div>
-<div class="container">
+<div class="contain">
 <div class="content">
   <form class="#">
 <h1>Daftar Siswa</h1>
@@ -87,28 +87,20 @@ $nisup = strtoupper($nis);
 <br><br>
 
 <label for="Penilaian siswa">Penilaian Siswa </label>
-<input type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
+<input class="button" type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
 <br>
 <br> 
 <label for="Penilaian siswa">E-Rapot </label>
-<input type="button" onclick="location.href='beraporinput.php';" value="Check" />
+<input class="button" type="button" onclick="location.href='beraporinput.php';" value="Check" />
 <br>
 <br> 
 <label for="keuangan">Keuangan </label>
-<input type="button" onclick="location.href='keuangan.php';" value="Check" />
+<input class="button" type="button" onclick="location.href='keuangan.php';" value="Check" />
 <br>
 <br>
-
-<div class="input-box">
-  <label for="ppdb">PPDB</label>
-  <input type="button" onclick="location.href='data.php';" value="Check" />
-  <br>
-  <br>
-
-<div class="input-box">
-<label for="laporan">Cetak Laporan</label>
-  <button>cetak</button>
-    </div>
+<label for="ppdb">PPDB</label>
+  <input class="button" type="button" onclick="location.href='data.php';" value="Check" />
+ 
     </form>
     </div>
     </div>

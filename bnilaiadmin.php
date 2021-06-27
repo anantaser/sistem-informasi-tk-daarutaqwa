@@ -27,7 +27,50 @@ $nisup = strtoupper($nis);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/bukti.css">
-
+<style type="text/css">
+th {
+  background-color: #4CAF50;
+            color: black;
+  @media (min-width: $bp-lisa) {
+        border-left: 1px solid rgba(134,188,37,1);
+        border-bottom: 1px solid rgba(134,188,37,1);
+      }
+      
+      @media (min-width: $bp-bart) {
+        background-color: transparent;
+        color: rgba(0,0,0.87);
+        text-align: left;
+    
+}
+}
+table{
+    border-collapse:collapse;
+    font:normal normal 12px Verdana,Arial,Sans-Serif;
+    color:#333333;
+}
+/* Mengatur warna latar, warna teks, ukruan font dan jenis bold (tebal) pada header tabel */
+table th {
+    background:#5F9EA0;
+    color:black;
+    font-weight:bold;
+    font-size:14px;
+}
+/* Mengatur border dan jarak/ruang pada kolom */
+table th,
+table td {
+    vertical-align:top;
+    padding:5px 10px;
+    border:1px solid #000;
+}
+/* Mengatur warna baris */
+table tr {
+    background:#F5FFFA;
+}
+/* Mengatur warna baris genap (akan menghasilkan warna selang seling pada baris tabel) */
+table tr:nth-child(even) {
+    background:#F0FFFF;
+}
+</style>
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
     <img src="assets/logotk.jpg" width="200">
@@ -45,19 +88,19 @@ $nisup = strtoupper($nis);
 <body>
   
   <h1>Halaman Nilai</h1>
-  <div class="container">
+  <div class="containe">
 <div class="content">
   <form action="#">
     <div class="user-details">
     <table border="1" cellpadding="10" cellspacing="0">
      <tr>
-       <th>No</th>
-       <th>Aksi</th>
-       <th>Nama</th>
-       <th>NIS</th>
-       <th>Kelompok</th>
-       <th>Semester</th>
-       <th>kelas</th>
+       <th >No</th>
+       <th >Aksi</th>
+       <th >Nama</th>
+       <th >NIS</th>
+       <th >Kelompok</th>
+       <th >Semester</th>
+       <th >kelas</th>
        
      </tr> 
      <?php $i = 1; ?>
@@ -73,7 +116,9 @@ $nisup = strtoupper($nis);
        <td><?= $row2['kelompok'] ?></td>
        <td><?= $row2['semester'] ?></td>
        <td><?= $row2['id_kelas'] ?></td>
+    
      </tr>
+
 <?php $i++; ?>
 <?php endwhile; ?>
 <?php endwhile; ?>
