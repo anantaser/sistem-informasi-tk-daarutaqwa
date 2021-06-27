@@ -96,7 +96,10 @@ $nisup  = strtoupper($nis);
 <br>
 <br>
 <label for="ppdb">PPDB</label>
-  <input class="button" type="button" onclick="location.href='data.php';" value="Check" />
+  <input class="button" type="button" onclick="location.href='datappdb.php';" value="Check" />
+
+<label for="ppdb">Registrasi Akun untuk Admin</label>
+  <input class="button" type="button" onclick="location.href='registrasi.php';" value="Check" />
  
 
   <br>

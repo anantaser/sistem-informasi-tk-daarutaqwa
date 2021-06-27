@@ -23,7 +23,7 @@ if (isset ($_POST["login"])){
         if( password_verify($password, $row["password"])){
           $_SESSION['login'] = true;
           $_SESSION['username'] = $username;
-          if (strpos($username, 'admin') !== false){
+          if (strpos(strtolower($username), 'admin') !== false){
           // if ($username contains 'admin'){
           header("Location:indexAdmin.php");
           exit;

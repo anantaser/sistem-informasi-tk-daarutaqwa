@@ -13,6 +13,9 @@ $conn = mysqli_connect("localhost","root","","sia_tk");
 $result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb WHERE siswa.status_siswa = 'Review'");
 
 $dr = mysqli_fetch_assoc($result);
+
+$res = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb WHERE status_siswa = 'Aktif'");
+
 $nisup  = strtoupper($nis);
 
  ?>
@@ -83,7 +86,40 @@ $nisup  = strtoupper($nis);
 
 </table>
 <br>
+<h1>Daftar Siswa Aktif</h1>
+<table border="1" cellpadding="10" cellspacing="0">
+ <tr>
+   <th>No</th>
+   <th>Nama</th>
+   <th>ID PPDB</th>
+   <th>NIS</th>
+   <th>Kelompok</th>
+   <th>Status Siswa</th>
+   <th>Aksi</th>
+ </tr> 
+
+  <?php $a = 1; ?>
+  <?php while($row2 = mysqli_fetch_assoc($res)) : ?>
+ <tr>
+  
+  <td><?= $a ?></td>
+   <td><?= $row2['namalengkap'] ?></td>
+   <td><?= $row2['nis'] ?></td>
+   <td><?= $row2['id_ppdb'] ?></td>
+   <td><?= $row2['kelompok'] ?></td>
+   <td><?= $row2['status_siswa'] ?></td>
+   <td>
+     <a href="reviewppdb.php?id_ppdb=<?= $row2['id_ppdb'] ?>">Tinjau Siswa</a>
+   </td>
+     
+ </tr>
+ <?php $a++; ?>
+  <?php endwhile; ?>
+  
+</table>
     </form>
+      <input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
+
     </div>
     </div>
 </body>

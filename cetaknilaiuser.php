@@ -23,9 +23,29 @@ $result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$qu';");
 $dr2 = mysqli_fetch_assoc($result2);
 $nisup = strtoupper($nis);
 
-$result3 = mysqli_query($conn, "SELECT * FROM nilai WHERE nis = '$nis';");
+$result3 = mysqli_query($conn, "SELECT AVG(sosemos) AS sosemosavg FROM nilai WHERE nis = '$nis';");
 
-$dr3 = mysqli_fetch_assoc($result3);
+$sosemos = mysqli_fetch_assoc($result3);
+
+$result4 = mysqli_query($conn, "SELECT AVG(bahasa) AS bahasaavg FROM nilai WHERE nis = '$nis';");
+
+$bahasa = mysqli_fetch_assoc($result4);
+
+$result5 = mysqli_query($conn, "SELECT AVG(kognitif) AS kognitifavg FROM nilai WHERE nis = '$nis';");
+
+$kognitif = mysqli_fetch_assoc($result5);
+
+$result6 = mysqli_query($conn, "SELECT AVG(mototik_kasar) AS motorikkasarsavg FROM nilai WHERE nis = '$nis';");
+
+$mototik_kasar = mysqli_fetch_assoc($result6);
+
+$result7 = mysqli_query($conn, "SELECT AVG(motorik_halus) AS motorikhalussavg FROM nilai WHERE nis = '$nis';");
+
+$motorik_halus = mysqli_fetch_assoc($result7);
+
+$result8 = mysqli_query($conn, "SELECT AVG(seni) AS seniavg FROM nilai WHERE nis = '$nis';");
+
+$seni = mysqli_fetch_assoc($result8);
 
 // var_dump($dr);
 // echo"<br><br>";
@@ -90,12 +110,12 @@ $dr3 = mysqli_fetch_assoc($result3);
  </tr> 
 <tr>
   <center>
-   <td ><?= $dr3['sosemos'] ?></td>
-   <td><?= $dr3['bahasa'] ?></td>
-   <td><?= $dr3['kognitif'] ?></td>
-   <td><?= $dr3['mototik_kasar'] ?></td>
-   <td><?= $dr3['motorik_halus'] ?></td>
-   <td><?= $dr3['seni'] ?></td>
+   <td ><?= $sosemos['sosemosavg'] ?></td>
+   <td><?= $bahasa['bahasaavg'] ?></td>
+   <td><?= $kognitif['kognitifavg'] ?></td>
+   <td><?= $mototik_kasar['motorikkasarsavg'] ?></td>
+   <td><?= $motorik_halus['motorikhalussavg'] ?></td>
+   <td><?= $seni['seniavg'] ?></td>
    </center>
  </tr> 
 </table>
@@ -107,9 +127,12 @@ $dr3 = mysqli_fetch_assoc($result3);
     <td width="200px">
       <p>Mengetahui Guru/Wali Kelas <br>  <br></p>
       <br><br><u>Ibu Maimunah, M.Pd</u></td>
+      <p>0 - 1 = BB (Belum Berkembang)</p>
+      <p>1 - 2 = MB (Masih Berkembang)</p>
+      <p>2 - 3 = BSH (Berkembang Sesuai Harapan)</p>
+      <p>3 - 4 = BSB (Berkembang Sangat Baik)</p>
       <br>
       <?= "Tanggal Cetak : ".$datetime ?>
-
   </tr>
 
 </table>
