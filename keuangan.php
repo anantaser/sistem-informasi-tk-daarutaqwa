@@ -37,7 +37,22 @@ $dr = mysqli_fetch_assoc($result);
   
   <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/bukti.css">
+<style type="text/css">
+  
+.contain{
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+     margin: 0 auto 100px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
+  }
 
+</style>
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
     <img src="assets/logotk.jpg" width="200">
@@ -54,7 +69,7 @@ $dr = mysqli_fetch_assoc($result);
 </head>
 <body>
 <br><br><br>
-  <div class="container">
+  <div class="contain">
   <h1>Daftar Upload Bukti Pembayaran</h1>
   
     <div class="content">

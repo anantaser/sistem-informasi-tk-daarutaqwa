@@ -61,14 +61,24 @@ $dr2 = mysqli_fetch_assoc($result2);
 </head>
 <body>
   <h1>Formulir Seragam</h1>
-  <form action="" method="post">
   <div class="container">
   <div class="content">
+  <form action="#" method="post">
   
   <div class="user-details">
-    <p>NIS:  <?= $nis ?> </p>
-    <p>Nama : <?= $dr2['namalengkap'] ?></p>
-    <p>Alamat : <?= $dr2['alamat'] ?></p>
+ <div class="input-box"> 
+  <span class="details">  Nama</span>
+      <input type=" text" placeholder="nama" name="nama" value="<?= $dr2['namalengkap'] ?>"></div>
+   <div class="input-box"> 
+      <span class="details">  NIS</span>
+      <input type=" text" placeholder="nama" name="nama" value="<?= $nis ?>"></div>
+   <div class="input-box"> 
+      <span class="details">  Alamat</span>
+      <input type=" text" placeholder="nama" name="nama" value="<?= $dr2['alamat'] ?>"></div>
+   
+    <div class="input-box"> 
+   
+   </div>
     <br>
     <div class="input-box">
     <label for="UkuranTopi">Ukuran Topi :</label>
@@ -89,16 +99,14 @@ $dr2 = mysqli_fetch_assoc($result2);
         </select>
         </div>   
   
-    <div>
-    </div>
-    <div>
-     </div>
+    <div class="input-box"> 
         <button class="button" type="submit" name="afterppdb">Simpan</button>
+</div>
+</div>
+</form>
 
 </div>
-</div>
   </div>
-</form>
 
 </body>
 

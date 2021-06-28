@@ -110,7 +110,8 @@ table th {
        </tr>
     
 
-     </table><center>
+     </table>
+     <center>
 <h1>Nilai Siswa</h1>
 </center>
 
@@ -142,7 +143,7 @@ table th {
 </tr>
 <?php endwhile; ?>
   <center>
-  <td>   <?= " ".$datetime ?></td>
+    <td><?= "".$datetime ?></td>
    <td ><?= $sosemos['sosemosavg'] ?></td>
    <td><?= $bahasa['bahasaavg'] ?></td>
    <td><?= $kognitif['kognitifavg'] ?></td>
