@@ -29,9 +29,24 @@ $password = password_hash($passrand, PASSWORD_DEFAULT);
 <html>
 <head>
   <title>Berhasil Registrasi</title>
+  <style type="text/css">
+    .skonten{
+      position: relative;
+    z-index: 1;
+    max-width: 600px;
+     margin: 0 auto 10px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  
+    }
+  </style>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/bukti.css">
 
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -48,15 +63,19 @@ $password = password_hash($passrand, PASSWORD_DEFAULT);
   </div>
 </head>
 <body>
-  <h1>Formulir Seragam</h1>
-  <form action="" method="post">
-  <div>
+  <br>  <br>  <br>  <br>  
+<div class="container">
+<div class="content">   
+  <form action="#" method="post">
     <p>Gunakan Akses Ini Untuk Login</p>
+  <div class="user-details">  
+  
       <div class="input-box">
               <span class="details">Username / Nis</span>
               <input type="text" placeholder=""name="nis" id="nis" value="<?= $nis ?>">
             </div>
       <div class="input-box">
+              
               <span class="details">Password</span>
               <input type="text" placeholder=""name="passrand" id="passrand" value="<?= $passrand ?>">
             </div>
@@ -65,10 +84,13 @@ $password = password_hash($passrand, PASSWORD_DEFAULT);
             </div>
     <p>Harap di Screenshot atau dicatat untuk Login</p>
     <p>Klik "OK" untuk menyelesaikan proses PPDB</p>
-    <div class="button">
-      <button type="submit" name="akunuserbaru">OK</button>
+    <div class="input-box">
+      <button class="button "  type="submit" name="akunuserbaru">OK</button>
+  </div>
   </div>
   </form>
+  </div>
+  </div>
 </body>
 
 <footer>

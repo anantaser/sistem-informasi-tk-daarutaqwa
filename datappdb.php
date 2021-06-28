@@ -60,8 +60,8 @@ $nisup  = strtoupper($nis);
  <tr>
    <th>No</th>
    <th>Nama</th>
-   <th>ID PPDB</th>
    <th>NIS</th>
+   <th>ID PPDB</th>
    <th>Kelompok</th>
    <th>Status Siswa</th>
    <th>Aksi</th>
@@ -91,8 +91,8 @@ $nisup  = strtoupper($nis);
  <tr>
    <th>No</th>
    <th>Nama</th>
-   <th>ID PPDB</th>
    <th>NIS</th>
+   <th>ID PPDB</th>
    <th>Kelompok</th>
    <th>Status Siswa</th>
    <th>Aksi</th>

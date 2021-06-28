@@ -16,7 +16,7 @@ $dr = mysqli_fetch_assoc($result);
     .konten{
       position: relative;
     z-index: 1;
-    max-width: 600px;
+    max-width: 800px;
      margin: 0 auto 100px; 
     width: 100%;
     background-color: #fff;
@@ -65,7 +65,8 @@ table th {
      
 
      </table>
-     <br>
+<h1><u>  Laporan E-rapor Siswa </u></h1>
+     
      <table border="1" cellpadding="10" cellspacing="0">
  <tr>
    <th>No</th><br>

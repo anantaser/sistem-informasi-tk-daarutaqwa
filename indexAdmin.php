@@ -101,6 +101,11 @@ $nisup  = strtoupper($nis);
 <br>
 <label for="ppdb">PPDB</label>
   <input class="button" type="button" onclick="location.href='datappdb.php';" value="Check" />
+<br>
+<br>
+<label for="siswa">Daftar Siswa</label>
+  <input class="button" type="button" onclick="location.href='laporansiswa.php';" value="Cetak" />
+
 
 
 </div>

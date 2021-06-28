@@ -105,7 +105,7 @@ $result3 = mysqli_query($conn, "SELECT * FROM bukti_pembayaran WHERE nis='$nis';
     <input class="button" type="button" onclick="location.href='indexUser.php';" value="Kembali" />
     </div>
     <div class="input-box"><br>
-      <label>.</label>
+      <label>Print Bukti Pembayaran</label>
     <input class="button" type="button" onclick="location.href='cetakbayar.php';" value="Cetak" />
     </div>
     

@@ -142,7 +142,7 @@ table th {
 </tr>
 <?php endwhile; ?>
   <center>
-  
+  <td>   <?= " ".$datetime ?></td>
    <td ><?= $sosemos['sosemosavg'] ?></td>
    <td><?= $bahasa['bahasaavg'] ?></td>
    <td><?= $kognitif['kognitifavg'] ?></td>

@@ -79,7 +79,7 @@ table th {
 
      </table>
 <center>
-<h1>laporan Pembayaran</h1>
+<h1>Laporan Pembayaran</h1>
 </center>
     <table border="1" cellpadding="10" cellspacing="0">
 

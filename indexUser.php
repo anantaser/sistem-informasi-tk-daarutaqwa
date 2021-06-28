@@ -107,8 +107,6 @@ $user = mysqli_fetch_row($result2);
       <input type="button" onclick="location.href='eraporuser.php';" value="Check" />
     
     </div>
-      <br>
-      <br>
 
 </div>
 </form>

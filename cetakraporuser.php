@@ -78,8 +78,8 @@ table th {
          <td>
          <center>
            <font size="4" color="blue" style="font-family: Nyla"><b>Yayasan Terpadu</b></font><br>
-           <font size="6" color="blue" style="font-family: Bernard MT Condensed"><b>DAARUTAQWA</b></font><br>
-           <font size="3" color="blue" style="font-family: Maiandra GD"><b>TAMAN KANAK-KANAK DAARUTAQWA</b></font>
+           <font size="6" color="blue" style="font-family: Bernard MT Condensed"><b>DAARUTTAQWA</b></font><br>
+           <font size="3" color="blue" style="font-family: Maiandra GD"><b>TAMAN KANAK-KANAK DAARUTTAQWA</b></font>
            <br>
            <font size="2">Jl. Raya Jakarta Bogor KM. 44 P.O. Box 40 CBI Pakansari Cibinong Bogor 16915   (021) 8755974</font>
          </center>
@@ -108,48 +108,23 @@ table th {
  
 <tr>
   <th>Pertumbuhan</th>
-  <td><?= $dr3['pertumbuhan'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+  <td><?= $dr3['pertumbuhan'] ?></td>
 </tr>
 <tr>
   <th>Sikap Spiritual</th>
-  <td><?= $dr3['sikap_spiritual'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+  <td><?= $dr3['sikap_spiritual'] ?></td>
 </tr>
 <tr>
   <th>Sikap Sosial</th>
-  <td><?= $dr3['sikap_sosial'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+  <td><?= $dr3['sikap_sosial'] ?></td>
 </tr>
 <tr>
   <th>Pengetahuan</th>
-  <td><?= $dr3['pengetahuan'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+  <td><?= $dr3['pengetahuan'] ?></td>
 </tr>
 <tr>
   <th>Keterampilan</th>
-  <td><?= $dr3['keterampilan'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+  <td><?= $dr3['keterampilan'] ?></td>
 </tr>
 
 </table>
@@ -168,7 +143,7 @@ table th {
 </td>
  --> 
  <td width="400px">
-      <?= "Bogor ".$datetime ?>
+   
       <p>Mengetahui kepala Taman Kanak-kanak <br>  <br></p>
       <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP.12312</p></td>
       <br> 

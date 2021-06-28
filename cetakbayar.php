@@ -83,7 +83,7 @@ table th {
    
 
      </table>
-<br> <br><br><center>
+<center>
 <H1><u>Bukti Pembayaran</u></H1>
 
 </center>
@@ -151,7 +151,7 @@ table th {
         <td width="200px">
    
       <p>Yang Menerima <br>  <br></p>
-      <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP. 213123</p></td>
+      <br><br><p><u>Admin</u><br></p></td>
       <br>
       
   </tr>
@@ -185,5 +185,6 @@ table th {
   </div>
 
 </body>
+<a href="#" onclick="window.print();">cetak</a>
 
 </html>

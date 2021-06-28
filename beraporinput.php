@@ -30,7 +30,7 @@ $nisup = strtoupper($nis);
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
     <img src="assets/logotk.jpg" width="200">
-    <h1>TK Islam Daarutaqwa</h1>
+    <h1>TK Islam Daaruttaqwa</h1>
     <p>Jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
   </div>
 
@@ -42,9 +42,11 @@ $nisup = strtoupper($nis);
   </div>
 </head>
 <body>
+  <br>  
   
-  <h1>Halaman Nilai</h1>
   <div class="container">
+<h1>Daftar E-rapor</h1>
+  
 <div class="content">
   <form action="#">
     <div class="user-details">
@@ -75,11 +77,19 @@ $nisup = strtoupper($nis);
 <?php $i++; ?>
 <?php endwhile; ?>
 </table>
+
+<div class="input-box">
+  <span> </span>
 <input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
   
     </div>
+    <div class="input-box"  > 
+<input class="button" type="button" onclick="location.href='laporanErapor.php';" value="Cetak Laporan" />
+</div>
+  </div>
+    </div>
     
-    <br><br>
+   
   </div>
   </form>
 
