@@ -75,15 +75,12 @@ $dr2 = mysqli_fetch_assoc($res);
 </head>
 <body>
 <br><br><br>
-<<<<<<< HEAD
   <div class="contain">
   <h1>Daftar Upload Bukti Pembayaran</h1>
   
     <div class="content">
-=======
-<div class="container">
+
 <div class="content">
->>>>>>> 2e7fa607d64eea5cc28ea9eb96f41f7fe1a23ca9
 <form class="#">
 <h1>Daftar Upload Bukti Pembayaran SPP</h1>
 <div class="user-details">

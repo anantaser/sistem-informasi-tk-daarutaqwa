@@ -26,6 +26,22 @@ $nisup = strtoupper($nis);
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
   <link rel="stylesheet" href="css/bukti.css">
+<style type="text/css">
+  
+.contain{
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+     margin: 0 auto 100px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
+  }
+
+</style>
 
   <div class="header">
     <script type="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -44,7 +60,7 @@ $nisup = strtoupper($nis);
 <body>
   <br>  
   
-  <div class="container">
+  <div class="contain">
 <h1>Daftar E-rapor</h1>
   
 <div class="content">

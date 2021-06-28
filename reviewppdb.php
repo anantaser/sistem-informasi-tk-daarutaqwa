@@ -44,7 +44,7 @@ $nisup  = strtoupper($nis);
 	<head>
 		<title>PPDB</title>
 		<link rel="stylesheet" href="css/ppdb.css">
-
+	<link rel="stylesheet" href="css/bukti.css">
 		<div class="header">
 		  <img src="assets/logotk.jpg" width="200">
 		  <h1>TK Islam Daarutaqwa</h1>
@@ -64,26 +64,24 @@ $nisup  = strtoupper($nis);
 	<h1>Halaman PPDB - Review - <?= strtoupper($row['namalengkap'] )?></h1>
 
 		<!-- <form action="afterppdb.php" method="post"> -->
-		<form method=post action="">
+		
 		 <div class="container">	
  			<div class="title">A. Indentitas Calon Siswa/i</div>
 	  		<div class="content">
 	   	   	<form action="#" method="post">
 	   	   			<div class="user-details">
-		  				<br><br>
+		  				
 		  			<div class="input-box">
 					  	<span class="details">ID PPDB </span>
 					  	<br>
 		  				<input type="text" name="idppdb" value="<?= $idppdb ?>">
 		  			</div>
-		  			<div class="user-details">
-		  				<br><br>
 		  			<div class="input-box">
 					  	<span class="details">NIS </span>
 					  	<br>
 		  				<input type="text" name="nis" value="<?= $row['nis'] ?>">
 		  			</div>
-		  			<br>
+		  			
 		    		<div class="input-box">
 					  	<span class="details">Nama Lengkap </span>
 					  	<input type="text" placeholder="" name="nama" id="nama" value="<?= $row['namalengkap'] ?>">
@@ -238,28 +236,22 @@ $nisup  = strtoupper($nis);
 
 					<div class="title"> D.Register</div>
 				 		<br>
-				 		<div class="rombel">Jenis Pendaftaran</div>
+				 		<div class="user-details">	
+
 				 		<div class="input-box">
+				 		<div class="details">Jenis Pendaftaran</div>
+
+				 		
 						<input type="text" placeholder=""name="jp" id="jp" value="<?= $row['jenis_pendaftaran'] ?>">	
 						</div>
 
-						<br>
-        	<div class="rombel"> Rombel </div>
-        	<div class="gender-details">
-	        	<div class="input-box">
-				<input type="text" placeholder=""name="rombel" id="rombel" value="<?= $row['masuk_rombel'] ?>">	
-				</div>
+				<div class="input-box">
+						
+        	<div class="details"> Rombel </div>
+        
+	        	<input type="text" placeholder=""name="rombel" id="rombel" value="<?= $row['masuk_rombel'] ?>">	
 			</div>
-			<br>
-        	<div class="user-details">
-		    		<div class="input-box">
-					  <span class="details">Tanggal masuk sekolah </span>
-					  <input type="date" placeholder="" name="tanggalmasuk" id="tanggalmasuk" value="<?= $row['tanggal_masuk'] ?>">	
-					</div>
-		    		</div>
-			</div>
-			<div class="user-details">
-		    		<div class="input-box">
+			<div class="input-box">
 					  <span class="details">Status Menyetujui Data Benar </span>
 					  <span>(1 = Setuju | 0 = Tidak)</span>
 					  <input type="text" placeholder="" name="ststj" id="ststj" value="<?= $row['status_setuju'] ?>">	
@@ -273,23 +265,33 @@ $nisup  = strtoupper($nis);
 					  <span class="details">Ukuran Topi</span>
 					  <input type="text" placeholder="" name="uktopi" id="uktopi" value="<?= $row['ukuran_topi'] ?>">
 					</div>
-		    		</div>
-			<div class="title">E.Sisi Admin</div>
+								    		<div class="input-box">
+					  <span class="details">Tanggal masuk sekolah </span>
+					  <input type="date" placeholder="" name="tanggalmasuk" id="tanggalmasuk" value="<?= $row['tanggal_masuk'] ?>">	
+					</div>		    		
+		</div>
+			
+		   <div class="title">E.Sisi Admin</div>
 			<br>
-			<div class="rombel">Semester</div>
+<div class="user-details">	
+			
 				<div class="input-box">
+			<div class="details	">Semester</div>
 				<input type="text" placeholder=""name="semester" id="semester" value="<?= $row['semester'] ?>">	
 				</div>
-
-			<br>
-        	<div class="rombel"> ID Kelas </div>
-        	<div class="gender-details">
-	        	<div class="input-box">
+				<div class="input-box">
+			<div class="details"> ID Kelas </div>
+        	
 				<input type="text" placeholder=""name="idkelas" id="idkelas" value="<?= $row['id_kelas'] ?>">	
 				</div>
-			</div>
+			
+				</div>
 
+			
+        	
+			
 			<br>
+        		
         	<input type="checkbox" name="ststj" id="dot2" value="aktif">
 	        <label>Menyetujui Siswa Menjadi Siswa Aktif</label>	        
 	       	<br>
@@ -297,19 +299,20 @@ $nisup  = strtoupper($nis);
         	<input type="checkbox" name="ststj" id="dot2" value="tidak aktif">
 	        <label>Menngubah Siswa Menjadi Siswa Tidak Aktif</label>	        
 	       	<br>
+<div class="user-details">
+	       		<div class="input-box">	<br>	
+        	<button type="submit" name="aktifsiswa" id="aktifsiswa">Simpan dan Update Menjadi Siswa Aktif</button></div>
 
-        	<button type="submit" name="aktifsiswa" id="aktifsiswa">Simpan dan Update Menjadi Siswa Aktif</button>
-        	<br>
-			<input class="button" type="button" onclick="location.href='datappdb.php';" value="Kembali" />
+			</div><div class="user-details">	
 
-
+        	<div class="input-box">	
+			<input class="button" type="button" onclick="location.href='datappdb.php';" value="Kembali" /></div>
         	</div>
-			</div>
-			</div>
-
-		  	</form>	
-		  </form>	
-		</div>
- 	</div>
+		
+</div>
+		</form>
+</div>
+	</div>
+       
 	</body>
 </html>
