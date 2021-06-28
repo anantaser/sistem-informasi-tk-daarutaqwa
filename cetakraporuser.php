@@ -89,44 +89,95 @@ table th {
     
 
      </table><center>
-<h1>Cetak Rapor Siswa</h1> </center>
+<h1>Rapor Siswa</h1> </center>
      
-<th>
-    <p>NIS  : <?= $nis ?>   </p>
-    <p>Nama : <?= $dr2['namalengkap'] ?>  </p>
-    <p>Kelas:  <?= $dr['id_kelas'] ?> </p>
-  </th>
+     <table width="100%">
+<td width="400px">
+    <p><b>NIS  : <?= $nis ?>  </b> </p>
+    <p><b>Nama : <?= $dr2['namalengkap'] ?></b> </p>
+    <p><b>Kelas:  <?= $dr['id_kelas'] ?> </b></p>
+  </td>
+  <td width="100px">
+    <p><b>Sakit: <?= $dr3['sakit'] ?> </b>   </p>
+    <p><b>Izin: <?= $dr3['izin'] ?>  </b> </p>
+    <p><b>Alpha:  <?= $dr3['alpha'] ?></b>  </p>
+   
+  </td>
+  </table>
 <table border="1" cellpadding="10" cellspacing="0">
- <tr>
-   <th>Pertumbuhan</th>
-   <th>Sikap Spiritual</th>
-   <th>Sikap Sosial</th>
-   <th>Pengetahuan</th>
-   <th>Keterampilan</th>
-    </tr> 
+ 
 <tr>
-  <center>
-   <td><?= $dr3['pertumbuhan'] ?></td>
-   <td><?= $dr3['sikap_spiritual'] ?></td>
-   <td><?= $dr3['sikap_sosial'] ?></td>
-   <td><?= $dr3['pengetahuan'] ?></td>
-   <td><?= $dr3['keterampilan'] ?></td>
-   </center>
- </tr> 
-</table>
+  <th>Pertumbuhan</th>
+  <td><?= $dr3['pertumbuhan'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+</tr>
+<tr>
+  <th>Sikap Spiritual</th>
+  <td><?= $dr3['sikap_spiritual'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+</tr>
+<tr>
+  <th>Sikap Sosial</th>
+  <td><?= $dr3['sikap_sosial'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+</tr>
+<tr>
+  <th>Pengetahuan</th>
+  <td><?= $dr3['pengetahuan'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+</tr>
+<tr>
+  <th>Keterampilan</th>
+  <td><?= $dr3['keterampilan'] ?>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+</tr>
 
+</table>
 <table width="100%">
   <tr>
     <td></td>
-    <p>Sakit: <?= $dr3['sakit'] ?>   </p>
-    <p>Izin: <?= $dr3['izin'] ?>  </p>
-    <p>Alpha:  <?= $dr3['alpha'] ?> </p>
-    <td></td>
-    <td width="200px">
+     <td></td>
+<!-- <td>
+  <div style="width:400px;float:right">
+    Denpasar, 10 Maret 2012
+    <br/>Kepala Sekolah Taman Kanak kanak
+    <br><br><br>
+    <p>Nama<br/>NIP. 1234</p>
+  </div>
+  <div style="clear:both"></div>
+</td>
+ --> 
+ <td width="400px">
+      <?= "Bogor ".$datetime ?>
+      <p>Mengetahui kepala Taman Kanak-kanak <br>  <br></p>
+      <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP.12312</p></td>
+      <br> 
+        <td width="200px">
+      <?= "Bogor ".$datetime ?>
       <p>Mengetahui Guru/Wali Kelas <br>  <br></p>
-      <br><br><u>Ibu Maimunah, M.Pd</u></td>
+      <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP. 213123</p></td>
       <br>
-      <?= "Tanggal Cetak : ".$datetime ?>
+      
   </tr>
 </table>
 </div>

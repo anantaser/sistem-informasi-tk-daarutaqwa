@@ -9,8 +9,8 @@ $nis = $_SESSION['username'];
 $idppdb = $_GET['id_ppdb'];
 
 if (isset($_POST["aktifsiswa"])){
-	var_dump($_POST);
-	exit();
+	// var_dump($_POST);
+	// exit();
 
 		if(aktifsiswa($_POST)<0) {
 			echo "<script>
@@ -69,6 +69,13 @@ $nisup  = strtoupper($nis);
  			<div class="title">A. Indentitas Calon Siswa/i</div>
 	  		<div class="content">
 	   	   	<form action="#" method="post">
+	   	   			<div class="user-details">
+		  				<br><br>
+		  			<div class="input-box">
+					  	<span class="details">ID PPDB </span>
+					  	<br>
+		  				<input type="text" name="idppdb" value="<?= $idppdb ?>">
+		  			</div>
 		  			<div class="user-details">
 		  				<br><br>
 		  			<div class="input-box">
@@ -283,7 +290,7 @@ $nisup  = strtoupper($nis);
 			</div>
 
 			<br>
-        	<input type="checkbox" name="ststj" id="dot2" value="Aktif">
+        	<input type="checkbox" name="ststj" id="dot2" value="aktif">
 	        <label>Menyetujui Siswa Menjadi Siswa Aktif</label>	        
 	       	<br>
 

@@ -23,9 +23,29 @@ $result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$qu';");
 $dr2 = mysqli_fetch_assoc($result2);
 $nisup = strtoupper($nis);
 
-$result3 = mysqli_query($conn, "SELECT * FROM nilai WHERE nis = '$nis';");
+$result3 = mysqli_query($conn, "SELECT AVG(sosemos) AS sosemosavg FROM nilai WHERE nis = '$nis';");
 
-$dr3 = mysqli_fetch_assoc($result3);
+$sosemos = mysqli_fetch_assoc($result3);
+
+$result4 = mysqli_query($conn, "SELECT AVG(bahasa) AS bahasaavg FROM nilai WHERE nis = '$nis';");
+
+$bahasa = mysqli_fetch_assoc($result4);
+
+$result5 = mysqli_query($conn, "SELECT AVG(kognitif) AS kognitifavg FROM nilai WHERE nis = '$nis';");
+
+$kognitif = mysqli_fetch_assoc($result5);
+
+$result6 = mysqli_query($conn, "SELECT AVG(mototik_kasar) AS motorikkasarsavg FROM nilai WHERE nis = '$nis';");
+
+$mototik_kasar = mysqli_fetch_assoc($result6);
+
+$result7 = mysqli_query($conn, "SELECT AVG(motorik_halus) AS motorikhalussavg FROM nilai WHERE nis = '$nis';");
+
+$motorik_halus = mysqli_fetch_assoc($result7);
+
+$result8 = mysqli_query($conn, "SELECT AVG(seni) AS seniavg FROM nilai WHERE nis = '$nis';");
+
+$seni = mysqli_fetch_assoc($result8);
 
 // var_dump($dr);
 // echo"<br><br>";
@@ -91,7 +111,7 @@ table th {
     
 
      </table><center>
-<h1>Cetak Nilai Siswa</h1>
+<h1>Nilai Siswa</h1>
 </center>
 
     <p>NIS: <?= $nis ?>   </p>
@@ -111,6 +131,7 @@ table th {
  </tr> 
 <?php while($aa = mysqli_fetch_assoc($result3)) :?>
 <tr>
+
   <td><?= $aa['tanggalnilai'] ?></td>
   <td><?= $aa['sosemos'] ?></td>
   <td><?= $aa['bahasa'] ?></td>
@@ -120,6 +141,16 @@ table th {
   <td><?= $aa['seni'] ?></td>
 </tr>
 <?php endwhile; ?>
+  <center>
+  
+   <td ><?= $sosemos['sosemosavg'] ?></td>
+   <td><?= $bahasa['bahasaavg'] ?></td>
+   <td><?= $kognitif['kognitifavg'] ?></td>
+   <td><?= $mototik_kasar['motorikkasarsavg'] ?></td>
+   <td><?= $motorik_halus['motorikhalussavg'] ?></td>
+   <td><?= $seni['seniavg'] ?></td>
+   </center>
+ </tr> 
 </table>
 
 
@@ -127,11 +158,16 @@ table th {
   <tr>
     <td></td>
     <td width="200px">
+        <td width="200px">
+      <?= "Bogor ".$datetime ?>
       <p>Mengetahui Guru/Wali Kelas <br>  <br></p>
-      <br><br><u>Ibu Maimunah, M.Pd</u></td>
+      <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP. 213123</p></td>
+      <br><p>0 - 1 = BB (Belum Berkembang)</p>
+      <p>1 - 2 = MB (Masih Berkembang)</p>
+      <p>2 - 3 = BSH (Berkembang Sesuai Harapan)</p>
+      <p>3 - 4 = BSB (Berkembang Sangat Baik)</p>
       <br>
-      <?= "Tanggal Cetak : ".$datetime ?>
-
+      
   </tr>
 
 </table>
