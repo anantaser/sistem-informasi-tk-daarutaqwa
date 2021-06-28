@@ -52,28 +52,47 @@ $dr3 = mysqli_fetch_assoc($result3);
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   
 		}
+    table{
+    border-collapse:collapse;
+    font:normal normal 12px Verdana,Arial,Sans-Serif;
+    color:#333333;
+}
+/* Mengatur warna latar, warna teks, ukruan font dan jenis bold (tebal) pada header tabel */
+table th {
+    background:#5F9EA0;
+    color:black;
+    font-weight:bold;
+    font-size:12px;
+}
+table th {
+    vertical-align:top;
+    padding:5px 10px;
+    border:1px solid #000;
+}
 	</style>
 </head>
 <body>
 	<div class="konten">
-	   <table>
+	   
+     <table >
        <tr>
          <td><img src="assets/logotk.jpg" width="90" height="90"></td>
          <td>
          <center>
-           <font size="4" color="black" style="font-family: Nyla"><b>Data Hasil Belajar Siswa</b></font><br>
-          
-           <font size="4" color="black" style="font-family: Maiandra GD"><b>Nilai Siswa</b></font>
-           <br><br>
-           <font size="2">______________________________________________________________________</font>
+           <font size="4" color="blue" style="font-family: Nyla"><b>Yayasan Terpadu</b></font><br>
+           <font size="7" color="blue" style="font-family: Bernard MT Condensed"><b>DAARUTAQWA</b></font><br>
+           <font size="4" color="blue" style="font-family: Maiandra GD"><b>TAMAN KANAK-KANAK DAARUTAQWA</b></font>
+           <br>
+           <font size="2">Jl. Raya Jakarta Bogor KM. 44 P.O. Box 40 CBI Pakansari Cibinong Bogor 16915   (021) 8755974</font>
          </center>
           </td>
 
        </tr>
-     
+    
 
-     </table>
-     <br><br>
+     </table><center>
+<h1>Cetak Nilai Siswa</h1>
+</center>
 
     <p>NIS: <?= $nis ?>   </p>
     <p>Nama: <?= $dr2['namalengkap'] ?>  </p>
@@ -81,6 +100,8 @@ $dr3 = mysqli_fetch_assoc($result3);
   
 <table border="1" cellpadding="10" cellspacing="0">
  <tr>
+  <th>Tanggal</th>
+   
    <th>Sosemos</th>
    <th>Bahasa</th>
    <th>Kognitif</th>
@@ -88,16 +109,17 @@ $dr3 = mysqli_fetch_assoc($result3);
    <th>Motorik Halus</th>
    <th>Seni</th>
  </tr> 
+<?php while($aa = mysqli_fetch_assoc($result3)) :?>
 <tr>
-  <center>
-   <td ><?= $dr3['sosemos'] ?></td>
-   <td><?= $dr3['bahasa'] ?></td>
-   <td><?= $dr3['kognitif'] ?></td>
-   <td><?= $dr3['mototik_kasar'] ?></td>
-   <td><?= $dr3['motorik_halus'] ?></td>
-   <td><?= $dr3['seni'] ?></td>
-   </center>
- </tr> 
+  <td><?= $aa['tanggalnilai'] ?></td>
+  <td><?= $aa['sosemos'] ?></td>
+  <td><?= $aa['bahasa'] ?></td>
+  <td><?= $aa['kognitif'] ?></td>
+  <td><?= $aa['mototik_kasar'] ?></td>
+  <td><?= $aa['motorik_halus'] ?></td>
+  <td><?= $aa['seni'] ?></td>
+</tr>
+<?php endwhile; ?>
 </table>
 
 

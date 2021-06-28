@@ -56,42 +56,43 @@ $user = mysqli_fetch_row($result2);
 <div class="user-details">
 
 <div class="input-box">
-      <label class="details">NIS :</label>
+      <label class="details"><b>NIS :</b></label>
       <label><?= $nis ?></label>
  </div>
       <br><br>
 <div class="input-box">
 
-      <label>Nama :</label>
+      <label><b>Nama</b></label>
       <label><?= $user[1] ?></label>
 </div>
       <br><br>
 <div class="input-box">
 
-      <label>Tanggal Lahir :</label>
+      <label><b>Tanggal Lahir :</b></label>
       <label><?= $user[4] ?></label>
 </div>
 
       <br><br>
 <div class="input-box">
 
-      <label>Tempat Lahir :</label>
+      <label><b>Tempat Lahir :</b></label>
       <label><?= $user[5] ?></label>
 </div>
 
       <br><br>
 <div class="input-box">
 
-      <label>Kelompok Belajar :</label>
+      <label><b>Kelompok Belajar :</b></label>
       <label><?= $ppdb[3] ?></label>
 </div>
 
       <br>
 
       <div class="input-box">
-      <label>Status Siswa :</label>
+      <label><b>Status Siswa :</b></label>
       <label><?= $ppdb[8] ?></label>
 </div>
+<br><br>
 </div>    
     <h2>Keuangan</h2>
       <label for="">Halaman Status Pembayaran</label>

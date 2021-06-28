@@ -53,33 +53,49 @@ $dr3 = mysqli_fetch_assoc($result3);
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   
 		}
+
+table{
+    border-collapse:collapse;
+    font:normal normal 12px Verdana,Arial,Sans-Serif;
+    color:#333333;
+}
+/* Mengatur warna latar, warna teks, ukruan font dan jenis bold (tebal) pada header tabel */
+table th {
+  border-collapse: collapse;
+    background:#5F9EA0;
+    color:black;
+    font-weight:bold;
+    font-size:12px;
+
 	</style>
 </head>
 <body>
 	<div class="konten">
-	   <table>
+	   
+     <table >
        <tr>
          <td><img src="assets/logotk.jpg" width="90" height="90"></td>
          <td>
          <center>
-           <font size="4" color="black" style="font-family: Nyla"><b>Data Hasil Belajar Siswa</b></font><br>
-          
-           <font size="4" color="black" style="font-family: Maiandra GD"><b>Rapor Siswa</b></font>
-           <br><br>
-           <font size="2">______________________________________________________________________</font>
+           <font size="4" color="blue" style="font-family: Nyla"><b>Yayasan Terpadu</b></font><br>
+           <font size="6" color="blue" style="font-family: Bernard MT Condensed"><b>DAARUTAQWA</b></font><br>
+           <font size="3" color="blue" style="font-family: Maiandra GD"><b>TAMAN KANAK-KANAK DAARUTAQWA</b></font>
+           <br>
+           <font size="2">Jl. Raya Jakarta Bogor KM. 44 P.O. Box 40 CBI Pakansari Cibinong Bogor 16915   (021) 8755974</font>
          </center>
           </td>
 
        </tr>
+    
+
+     </table><center>
+<h1>Cetak Rapor Siswa</h1> </center>
      
-
-     </table>
-     <br><br>
-
-    <p>NIS: <?= $nis ?>   </p>
-    <p>Nama: <?= $dr2['namalengkap'] ?>  </p>
+<th>
+    <p>NIS  : <?= $nis ?>   </p>
+    <p>Nama : <?= $dr2['namalengkap'] ?>  </p>
     <p>Kelas:  <?= $dr['id_kelas'] ?> </p>
-  
+  </th>
 <table border="1" cellpadding="10" cellspacing="0">
  <tr>
    <th>Pertumbuhan</th>

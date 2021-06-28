@@ -80,21 +80,17 @@ if ( isset($_POST["submit"])) {
 
     <div class="user-details">
     <div class="input-box">
-    <span class="details">NIS</span>
-    <input type="text" name="nis" value="<?= $nis ?>" id="nis">
+    <label for="nis">NIS :</label><input type="text" name="nis" value="<?= $nis ?>" id="nis">
     </div>
-    <br><br>
     <div class="input-box">
         <label for="namalengkap">Nama Lengkap :</label>
         <input type="text" name="namalengkap" id="namalengkap" value="<?= $user[1] ?>">
      </div>
-    <br><br>
-
+   
     <div class="input-box">
        <label for="kelompok">Kelompok :</label>
         <input type="text" name="kelompok" id="kelompok" value="<?= $ppdb[3] ?>">
     </div>
-    <br><br>
     <div class="input-box">
        <label for="bulanbayar">Bulan Bayar :</label>
         <select  name="bulanbayar" id="bulanbayar">
@@ -112,13 +108,10 @@ if ( isset($_POST["submit"])) {
             <option value="Desember">Desember</option>
          </select>
     </div>
-    <br><br>
-
     <div class="input-box">
         <label for="keteranganbayar">Keterangan Bayar :</label>
         <input type="text" name="keteranganbayar" id="keteranganbayar">
     </div>
-    <br><br>
 
     <div class="input-box">
         <label for="kategoribukti">Kategori Bukti :</label>
@@ -127,7 +120,6 @@ if ( isset($_POST["submit"])) {
           <option value="Pengembangan">Pengembangan</option>
         </select>
     </div>
-    <br><br>
      <div class="input-box">
         <label for="jumlahbayar">Jumlah :</label>
         <input type="text" name="jumlahbayar" id="jumlahbayar">
@@ -136,16 +128,16 @@ if ( isset($_POST["submit"])) {
     <div></div>
     
    <br><br>
-     
-      <br><br>  
+       
 <div class="input-box">
           
     <br><br>
-</div>
-<div class="input-box">
+</div><div class="upload">
      <label> Upload Gambar -> </label>
     
       <input  type="file" name="imageupload" id="imageupload">
+</div>
+<div class="input-box">
 
     <button class="button" type="submit" name="submit"> Tambah Data! </button>
     <input class="button" type="button" onclick="location.href='pembayaran.php';" value="Kembali" />
