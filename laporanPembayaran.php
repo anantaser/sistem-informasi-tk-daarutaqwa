@@ -12,7 +12,7 @@ $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
 
-$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis");
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis WHERE kategoribukti = 'SPP';");
 
 $dr = mysqli_fetch_assoc($result);
 
@@ -23,7 +23,7 @@ $dr = mysqli_fetch_assoc($result);
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Laporan Pembayaran SPP</title>
     <style type="text/css">
     .konten{
       position: relative;
@@ -79,13 +79,13 @@ table th {
 
      </table>
 <center>
-<h1>Laporan Pembayaran</h1>
+<h1>Laporan Bukti Pembayaran SPP</h1>
 </center>
     <table border="1" cellpadding="10" cellspacing="0">
 
 
      <tr>
-       <th>ID Pembayaran</th>
+       <th>ID SPP</th>
        <th>NIS</th>
        <th>Jumlah Bayar</th>
        <th>Bulan Bayar</th>

@@ -133,6 +133,10 @@ function buktibayar($databuktibayar){
     	exit;
   	}
 
+
+  	$tgl_bayar = date("m.d.y");
+  	$status_bayar = 'ok';
+  	$id_pembayaran = strtoupper(substr(uniqid(rand()),0,10));
   	$id_bukti = strtoupper(substr(uniqid(rand()),0,10));
   	$nis = mysqli_real_escape_string($conn,$databuktibayar["nis"]);  	
   	$jumlahbayar = mysqli_real_escape_string($conn,$databuktibayar["jumlahbayar"]);
@@ -147,9 +151,15 @@ function buktibayar($databuktibayar){
   		return false;
   	}
 
-  	$query = "INSERT INTO `bukti_pembayaran`(`id_bukti`, `nis`, `bulan_bayar`, `jumlah_bayar`, `keterangan_bayar`, `imageupload`, `kategoribukti`) VALUES ('$id_bukti','$nis','$bulanbayar','$jumlahbayar','$keteranganbayar','$imageupload','$kategoribukti')";
-  	mysqli_query($conn, $query);
-  	return mysqli_affected_rows($conn);
+  	$query = "INSERT INTO `bukti_pembayaran`(`id_bukti`, `nis`, `bulan_bayar`, `jumlah_bayar`, `keterangan_bayar`, `imageupload`, `kategoribukti`) VALUES ('$id_bukti','$nis','$bulanbayar','$jumlahbayar','$keteranganbayar','$imageupload','$kategoribukti');";
+  	$query .= "INSERT INTO `pembayaran`(`id_pembayaran`, `nis`, `tgl_bayar`, `bulan_bayar`, `ket_bayar`, `status_bayar`, `kategori`, `id_bukti`) VALUES ('$id_pembayaran','$nis','$tgl_bayar','$bulanbayar','$keteranganbayar','$status_bayar','$kategoribukti','$id_bukti');";
+
+  	if (mysqli_multi_query($conn, $query)) {    
+    		echo "New records created successfully";
+  		} else {    
+    	echo "Error: " . $query . "<br>" . mysqli_error($conn);
+  		}
+  		mysqli_close($conn);
 }
 
 function upload() {

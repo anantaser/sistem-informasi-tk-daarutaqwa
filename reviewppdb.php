@@ -293,6 +293,10 @@ $nisup  = strtoupper($nis);
         	<input type="checkbox" name="ststj" id="dot2" value="aktif">
 	        <label>Menyetujui Siswa Menjadi Siswa Aktif</label>	        
 	       	<br>
+	       	<br>
+        	<input type="checkbox" name="ststj" id="dot2" value="tidak aktif">
+	        <label>Menngubah Siswa Menjadi Siswa Tidak Aktif</label>	        
+	       	<br>
 
         	<button type="submit" name="aktifsiswa" id="aktifsiswa">Simpan dan Update Menjadi Siswa Aktif</button>
         	<br>
