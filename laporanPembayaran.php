@@ -100,7 +100,7 @@ table th {
      <tr>
        <td><?= $row['id_bukti'] ?></td>
        <td><?= $row['nis'] ?></td>
-       <td><?= $row['jumlah_bayar'] ?></td>
+       <td>Rp.<?= $row['jumlah_bayar'] ?></td>
        <td><?= $row['bulan_bayar'] ?></td>
        <td><?= $row['keterangan_bayar'] ?></td>
        <td><?= $row['kategoribukti'] ?></td>

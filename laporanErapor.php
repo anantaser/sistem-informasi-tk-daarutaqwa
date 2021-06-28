@@ -3,17 +3,50 @@
 require 'functions.php';
 $conn = mysqli_connect("localhost","root","","sia_tk");
 
-$result3 = mysqli_query($conn, "SELECT * FROM e_rapor order by id_erapot desc ");
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN e_rapor ON e_rapor.nis = siswa.nis");
 
-$dr3 = mysqli_fetch_assoc($result3);
+$dr = mysqli_fetch_assoc($result);
 
  ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title></title>
+  <style type="text/css">
+    .konten{
+      position: relative;
+    z-index: 1;
+    max-width: 600px;
+     margin: 0 auto 100px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  
+    }
+    table{
+    border-collapse:collapse;
+    font:normal normal 12px Verdana,Arial,Sans-Serif;
+    color:#333333;
+}
+/* Mengatur warna latar, warna teks, ukruan font dan jenis bold (tebal) pada header tabel */
+table th {
+    background:#5F9EA0;
+    color:black;
+    font-weight:bold;
+    font-size:12px;
+}
+table th {
+    vertical-align:top;
+    padding:5px 10px;
+    border:1px solid #000;
+}
+  </style>
+
 </head>
 <body>
+  <div class="konten">
 <center>
      <table>
        <tr>
@@ -45,7 +78,7 @@ $dr3 = mysqli_fetch_assoc($result3);
    
  </tr> 
   <?php $i = 1; ?>
-<?php while($data = mysqli_fetch_assoc($result3)) : ?>
+<?php while($data = mysqli_fetch_assoc($result)) : ?>
 <tr>
   <td><?= $i ?></td>     
    <td><?= $data['nis'] ?></td>
@@ -74,5 +107,6 @@ $dr3 = mysqli_fetch_assoc($result3);
      
      
    </center>
+   </div>
 </body>
 </html>

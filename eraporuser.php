@@ -86,13 +86,13 @@ $nilai = mysqli_fetch_assoc($result3);
 </tr>
 <?php while($aa = mysqli_fetch_assoc($result3)) :?>
 <tr>
-  <td><?= $aa['tanggalnilai'] ?></td>
-  <td><?= $aa['sosemos'] ?></td>
-  <td><?= $aa['bahasa'] ?></td>
-  <td><?= $aa['kognitif'] ?></td>
-  <td><?= $aa['mototik_kasar'] ?></td>
-  <td><?= $aa['motorik_halus'] ?></td>
-  <td><?= $aa['seni'] ?></td>
+  <td><center><?= $aa['tanggalnilai'] ?>  </center></td>
+  <td><center><?= $aa['sosemos'] ?>       </center></td>
+  <td><center><?= $aa['bahasa'] ?>        </center></td>
+  <td><center><?= $aa['kognitif'] ?>      </center></td>
+  <td><center><?= $aa['mototik_kasar'] ?> </center></td>
+  <td><center><?= $aa['motorik_halus'] ?> </center></td>
+  <td><center><?= $aa['seni'] ?>          </center></td>
 </tr>
 <?php endwhile; ?>
 <br>
