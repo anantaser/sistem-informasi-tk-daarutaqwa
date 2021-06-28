@@ -2,6 +2,7 @@
 
 session_start();
 
+
 if (!isset($_SESSION["login"])){
   header("location: login.php");
   exit;
@@ -10,15 +11,11 @@ if (!isset($_SESSION["login"])){
 $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
-$result = mysqli_query($conn, "SELECT * FROM siswa WHERE nis = '$nis';");
 
-$ppdb = mysqli_fetch_row($result);
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis");
 
-$result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[1]';");
+$dr = mysqli_fetch_assoc($result);
 
-$user = mysqli_fetch_row($result2);
-
-$result3 = mysqli_query($conn, "SELECT * FROM bukti_pembayaran WHERE nis='$nis';");
 
 
 
@@ -84,7 +81,7 @@ table th {
 <center>
 <h1>laporan Pembayaran</h1>
 </center>
-   <table border="1" cellpadding="10" cellspacing="0">
+    <table border="1" cellpadding="10" cellspacing="0">
 
 
      <tr>
@@ -95,9 +92,11 @@ table th {
        <th>Keterangan Bayar</th>
        <!-- <th>Status Bayar</th> -->
        <th>Kategori</th>
+
+      
        
      </tr> 
-     <?php while($row = mysqli_fetch_assoc($result3)) :?>
+     <?php while($row = mysqli_fetch_assoc($result)) :?>
      <tr>
        <td><?= $row['id_bukti'] ?></td>
        <td><?= $row['nis'] ?></td>
@@ -115,7 +114,7 @@ table th {
     <td width="200px">
         <td width="200px">
       
-      <p>Mengetahui Guru/Wali Kelas <br>  <br></p>
+      <p>Mengetahui Kepala Sekolah Taman Kanak-kanak <br>  <br></p>
       <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP. 213123</p></td>
       
   </tr>
@@ -124,4 +123,6 @@ table th {
 
 </div>
 </body>
+<a href="#" onclick="window.print();">cetak</a>
+
 </html>

@@ -43,11 +43,10 @@ $nisup  = strtoupper($nis);
 
 
 <body>
-<div>
   <h1>Selamat Datang, <?= $nisup ?></h1>
 
 
-</div>
+
 
 <div class="container">
 <div class="content">
@@ -91,24 +90,68 @@ $nisup  = strtoupper($nis);
 <input class="button" type="button" onclick="location.href='beraporinput.php';" value="Check" />
 <br>
 <br> 
-<label for="keuangan">Keuangan </label>
+<label for="ppdb">Registrasi Akun untuk Admin</label>
+  <input class="button" type="button" onclick="location.href='registrasi.php';" value="Check" />
+ </div>
+<div class="input-box">
+  <br><br>
+  <label for="keuangan">Keuangan </label>
 <input class="button" type="button" onclick="location.href='keuangan.php';" value="Check" />
 <br>
 <br>
 <label for="ppdb">PPDB</label>
   <input class="button" type="button" onclick="location.href='datappdb.php';" value="Check" />
 
-<label for="ppdb">Registrasi Akun untuk Admin</label>
-  <input class="button" type="button" onclick="location.href='registrasi.php';" value="Check" />
- 
 
+</div>
   <br>
   <br>
-
+</div>
  </form>
     </div>
     </div>
 </body>
 
 
+<footer>
+  <div class="kontainer">
+    <div class="sec aboutus">
+      <h1>TK Daarutaqwa</h1>
+      <p>Merupakan TK Islam yang berlokasi di cibinong yang beralamat di jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
+
+    </div>
+    <div class="sec contact">
+      <h1>Contact Info</h1>
+
+      <ul class="info">
+        <li>
+          <span><i class="fa fa-map"></i></span>
+          <span>Cibinong <br>
+            Kab bogor <br>Indonesia</span></li>
+        <li>
+          <span><i class="fa fa-phone"></i></span>
+          <p><a href="#">+1234567</a><br><a href="#">+1234567
+          </p>
+          </li>
+            <li>
+          <span><i class="fa fa-envelope"></i></span>
+          <p><a href="#">tkislamdaarutaqwa@gmail.com</a></p>
+          </li>
+      </ul>
+    </div>
+</div>
+<div class="body">
+    <div class="sci">
+      <li><a href="#"><span class="fa fa-facebook "></span></a></li>
+      <li><a href="#"><span class="fa fa-instagram "></span></a></li>
+      <li><a href="#"><span class="fa fa-twitter "></span></a></li>
+      <li><a href="#"><span class="fa fa-youtube"></span></a></li>
+     
+      
+    </div>
+  </div>
+</footer>
+<div class="copyrightText">TK - Daarutaqwa ©2021</div>
+
 </html>
+

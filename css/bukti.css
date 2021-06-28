@@ -245,6 +245,7 @@ transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
   }
 
 table{
+  position: relative;
     border-collapse:collapse;
     font:normal normal 12px Verdana,Arial,Sans-Serif;
     color:#333333;
@@ -276,6 +277,19 @@ table tr:nth-child(even) {
     position: relative;
     z-index: 1;
     max-width: 600px;
+     margin: 0 auto 100px; 
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    
+  }
+
+.contai{
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
      margin: 0 auto 100px; 
     width: 100%;
     background-color: #fff;

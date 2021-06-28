@@ -53,7 +53,14 @@ $dr = mysqli_fetch_assoc($result);
   </div>
 </head>
 <body>
+<br><br><br>
+  <div class="container">
   <h1>Daftar Upload Bukti Pembayaran</h1>
+  
+    <div class="content">
+<form class="#">
+
+<div class="user-details">
     <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
 
@@ -96,18 +103,20 @@ $dr = mysqli_fetch_assoc($result);
     <br><br> 
     <div class="input-box"><br>
       <label>.</label>
-    <input class="button" type="button" onclick="location.href='indexUser.php';" value="Kembali" />
+    <input class="button" type="button" onclick="location.href='laporanPembayaran.php';" value="Cetak Laporan" />
+    </div>
+    
+    <div class="input-box"><br>
+      <label>.</label>
+    <input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
     </div>
     </div>
     </form>
     <br><br>
-     
-    <label></label>
-  </div>
-  </div>
-  <div>
-  </div>
-
+     </div>
+   </form> 
+</div>
+</div>
 </body>
 
 <footer>
