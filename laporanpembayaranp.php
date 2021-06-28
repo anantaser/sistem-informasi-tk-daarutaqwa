@@ -1,32 +1,30 @@
-<?php  
+<?php 
 
 session_start();
 
-$conn = mysqli_connect("localhost","root","","sia_tk");
 
 if (!isset($_SESSION["login"])){
   header("location: login.php");
   exit;
 } 
 
+$nis = $_SESSION['username'];
 
-$result = mysqli_query($conn,"SELECT * FROM `nilai`;");
+$conn = mysqli_connect("localhost","root","","sia_tk");
 
-$nilai = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis WHERE kategoribukti = 'Pengembangan';");
 
-// var_dump($nilai);
-// exit();
+$dr = mysqli_fetch_assoc($result);
 
 
-?>
 
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Laporan Nilai</title>
-
-
-  <style type="text/css">
+  <title>Laporan Bukti Pembayaran Pengembangan</title>
+    <style type="text/css">
     .konten{
       position: relative;
     z-index: 1;
@@ -61,7 +59,7 @@ table th {
 </head>
 <body>
 <div class="konten">
-<center>
+
      <table >
        <tr>
          <td><img src="assets/logotk.jpg" width="90" height="90"></td>
@@ -76,54 +74,55 @@ table th {
           </td>
 
        </tr>
-     
+    
+
 
      </table>
-     <br>
-     <h1>Laporan Nilai Siswa</h1>
-     <table border="1" cellpadding="10" cellspacing="0">
- <tr>
-    <th>No</th>
-   <th>NIS</th>
-   <th>Tanggal</th>
-   <th>Bahasa</th>
-   <th>Kognitif</th>
-   <th>Motorik Kasar</th>
-   <th>Motorik Halus</th>
-   <th>Seni</th>
- </tr> 
-     
+<center>
+<h1>Laporan Pembayaran Pengembangan</h1>
+</center>
+    <table border="1" cellpadding="10" cellspacing="0">
 
-<?php $i = 1; ?>
-<?php while($row = mysqli_fetch_assoc($result)) :?>
-<tr>
-  <center>
-   <td><?= $i ?></td>
-   <td><?= $row['nis'] ?></td>
-   <td><?= $row['tanggalnilai'] ?></td>
-   <td><?= $row['bahasa'] ?></td>
-   <td><?= $row['kognitif'] ?></td>
-   <td><?= $row['mototik_kasar'] ?></td>
-   <td><?= $row['motorik_halus'] ?></td>
-   <td><?= $row['seni'] ?></td>
-   </center>
- </tr> 
 
-<?php $i++; ?>
-<?php endwhile; ?>
-</table>
+     <tr>
+       <th>ID Pengembangan</th>
+       <th>NIS</th>
+       <th>Jumlah Bayar</th>
+       <th>Bulan Bayar</th>
+       <th>Keterangan Bayar</th>
+       <!-- <th>Status Bayar</th> -->
+       <th>Kategori</th>
+
+      
+       
+     </tr> 
+     <?php while($row = mysqli_fetch_assoc($result)) :?>
+     <tr>
+       <td><?= $row['id_bukti'] ?></td>
+       <td><?= $row['nis'] ?></td>
+       <td>Rp.<?= $row['jumlah_bayar'] ?></td>
+       <td><?= $row['bulan_bayar'] ?></td>
+       <td><?= $row['keterangan_bayar'] ?></td>
+       <td><?= $row['kategoribukti'] ?></td>
+     </tr>
+     <?php endwhile; ?>
+    </table>
+
 <table width="100%">
   <tr>
     <td></td>
-    <td width="150px">
-      <p>Mengetahui Kepala Sekolah <br>  </p>
-      <br><br><p>___________________</p>
-      <p>Ibu Khodijah</p></td>
+    <td width="200px">
+        <td width="200px">
+      
+      <p>Mengetahui Kepala Sekolah Taman Kanak-kanak <br>  <br></p>
+      <br><br><p><u>Ibu Maimunah, M.Pd</u><br>NIP. 213123</p></td>
+      
   </tr>
+
 </table>
-     
-   </center>
-   </div>
+
+</div>
 </body>
 <a href="#" onclick="window.print();">cetak</a>
+
 </html>

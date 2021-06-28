@@ -11,9 +11,15 @@ $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
 
-$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis");
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis WHERE kategoribukti = 'SPP';");
+$res = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb INNER JOIN bukti_pembayaran ON bukti_pembayaran.nis = siswa.nis WHERE kategoribukti = 'Pengembangan';");
+
 
 $dr = mysqli_fetch_assoc($result);
+$dr2 = mysqli_fetch_assoc($res);
+// var_dump($dr);
+// var_dump($dr2);
+// exit();
 
 // $result2 = mysqli_query($conn, "SELECT * FROM `bukti_pembayaran`");
 
@@ -69,14 +75,18 @@ $dr = mysqli_fetch_assoc($result);
 </head>
 <body>
 <br><br><br>
+<<<<<<< HEAD
   <div class="contain">
   <h1>Daftar Upload Bukti Pembayaran</h1>
   
     <div class="content">
+=======
+<div class="container">
+<div class="content">
+>>>>>>> 2e7fa607d64eea5cc28ea9eb96f41f7fe1a23ca9
 <form class="#">
-
+<h1>Daftar Upload Bukti Pembayaran SPP</h1>
 <div class="user-details">
-    <br><br>
     <table border="1" cellpadding="10" cellspacing="0">
 
 
@@ -89,7 +99,6 @@ $dr = mysqli_fetch_assoc($result);
        <!-- <th>Status Bayar</th> -->
        <th>Kategori</th>
        <th>Bukti Pembayaran</th>
-       <th>Aksi</th>
       
        
      </tr> 
@@ -104,32 +113,62 @@ $dr = mysqli_fetch_assoc($result);
        <td>
          <a href="img/<?= $row['imageupload'] ?>"><?= $row['imageupload'] ?></a>
        </td>
+     </tr>
+     <?php endwhile; ?>
+    </table>
+    <input class="button" type="button" onclick="location.href='laporanPembayaran.php';" value="Cetak Laporan" />
+    
+    <br>
+    <br>
+
+    <div class="user-details">
+    <h1>Daftar Upload Bukti Pembayaran Pengembangan</h1>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+
+     <tr>
+       <th>ID Pembayaran</th>
+       <th>NIS</th>
+       <th>Jumlah Bayar</th>
+       <th>Bulan Bayar</th>
+       <th>Keterangan Bayar</th>
+       <!-- <th>Status Bayar</th> -->
+       <th>Kategori</th>
+       <th>Bukti Pembayaran</th>
+      
+       
+     </tr> 
+     <?php while($row2 = mysqli_fetch_assoc($res)) :?>
+     <tr>
+       <td><?= $row2['id_bukti'] ?></td>
+       <td><?= $row2['nis'] ?></td>
+       <td><?= $row2['jumlah_bayar'] ?></td>
+       <td><?= $row2['bulan_bayar'] ?></td>
+       <td><?= $row2['keterangan_bayar'] ?></td>
+       <td><?= $row2['kategoribukti'] ?></td>
        <td>
-         <a href="statuskeuangan.php?id_bukti=<?= $row['id_bukti'] ?>">Review</a>
-         
+         <a href="img/<?= $row2['imageupload'] ?>"><?= $row2['imageupload'] ?></a>
        </td>
      </tr>
      <?php endwhile; ?>
     </table>
 
     <div class="input-box"><br>
-    <label for="keuangan">Upload Bukti Bayar</label>
-    <input class="button" type="button" onclick="location.href='buktipembayaran.php';" value="Upload" /></div>
-    <br><br> 
-    <div class="input-box"><br>
-      <label>.</label>
-    <input class="button" type="button" onclick="location.href='laporanPembayaran.php';" value="Cetak Laporan" />
+    <label>.</label>
+    <input class="button" type="button" onclick="location.href='laporanpembayaranp.php';" value="Cetak Laporan" />
     </div>
     
     <div class="input-box"><br>
-      <label>.</label>
+    <label>.</label>
     <input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
     </div>
     </div>
     </form>
     <br><br>
-     </div>
+    </div>
    </form> 
+</div>
 </div>
 </div>
 </body>

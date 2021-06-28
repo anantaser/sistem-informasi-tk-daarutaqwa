@@ -18,9 +18,9 @@ $result2 = mysqli_query($conn, "SELECT * FROM ppdb WHERE id_ppdb = '$ppdb[1]';")
 
 $user = mysqli_fetch_row($result2);
 
-$result3 = mysqli_query($conn, "SELECT * FROM bukti_pembayaran WHERE nis='$nis' AND kategoribukti = 'SPP';");
+$result3 = mysqli_query($conn, "SELECT * FROM bukti_pembayaran WHERE nis='$nis' AND kategoribukti = 'Pengembangan';");
 
-$result4 = mysqli_query($conn,"SELECT SUM(jumlah_bayar) FROM bukti_pembayaran WHERE nis = '$nis' AND kategoribukti = 'SPP';");
+$result4 = mysqli_query($conn,"SELECT SUM(jumlah_bayar) FROM bukti_pembayaran WHERE nis = '$nis' AND kategoribukti = 'Pengembangan';");
 $total = mysqli_fetch_assoc($result4);
 // var_dump($total);
 // exit();
@@ -87,7 +87,7 @@ table th {
 
      </table>
 <center>
-<H1><u>Kartu SPP</u></H1>
+<H1><u>Kwitansi Pembayaran Pengembangan</u></H1>
 
 </center>
 

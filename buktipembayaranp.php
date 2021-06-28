@@ -23,6 +23,9 @@ $user = mysqli_fetch_row($result2);
 
 if ( isset($_POST["submit"])) {
 
+  // var_dump($_POST);
+  // var_dump($_FILES);
+  // die;
 
   if ( buktibayar($_POST) > 0) {
     echo"
@@ -68,7 +71,7 @@ if ( isset($_POST["submit"])) {
 
 </head>
 <body>
-  <h1>Upload Bukti Pembayaran - Sisi User</h1>
+  <h1>Upload Bukti Pembayaran Pengembangan - Sisi User</h1>
   <div class="container">
     <div class="title"> Upload Bukti Pembayaran</div>
     <div class="content">   
@@ -113,8 +116,8 @@ if ( isset($_POST["submit"])) {
     <div class="input-box">
         <label for="kategoribukti">Kategori Bukti :</label>
         <select id="kategoribukti" name="kategoribukti">
-         <option value="SPP">SPP</option>
-          <!-- <option value="Pengembangan">Pengembangan</option> -->
+         <!-- <option value="SPP">SPP</option> -->
+          <option value="Pengembangan">Pengembangan</option>
         </select>
     </div>
      <div class="input-box">

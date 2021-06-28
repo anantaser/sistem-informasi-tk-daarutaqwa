@@ -97,16 +97,22 @@ $result3 = mysqli_query($conn, "SELECT * FROM bukti_pembayaran WHERE nis='$nis';
     </table>
 
     <div class="input-box"><br>
-    <label for="keuangan">Upload Bukti Bayar</label>
+    <label for="keuangan">Upload Bukti Bayar SPP</label>
     <input class="button" type="button" onclick="location.href='buktipembayaran.php';" value="Upload" /></div>
     <br><br> 
+     <div class="input-box"><br>
+    <label for="keuangan">Upload Bukti Bayar Pembayaran PPDB</label>
+    <input class="button" type="button" onclick="location.href='buktipembayaranp.php';" value="Upload" /></div>
     <div class="input-box"><br>
-      <label>.</label>
-    <input class="button" type="button" onclick="location.href='indexUser.php';" value="Kembali" />
+    <label>Cetak Kartu SPP</label>
+    <input class="button" type="button" onclick="location.href='cetakbayar.php';" value="Cetak" />
     </div>
     <div class="input-box"><br>
-      <label>Print Bukti Pembayaran</label>
-    <input class="button" type="button" onclick="location.href='cetakbayar.php';" value="Cetak" />
+    <label>Kwitansi Pembayaran Pengembangan</label>
+    <input class="button" type="button" onclick="location.href='cetakbayarp.php';" value="Cetak" />
+    </div>
+    <div class="input-box"><br>
+    <input class="button" type="button" onclick="location.href='indexUser.php';" value="Kembali" />
     </div>
     
     </div>

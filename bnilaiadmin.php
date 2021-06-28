@@ -118,7 +118,13 @@ table tr:nth-child(even) {
 <?php $i++; ?>
 <?php endwhile; ?>
 </table>
+<div class="input-box"><br>
 <input class="button" type="button" onclick="location.href='indexAdmin.php';" value="Kembali" />
+</div>
+<div class="input-box"><br>
+<input class="button" type="button" onclick="location.href='laporannilai.php';" value="Cetak Laporan Nilai" />
+</div>
+
   
     </div>
     

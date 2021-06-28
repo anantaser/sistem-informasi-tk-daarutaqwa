@@ -18,6 +18,10 @@ $res = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb 
 
 $nisup  = strtoupper($nis);
 
+$res2 = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb WHERE status_siswa = 'tidak aktif'");
+
+$nisup  = strtoupper($nis);
+
  ?>
 
 
@@ -110,6 +114,38 @@ $nisup  = strtoupper($nis);
    <td><?= $row2['status_siswa'] ?></td>
    <td>
      <a href="reviewppdb.php?id_ppdb=<?= $row2['id_ppdb'] ?>">Tinjau Siswa</a>
+   </td>
+     
+ </tr>
+ <?php $a++; ?>
+  <?php endwhile; ?>
+  
+</table>
+<br>
+<h1>Daftar Siswa Tidak Aktif</h1>
+<table border="1" cellpadding="10" cellspacing="0">
+ <tr>
+   <th>No</th>
+   <th>Nama</th>
+   <th>NIS</th>
+   <th>ID PPDB</th>
+   <th>Kelompok</th>
+   <th>Status Siswa</th>
+   <th>Aksi</th>
+ </tr> 
+
+  <?php $a = 1; ?>
+  <?php while($row3 = mysqli_fetch_assoc($res2)) : ?>
+ <tr>
+  
+  <td><?= $a ?></td>
+   <td><?= $row3['namalengkap'] ?></td>
+   <td><?= $row3['nis'] ?></td>
+   <td><?= $row3['id_ppdb'] ?></td>
+   <td><?= $row3['kelompok'] ?></td>
+   <td><?= $row3['status_siswa'] ?></td>
+   <td>
+     <a href="reviewppdb.php?id_ppdb=<?= $row3['id_ppdb'] ?>">Tinjau Siswa</a>
    </td>
      
  </tr>

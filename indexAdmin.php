@@ -10,7 +10,7 @@ if (!isset($_SESSION["login"])){
 $nis = $_SESSION['username'];
 
 $conn = mysqli_connect("localhost","root","","sia_tk");
-$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb");
+$result = mysqli_query($conn, "SELECT * FROM ppdb INNER JOIN siswa ON ppdb.id_ppdb = siswa.id_ppdb"); 
 
 $dr = mysqli_fetch_assoc($result);
 $nisup  = strtoupper($nis);
@@ -43,10 +43,11 @@ $nisup  = strtoupper($nis);
 
 
 <body>
+<div>
   <h1>Selamat Datang, <?= $nisup ?></h1>
 
 
-
+</div>
 
 <div class="container">
 <div class="content">
@@ -90,73 +91,24 @@ $nisup  = strtoupper($nis);
 <input class="button" type="button" onclick="location.href='beraporinput.php';" value="Check" />
 <br>
 <br> 
-<label for="ppdb">Registrasi Akun untuk Admin</label>
-  <input class="button" type="button" onclick="location.href='registrasi.php';" value="Check" />
- </div>
-<div class="input-box">
-  <br><br>
-  <label for="keuangan">Keuangan </label>
+<label for="keuangan">Keuangan </label>
 <input class="button" type="button" onclick="location.href='keuangan.php';" value="Check" />
 <br>
 <br>
 <label for="ppdb">PPDB</label>
   <input class="button" type="button" onclick="location.href='datappdb.php';" value="Check" />
-<br>
-<br>
-<label for="siswa">Daftar Siswa</label>
-  <input class="button" type="button" onclick="location.href='laporansiswa.php';" value="Cetak" />
 
+<label for="ppdb">Registrasi Akun untuk Admin</label>
+  <input class="button" type="button" onclick="location.href='registrasi.php';" value="Check" />
+ 
 
-
-</div>
   <br>
   <br>
-</div>
+
  </form>
     </div>
     </div>
 </body>
 
 
-<footer>
-  <div class="kontainer">
-    <div class="sec aboutus">
-      <h1>TK Daarutaqwa</h1>
-      <p>Merupakan TK Islam yang berlokasi di cibinong yang beralamat di jl. Raya bogor, KM. 44, Pakansari, Cibinong, Bogor, West Java 16915</p>
-
-    </div>
-    <div class="sec contact">
-      <h1>Contact Info</h1>
-
-      <ul class="info">
-        <li>
-          <span><i class="fa fa-map"></i></span>
-          <span>Cibinong <br>
-            Kab bogor <br>Indonesia</span></li>
-        <li>
-          <span><i class="fa fa-phone"></i></span>
-          <p><a href="#">+1234567</a><br><a href="#">+1234567
-          </p>
-          </li>
-            <li>
-          <span><i class="fa fa-envelope"></i></span>
-          <p><a href="#">tkislamdaarutaqwa@gmail.com</a></p>
-          </li>
-      </ul>
-    </div>
-</div>
-<div class="body">
-    <div class="sci">
-      <li><a href="#"><span class="fa fa-facebook "></span></a></li>
-      <li><a href="#"><span class="fa fa-instagram "></span></a></li>
-      <li><a href="#"><span class="fa fa-twitter "></span></a></li>
-      <li><a href="#"><span class="fa fa-youtube"></span></a></li>
-     
-      
-    </div>
-  </div>
-</footer>
-<div class="copyrightText">TK - Daarutaqwa ©2021</div>
-
 </html>
-
