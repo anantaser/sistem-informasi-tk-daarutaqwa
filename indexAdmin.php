@@ -24,7 +24,7 @@ $nisup  = strtoupper($nis);
   <head>
     <title>PPDB - Admin</title>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/ppdb.css">
+    <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/bukti.css">
 <style type="text/css">
   
@@ -66,7 +66,7 @@ $nisup  = strtoupper($nis);
 
 </div>
 
-<div class="contain">
+<div class="container">
 <div class="content">
   <form class="#">
 <h1>Daftar Siswa Aktif</h1>
@@ -97,31 +97,33 @@ $nisup  = strtoupper($nis);
 </table>
 <br>
 <br><br>
+<div class="user-details">
 <div class="input-box">
-<br><br>
 
 <label for="Penilaian siswa">Penilaian Siswa </label>
 <input class="button" type="button" onclick="location.href='bnilaiadmin.php';" value="Check" />
+</div>
 
-<br>
-<br>
+<div class="input-box">
 <label for="ppdb">PPDB</label>
   <input class="button" type="button" onclick="location.href='datappdb.php';" value="Check" />
-
+</div>
+<div class="input-box">
 <label for="ppdb">Registrasi Akun untuk Admin</label>
   <input class="button" type="button" onclick="location.href='registrasi.php';" value="Check" />
 </div> 
 <div class="input-box"> 
-<br>  <br>  
+
 <label for="Penilaian siswa">E-Rapot </label>
 <input class="button" type="button" onclick="location.href='beraporinput.php';" value="Check" />
-<br>
-<br> 
+</div>
+
+<div class="input-box"> 
 <label for="keuangan">Keuangan </label>
 <input class="button" type="button" onclick="location.href='keuangan.php';" value="Check" />
 
 </div>
-
+</div>
   <br>
   <br>
 </div>
